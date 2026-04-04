@@ -154,17 +154,38 @@ export default function MapPage({ theme = 'default' }) {
   const [ripplePos, setRipplePos] = useState(null)
   const [viewMode, setViewMode] = useState('numbers') // 'numbers' | 'graphs'
   const [panelSize, setPanelSize] = useState('md') // 'sm' | 'md' | 'lg'
+
+  // Time machine state
+  const [timeMachine, setTimeMachine] = useState(false)
+  const [currentYear, setCurrentYear] = useState(2021)
+  const [playing, setPlaying] = useState(false)
+  const [timeseriesData, setTimeseriesData] = useState(null) // county -> year -> {rate, pop, deaths}
+  const playRef = useRef(null)
+
   const containerRef = useRef(null)
   const debounceRef = useRef(null)
   const pulseKeyRef = useRef(0)
 
-  // Load counties
+  // Load counties + timeseries
   useEffect(() => {
     fetch(`${API}/counties`).then(r => r.json()).then(data => {
       setCounties(data)
       setMaxPop(Math.max(...data.map(c => c.population)))
     }).catch(() => {})
+    fetch(`${API}/timeseries`).then(r => r.json()).then(setTimeseriesData).catch(() => {})
   }, [])
+
+  // Time machine auto-play
+  useEffect(() => {
+    if (!playing) { clearInterval(playRef.current); return }
+    playRef.current = setInterval(() => {
+      setCurrentYear(y => {
+        if (y >= 2021) { setPlaying(false); return 2021 }
+        return y + 1
+      })
+    }, 800)
+    return () => clearInterval(playRef.current)
+  }, [playing])
 
   // Run simulation (debounced)
   const runSim = useCallback(async (county, ivs) => {
@@ -271,12 +292,28 @@ export default function MapPage({ theme = 'default' }) {
         {counties.map(county => {
           const pos = COUNTY_COORDS[county.name]
           if (!pos) return null
-          const norm = county.population / maxPop
+
+          // Time machine: size and color based on death RATE for the selected year
+          const tsCounty = timeseriesData?.[county.name]
+          const tsYear = tsCounty?.[String(currentYear)]
+          const useTimeMachine = timeMachine && tsYear
+
+          let norm, size, color
+          if (useTimeMachine) {
+            // Normalize by death rate (max ~85 per 100K for worst county/year)
+            norm = Math.min(1, tsYear.rate / 85)
+            size = Math.max(12, Math.min(40, 10 + norm * 30)) // size grows with death rate
+            color = riskColor(norm, colorScheme)
+          } else {
+            norm = county.population / maxPop
+            size = Math.max(14, Math.min(36, Math.sqrt(county.population / 4000)))
+            color = riskColor(norm, colorScheme)
+          }
+
           const isActive = county.name === selected
           const isHovered = county.name === hoveredCounty
-          const size = Math.max(14, Math.min(36, Math.sqrt(county.population / 4000)))
-          const color = isActive ? (isBW ? '#ddd' : '#a78bfa') : riskColor(norm, colorScheme)
-          const cachedData = hoverData[county.name]
+          if (isActive) color = isBW ? '#ddd' : '#a78bfa'
+          const cachedData = useTimeMachine ? null : hoverData[county.name]
 
           const icon = L.divIcon({
             className: '',
@@ -320,8 +357,23 @@ export default function MapPage({ theme = 'default' }) {
                     <span style={{ color: '#94a3b8' }}>Risk Level</span>
                     <span style={{ fontWeight: 700, color }}>{riskLabel(norm)}</span>
                   </div>
-                  ${cachedData ? '' : ''}
-                  {cachedData ? (
+                  {useTimeMachine && tsYear && (
+                    <>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1px 0' }}>
+                        <span style={{ color: '#94a3b8' }}>Year</span>
+                        <span style={{ fontWeight: 700, color: '#fff', fontFamily: "'JetBrains Mono', monospace" }}>{currentYear}</span>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1px 0' }}>
+                        <span style={{ color: '#94a3b8' }}>Death Rate</span>
+                        <span style={{ fontWeight: 700, color: riskColor(norm, colorScheme), fontFamily: "'JetBrains Mono', monospace" }}>{tsYear.rate}/100K</span>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1px 0' }}>
+                        <span style={{ color: '#94a3b8' }}>Est. Deaths</span>
+                        <span style={{ fontWeight: 700, color: '#ef4444', fontFamily: "'JetBrains Mono', monospace" }}>{Math.round(tsYear.deaths)}</span>
+                      </div>
+                    </>
+                  )}
+                  {!useTimeMachine && cachedData ? (
                     <>
                       {[
                         ['Baseline Deaths', cachedData.baseline_deaths?.toLocaleString(), '#ef4444'],
@@ -342,11 +394,11 @@ export default function MapPage({ theme = 'default' }) {
                         </div>
                       )}
                     </>
-                  ) : (
+                  ) : !useTimeMachine ? (
                     <div style={{ color: '#475569', fontSize: 10, textAlign: 'center', padding: '4px 0' }}>
                       Loading simulation...
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </LeafletTooltip>
             </Marker>
@@ -578,6 +630,15 @@ export default function MapPage({ theme = 'default' }) {
           Network
         </button>
         <button
+          onClick={() => { setTimeMachine(v => !v); if (!timeMachine) setCurrentYear(2003) }}
+          className={`px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl transition-all press-effect ${
+            timeMachine ? 'bg-red-600/80 text-white' : 'text-slate-300 hover:text-white'
+          }`}
+          style={{ background: timeMachine ? undefined : 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
+        >
+          Time Machine
+        </button>
+        <button
           onClick={toggleFullscreen}
           className="px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl text-slate-300 hover:text-white transition-all press-effect"
           style={{ background: 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
@@ -598,7 +659,7 @@ export default function MapPage({ theme = 'default' }) {
           )
         })}
         <span className="text-slate-600 ml-1">|</span>
-        <span className="text-slate-500">Size = population</span>
+        <span className="text-slate-500">Size = {timeMachine ? 'death rate' : 'population'}</span>
       </div>
 
       {/* Bottom-center: County quick-select */}
@@ -645,6 +706,127 @@ export default function MapPage({ theme = 'default' }) {
                 </button>
               ))}
             </div>
+
+            {/* Generate policy report */}
+            <button
+              onClick={async () => {
+                try {
+                  const res = await fetch(`${API}/policy-letter`, {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ county: selected, budget: 2000000, ...interventions }),
+                  })
+                  const data = await res.json()
+                  const blob = new Blob([data.letter], { type: 'text/plain' })
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = `DrugDiffuse_${selected}_Policy_Report.txt`
+                  a.click()
+                  URL.revokeObjectURL(url)
+                } catch {}
+              }}
+              className="w-full mt-2 px-3 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-green-600/80 to-emerald-600/80 text-white hover:brightness-110 transition press-effect flex items-center justify-center gap-1.5"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              Download Policy Report
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ═══ TIME MACHINE ═══ */}
+      {timeMachine && timeseriesData && (
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-[1001] fade-up" style={{ width: 'min(600px, calc(100% - 32px))' }}>
+          <div className="glass-panel px-5 py-4">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-3">
+                <p className="text-xs font-bold text-white">Indiana Opioid Epidemic</p>
+                <span className="text-2xl font-black font-mono text-white">{currentYear}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => { setCurrentYear(2003); setPlaying(false) }}
+                  className="w-7 h-7 rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition text-xs flex items-center justify-center press-effect"
+                >
+                  ⏮
+                </button>
+                <button
+                  onClick={() => setPlaying(p => !p)}
+                  className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition press-effect ${
+                    playing ? 'bg-red-600 text-white' : 'bg-white/10 text-white border border-slate-600 hover:border-slate-400'
+                  }`}
+                >
+                  {playing ? '⏸' : '▶'}
+                </button>
+                <button
+                  onClick={() => { setCurrentYear(2021); setPlaying(false) }}
+                  className="w-7 h-7 rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition text-xs flex items-center justify-center press-effect"
+                >
+                  ⏭
+                </button>
+              </div>
+            </div>
+
+            {/* Year slider */}
+            <div className="relative">
+              <input
+                type="range"
+                min={2003}
+                max={2021}
+                value={currentYear}
+                onChange={e => { setCurrentYear(parseInt(e.target.value)); setPlaying(false) }}
+                className="w-full"
+                style={{ '--pct': `${((currentYear - 2003) / 18) * 100}%` }}
+              />
+              {/* Year labels */}
+              <div className="flex justify-between mt-1">
+                {[2003, 2006, 2009, 2012, 2015, 2018, 2021].map(y => (
+                  <span
+                    key={y}
+                    className={`text-[9px] font-mono cursor-pointer transition ${
+                      y === currentYear ? 'text-white font-bold' : 'text-slate-600 hover:text-slate-400'
+                    }`}
+                    onClick={() => { setCurrentYear(y); setPlaying(false) }}
+                  >
+                    {y}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Context label */}
+            <div className="mt-2 text-[10px] text-slate-400 text-center">
+              {currentYear <= 2010 && 'Prescription opioid era — rates rising steadily'}
+              {currentYear > 2010 && currentYear <= 2013 && 'Heroin transition — prescription crackdowns push users to street drugs'}
+              {currentYear === 2014 && 'Fentanyl enters the supply — death rates begin accelerating'}
+              {currentYear === 2015 && '⚠ Scott County HIV outbreak — 235 infected from injection drug use'}
+              {currentYear >= 2016 && currentYear <= 2019 && 'Fentanyl surge — death rates nearly double across Indiana'}
+              {currentYear >= 2020 && 'COVID-19 pandemic — isolation drives overdoses to record highs'}
+            </div>
+
+            {/* Selected county stat for current year */}
+            {timeseriesData[selected]?.[String(currentYear)] && (
+              <div className="flex items-center justify-center gap-6 mt-2 pt-2 border-t border-slate-700/50">
+                <div className="text-center">
+                  <p className="text-[9px] text-slate-500 uppercase">{selected}</p>
+                  <p className="text-sm font-black font-mono text-red-400">
+                    {timeseriesData[selected][String(currentYear)].rate}/100K
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-[9px] text-slate-500 uppercase">Est. Deaths</p>
+                  <p className="text-sm font-black font-mono text-white">
+                    {Math.round(timeseriesData[selected][String(currentYear)].deaths)}
+                  </p>
+                </div>
+                <div className="text-center">
+                  <p className="text-[9px] text-slate-500 uppercase">Population</p>
+                  <p className="text-sm font-black font-mono text-slate-300">
+                    {timeseriesData[selected][String(currentYear)].pop?.toLocaleString()}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
