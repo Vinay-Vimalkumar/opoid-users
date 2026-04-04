@@ -4,8 +4,8 @@ __pycache__/
 node_modules/
 frontend/dist/
 # data/processed/
-ml/xgb_model.json
-ml/feature_importance.json
+# ml/xgb_model.json
+# ml/feature_importance.json
 *.db
 .vite/
 

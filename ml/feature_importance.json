@@ -1,0 +1,11 @@
+{
+  "naloxone": 0.05710456520318985,
+  "prescribing": 0.11793377995491028,
+  "treatment": 0.16663263738155365,
+  "population": 0.15964624285697937,
+  "overdose_rate_per_100k": 0.0796571597456932,
+  "pct_uninsured": 0.10125192999839783,
+  "od_touchpoints": 0.23252776265144348,
+  "treatment_facilities": 0.07331807166337967,
+  "median_household_income": 0.0119278309866786
+}
