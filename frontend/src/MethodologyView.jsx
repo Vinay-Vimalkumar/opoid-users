@@ -51,7 +51,7 @@ const COLOR_MAP = {
 export default function MethodologyView() {
   return (
     <div className="space-y-6">
-      <div className="bg-gradient-to-r from-slate-800 to-slate-800/50 rounded-xl p-6 border border-slate-700">
+      <div className="bg-gradient-to-r from-slate-800 to-slate-800/50 rounded-xl p-6 border border-slate-700 fade-up">
         <h2 className="text-xl font-bold text-white mb-2">How DrugDiffuse Works</h2>
         <p className="text-slate-400 text-sm leading-relaxed max-w-3xl">
           A six-stage pipeline from raw CDC data to actionable policy recommendations.
@@ -64,15 +64,15 @@ export default function MethodologyView() {
         {STEPS.map((step, i) => {
           const c = COLOR_MAP[step.color]
           return (
-            <div key={i} className="flex gap-4 mb-4">
+            <div key={i} className={`flex gap-4 mb-4 fade-up fade-up-d${i + 1}`}>
               {/* Timeline */}
               <div className="flex flex-col items-center w-8 flex-shrink-0">
-                <div className={`w-4 h-4 rounded-full ${c.dot} ring-2 ring-slate-800 z-10`} />
-                {i < STEPS.length - 1 && <div className="w-0.5 flex-1 bg-slate-600" />}
+                <div className={`w-4 h-4 rounded-full ${c.dot} ring-2 ring-slate-800 z-10 scale-pop`} style={{ animationDelay: `${i * 0.1}s` }} />
+                {i < STEPS.length - 1 && <div className="w-0.5 flex-1 bg-slate-600 draw-line" style={{ animationDelay: `${i * 0.15}s` }} />}
               </div>
 
               {/* Card */}
-              <div className={`flex-1 ${c.bg} rounded-xl p-4 border ${c.border} mb-1`}>
+              <div className={`flex-1 ${c.bg} rounded-xl p-4 border ${c.border} mb-1 hover-lift`}>
                 <div className="flex items-center gap-2 mb-1">
                   <span className={`text-xs font-mono ${c.text} opacity-60`}>0{i + 1}</span>
                   <h3 className={`text-sm font-bold ${c.text}`}>{step.title}</h3>
@@ -87,7 +87,7 @@ export default function MethodologyView() {
 
       {/* Technical details */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+        <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 fade-up fade-up-d7 hover-lift">
           <h3 className="text-sm font-semibold text-slate-300 mb-3">Compartmental Model</h3>
           <div className="text-xs text-slate-400 font-mono leading-loose space-y-1">
             <p>General Pop → <span className="text-blue-400">Prescribed</span> → <span className="text-yellow-400">Misuse</span> → <span className="text-orange-400">OUD</span></p>
@@ -101,7 +101,7 @@ export default function MethodologyView() {
           </div>
         </div>
 
-        <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+        <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 fade-up fade-up-d8 hover-lift">
           <h3 className="text-sm font-semibold text-slate-300 mb-3">Infrastructure</h3>
           <div className="text-xs text-slate-400 space-y-2">
             <div className="flex justify-between">
@@ -133,7 +133,7 @@ export default function MethodologyView() {
       </div>
 
       {/* Limitations */}
-      <div className="bg-slate-800/50 rounded-xl p-5 border border-slate-700">
+      <div className="bg-slate-800/50 rounded-xl p-5 border border-slate-700 fade-up">
         <h3 className="text-sm font-semibold text-slate-300 mb-2">Limitations & Future Work</h3>
         <ul className="text-xs text-slate-400 space-y-1 list-disc list-inside">
           <li>Model uses fixed transition rates — cannot capture regime changes like the 2020 fentanyl surge (would need time-varying rates)</li>

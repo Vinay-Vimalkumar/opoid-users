@@ -12,8 +12,12 @@ const TABS = [
 ]
 
 const THEMES = [
-  { key: 'default', label: 'Default',       dots: ['#f97316', '#9333ea'] },
-  { key: 'bw',      label: 'Black & White',  dots: ['#ffffff', '#555555'] },
+  { key: 'default',  label: 'Ember',          dots: ['#f97316', '#9333ea'] },
+  { key: 'ocean',    label: 'Ocean',          dots: ['#06b6d4', '#3b82f6'] },
+  { key: 'emerald',  label: 'Emerald',        dots: ['#10b981', '#059669'] },
+  { key: 'rose',     label: 'Rose',           dots: ['#f43f5e', '#ec4899'] },
+  { key: 'midnight', label: 'Midnight',       dots: ['#6366f1', '#8b5cf6'] },
+  { key: 'bw',       label: 'Monochrome',     dots: ['#ffffff', '#555555'] },
 ]
 
 export default function App() {
@@ -69,7 +73,7 @@ export default function App() {
               <button
                 key={tab.key}
                 onClick={() => setPage(tab.key)}
-                className={`h-full px-4 text-sm font-semibold border-b-2 transition ${
+                className={`h-full px-4 text-sm font-semibold border-b-2 transition-all duration-200 press-effect ${
                   page === tab.key
                     ? 'text-white'
                     : 'border-transparent text-slate-500 hover:text-slate-300'
@@ -141,14 +145,16 @@ export default function App() {
 
       {/* Page */}
       <div className="flex-1 min-h-0">
-        {page === 'home'
-          ? <LandingPage onNavigate={setPage} theme={theme} />
-          : page === 'whatif'
-          ? <div className="max-w-7xl mx-auto px-4 py-6"><CounterfactualView /></div>
-          : page === 'methodology'
-          ? <div className="max-w-7xl mx-auto px-4 py-6"><MethodologyView /></div>
-          : <MapPage theme={theme} />
-        }
+        <div key={page} className="page-enter">
+          {page === 'home'
+            ? <LandingPage onNavigate={setPage} theme={theme} />
+            : page === 'whatif'
+            ? <div className="max-w-7xl mx-auto px-4 py-6"><CounterfactualView /></div>
+            : page === 'methodology'
+            ? <div className="max-w-7xl mx-auto px-4 py-6"><MethodologyView /></div>
+            : <MapPage theme={theme} />
+          }
+        </div>
       </div>
 
       {/* Footer */}

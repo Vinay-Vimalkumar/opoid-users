@@ -50,7 +50,7 @@ export default function CounterfactualView() {
   return (
     <div className="space-y-6">
       {/* Headline */}
-      <div className="bg-gradient-to-r from-red-900/40 to-orange-900/40 rounded-xl p-6 border border-red-800/50">
+      <div className="bg-gradient-to-r from-red-900/40 to-orange-900/40 rounded-xl p-6 border border-red-800/50 fade-up">
         <h2 className="text-xl font-bold text-white mb-2">
           "What If?" — Counterfactual Analysis
         </h2>
@@ -63,19 +63,19 @@ export default function CounterfactualView() {
       </div>
 
       {/* Scenario toggle */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 fade-up fade-up-d1">
         <button
           onClick={() => setActiveScenario('scott')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-            activeScenario === 'scott' ? 'bg-red-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 press-effect ${
+            activeScenario === 'scott' ? 'bg-red-600 text-white glow-red' : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:-translate-y-0.5'
           }`}
         >
           Scott County (HIV Outbreak)
         </button>
         <button
           onClick={() => setActiveScenario('statewide')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
-            activeScenario === 'statewide' ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 press-effect ${
+            activeScenario === 'statewide' ? 'bg-orange-600 text-white glow-orange' : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:-translate-y-0.5'
           }`}
         >
           Statewide (2016 Fentanyl Surge)
@@ -85,7 +85,7 @@ export default function CounterfactualView() {
       {activeScenario === 'scott' && scott && (
         <div className="space-y-4">
           {/* Context card */}
-          <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+          <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 fade-up fade-up-d2 hover-lift">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-red-900/50 flex items-center justify-center text-red-400 text-lg flex-shrink-0">
                 !
@@ -103,7 +103,7 @@ export default function CounterfactualView() {
           </div>
 
           {/* Main chart */}
-          <div className="bg-slate-800 rounded-xl p-5 border border-slate-700">
+          <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 fade-up fade-up-d3 chart-enter">
             <h3 className="text-sm font-semibold text-slate-300 mb-1">
               Overdose Deaths: Actual vs. Counterfactual (2003-2021)
             </h3>
@@ -130,23 +130,23 @@ export default function CounterfactualView() {
           {/* Key findings */}
           {scott.findings && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-slate-800 rounded-xl p-5 border border-red-800/30">
+              <div className="bg-slate-800 rounded-xl p-5 border border-red-800/30 fade-up fade-up-d4 hover-lift">
                 <p className="text-xs text-slate-400 uppercase tracking-wide mb-2">Without Intervention</p>
-                <p className="text-3xl font-bold text-red-400 font-mono">
+                <p className="text-3xl font-bold text-red-400 font-mono number-enter">
                   {scott.findings.crisis_period_2015_2021?.actual_deaths?.toFixed?.(0) ?? '—'}
                 </p>
                 <p className="text-xs text-slate-500 mt-1">deaths during crisis (2015-2021)</p>
               </div>
-              <div className="bg-slate-800 rounded-xl p-5 border border-green-800/30">
+              <div className="bg-slate-800 rounded-xl p-5 border border-green-800/30 fade-up fade-up-d5 hover-lift">
                 <p className="text-xs text-slate-400 uppercase tracking-wide mb-2">With Aggressive Intervention</p>
-                <p className="text-3xl font-bold text-green-400 font-mono">
+                <p className="text-3xl font-bold text-green-400 font-mono number-enter">
                   {scott.findings.crisis_period_2015_2021?.with_aggressive_intervention ?? '—'}
                 </p>
                 <p className="text-xs text-slate-500 mt-1">deaths (naloxone 70%, treatment 60%)</p>
               </div>
-              <div className="bg-slate-800 rounded-xl p-5 border border-yellow-800/30">
+              <div className="bg-slate-800 rounded-xl p-5 border border-yellow-800/30 fade-up fade-up-d6 hover-lift">
                 <p className="text-xs text-slate-400 uppercase tracking-wide mb-2">Lives Saveable</p>
-                <p className="text-3xl font-bold text-yellow-400 font-mono">
+                <p className="text-3xl font-bold text-yellow-400 font-mono number-enter shimmer-text">
                   {scott.findings.aggressive_scenario?.percent_reduction ?? '—'}%
                 </p>
                 <p className="text-xs text-slate-500 mt-1">reduction in overdose deaths</p>
@@ -154,7 +154,7 @@ export default function CounterfactualView() {
             </div>
           )}
 
-          <div className="bg-yellow-900/20 rounded-xl p-4 border border-yellow-800/30">
+          <div className="bg-yellow-900/20 rounded-xl p-4 border border-yellow-800/30 fade-up fade-up-d7 gradient-border">
             <p className="text-sm text-yellow-200 font-medium">{scott.findings?.headline}</p>
           </div>
         </div>
@@ -187,29 +187,29 @@ export default function CounterfactualView() {
 
           {/* Statewide summary */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-slate-800 rounded-xl p-4 border border-red-800/30">
+            <div className="bg-slate-800 rounded-xl p-4 border border-red-800/30 fade-up fade-up-d2 hover-lift">
               <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Actual Deaths</p>
-              <p className="text-2xl font-bold text-red-400 font-mono">{statewide.total_actual_deaths?.toLocaleString()}</p>
+              <p className="text-2xl font-bold text-red-400 font-mono number-enter">{statewide.total_actual_deaths?.toLocaleString()}</p>
               <p className="text-xs text-slate-500">2016-2021, 20 counties</p>
             </div>
-            <div className="bg-slate-800 rounded-xl p-4 border border-green-800/30">
+            <div className="bg-slate-800 rounded-xl p-4 border border-green-800/30 fade-up fade-up-d3 hover-lift">
               <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Counterfactual</p>
-              <p className="text-2xl font-bold text-green-400 font-mono">{statewide.total_counterfactual_deaths?.toLocaleString()}</p>
+              <p className="text-2xl font-bold text-green-400 font-mono number-enter">{statewide.total_counterfactual_deaths?.toLocaleString()}</p>
               <p className="text-xs text-slate-500">with intervention</p>
             </div>
-            <div className="bg-slate-800 rounded-xl p-4 border border-yellow-800/30">
+            <div className="bg-slate-800 rounded-xl p-4 border border-yellow-800/30 fade-up fade-up-d4 hover-lift">
               <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Lives Saveable</p>
-              <p className="text-2xl font-bold text-yellow-400 font-mono">{statewide.total_lives_saved?.toLocaleString()}</p>
+              <p className="text-2xl font-bold text-yellow-400 font-mono number-enter">{statewide.total_lives_saved?.toLocaleString()}</p>
               <p className="text-xs text-slate-500">estimated</p>
             </div>
-            <div className="bg-slate-800 rounded-xl p-4 border border-purple-800/30">
+            <div className="bg-slate-800 rounded-xl p-4 border border-purple-800/30 fade-up fade-up-d5 hover-lift">
               <p className="text-xs text-slate-400 uppercase tracking-wide mb-1">Reduction</p>
-              <p className="text-2xl font-bold text-purple-400 font-mono">{statewide.pct_reduction}%</p>
+              <p className="text-2xl font-bold text-purple-400 font-mono number-enter shimmer-text">{statewide.pct_reduction}%</p>
               <p className="text-xs text-slate-500">fewer deaths</p>
             </div>
           </div>
 
-          <div className="bg-orange-900/20 rounded-xl p-4 border border-orange-800/30">
+          <div className="bg-orange-900/20 rounded-xl p-4 border border-orange-800/30 fade-up fade-up-d6 gradient-border">
             <p className="text-sm text-orange-200 font-medium">{statewide.headline}</p>
           </div>
         </div>
