@@ -8,3 +8,7 @@ ml/xgb_model.json
 ml/feature_importance.json
 *.db
 .vite/
+
+# SLURM logs
+simulation/cluster/logs/
+ml/cluster/logs/
