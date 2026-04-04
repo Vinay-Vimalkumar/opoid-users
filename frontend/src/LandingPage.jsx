@@ -4,10 +4,10 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const API = '/api'
 
 const GLOBAL_STATS = [
-  { value: '80,000+', label: 'Americans die from opioid overdoses each year', color: '#ef4444' },
-  { value: '2,500+',  label: 'Hoosiers lost annually in Indiana',              color: '#f97316' },
-  { value: '20',      label: 'Indiana counties modeled in our simulation',     color: '#a855f7' },
-  { value: '$2M',     label: 'Avg county public health budget for intervention',color: '#22c55e' },
+  { value: '15,000+', label: 'Hoosiers have died from overdoses since 1999',        color: '#ef4444' },
+  { value: '3 of 5',  label: 'overdose deaths in Indiana involve opioids',           color: '#f97316' },
+  { value: '57,500',  label: 'Indiana K–12 students with a parent with OUD',         color: '#a855f7' },
+  { value: '5/day',   label: 'overdose deaths per day at Indiana\'s peak',           color: '#22c55e' },
 ]
 
 const HOW_IT_WORKS = [
@@ -184,9 +184,9 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
           </p>
 
           <p className="reveal reveal-d3 text-slate-500 text-base max-w-2xl mx-auto mb-12 leading-relaxed">
-            Run thousands of policy scenarios across 20 Indiana counties.
-            Find the interventions that save the most lives per dollar —
-            powered by real epidemiological modeling and machine learning.
+            Since 1999, 15,000+ Hoosiers have died from overdoses —
+            with 57,500 Indiana children living in the shadow of parental addiction right now.
+            Run policy scenarios across 20 Indiana counties and find the interventions that save the most lives per dollar.
           </p>
 
           <div className="reveal reveal-d4 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -228,25 +228,25 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
           <div className="reveal">
             <p className="text-xs font-semibold uppercase tracking-widest text-red-400 mb-3">The Problem</p>
             <h2 className="text-3xl font-black text-white mb-5 leading-tight">
-              Policymakers are flying blind during an opioid crisis
+              An intergenerational crisis — and policymakers are flying blind
             </h2>
             <p className="text-slate-400 leading-relaxed mb-4">
-              Indiana has one of the highest overdose death rates in the Midwest. County health departments are handed limited budgets and asked to make life-or-death decisions with little more than gut instinct and outdated annual reports.
+              Since 1999, over 15,000 Hoosiers have died from overdoses — roughly 5 per day at the peak. Fifty-eight Indiana counties recorded nearly 100 opioid prescriptions per 100 residents for multiple years running, indicating systemic overprescribing, not isolated incidents.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              DrugDiffuse changes that. We built an epidemiological simulation engine and an ML optimization layer that finds the intervention mix that saves the most lives per dollar — giving every county a data-driven playbook.
+              The damage doesn't stop there. Approximately 2.2 million children nationwide — including 57,500 Indiana K–12 students — have a parent with opioid use disorder, making them significantly more likely to experience trauma, foster care, and future addiction. The crisis is self-perpetuating without targeted, data-driven intervention.
             </p>
           </div>
           <div className="reveal reveal-d2 space-y-4">
             {[
-              { label: 'Overdose deaths preventable with naloxone', pct: 47, color: '#22c55e' },
-              { label: 'OUD cases that never reach treatment',       pct: 80, color: '#ef4444' },
-              { label: 'Cost saved with optimized intervention mix', pct: 34, color: '#f97316' },
+              { label: 'Indiana overdose deaths that involve opioids',     pct: 60, color: '#ef4444' },
+              { label: 'OUD cases estimated to never reach treatment',     pct: 80, color: '#f97316' },
+              { label: 'K–12 students impacted by parental OUD statewide', pct: 57, note: '57,500 students', color: '#a855f7' },
             ].map((item, i) => (
               <div key={i} className="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
                 <div className="flex justify-between mb-2">
                   <span className="text-sm text-slate-400">{item.label}</span>
-                  <span className="text-sm font-bold text-white font-mono">{item.pct}%</span>
+                  <span className="text-sm font-bold text-white font-mono">{item.note ?? `${item.pct}%`}</span>
                 </div>
                 <div className="h-2 rounded-full bg-slate-800 overflow-hidden">
                   <div
@@ -288,15 +288,31 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
       {counties.length > 0 && (
         <section id="insights" className="relative z-10 border-t border-slate-800 bg-slate-900/20 py-20 px-4">
           <div className="max-w-6xl mx-auto">
+            {/* County dispensing rate spotlight */}
+            <div className="reveal mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { county: 'Scott County',  rate: 87.2, note: 'Epicenter of 2015 HIV outbreak tied to IV drug use' },
+                { county: 'Knox County',   rate: 85.7, note: 'Rural county with limited treatment access' },
+                { county: 'Wayne County',  rate: 65.3, note: 'Urban-rural mix; high prescription exposure' },
+              ].map(({ county, rate, note }) => (
+                <div key={county} className="bg-slate-900/80 rounded-2xl p-4 border border-red-900/30 backdrop-blur">
+                  <p className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-1">High-Risk County</p>
+                  <p className="text-lg font-black text-white">{county}</p>
+                  <p className="text-2xl font-black font-mono text-red-400 my-1">{rate} <span className="text-sm font-normal text-slate-500">Rx / 100 residents</span></p>
+                  <p className="text-xs text-slate-500 leading-snug">{note}</p>
+                </div>
+              ))}
+            </div>
+
             <div className="reveal mb-10">
               <p className="text-xs font-semibold uppercase tracking-widest text-orange-500 mb-2">County Insights</p>
               <h2 className="text-3xl font-black text-white">Indiana County Overview</h2>
-              <p className="text-slate-500 mt-2 text-sm">Population-weighted OUD burden across all 20 modeled counties.</p>
+              <p className="text-slate-500 mt-2 text-sm">58 Indiana counties recorded ~100 opioid prescriptions per 100 residents for multiple years. Select any county below to run a simulation.</p>
             </div>
             <div className="grid lg:grid-cols-3 gap-6">
               {/* Bar chart */}
               <div className="reveal lg:col-span-2 bg-slate-900/80 rounded-2xl p-5 border border-slate-800 backdrop-blur">
-                <p className="text-sm font-semibold text-slate-300 mb-4">Population by County (proxy for OUD burden)</p>
+                <p className="text-sm font-semibold text-slate-300 mb-4">County Population (scale of OUD exposure)</p>
                 <ResponsiveContainer width="100%" height={260}>
                   <BarChart data={[...counties].sort((a,b) => b.population - a.population)} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
@@ -318,7 +334,8 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
               {/* Top / Bottom lists */}
               <div className="reveal reveal-d1 space-y-4">
                 <div className="bg-slate-900/80 rounded-2xl p-4 border border-red-900/30 backdrop-blur">
-                  <p className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-3">Highest Burden (Top 5)</p>
+                  <p className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-3">Largest Counties</p>
+                  <p className="text-[10px] text-slate-600 mb-2">Highest total OUD exposure by scale</p>
                   <div className="space-y-2">
                     {top5.map((c, i) => (
                       <div key={c.name} className="flex items-center justify-between">
@@ -326,13 +343,14 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
                           <span className="text-xs text-slate-600 w-4">{i+1}</span>
                           <span className="text-sm text-slate-300">{c.name}</span>
                         </div>
-                        <span className="text-xs font-mono text-red-400">{(c.population/1000).toFixed(0)}K</span>
+                        <span className="text-xs font-mono text-red-400">{(c.population/1000).toFixed(0)}K pop.</span>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="bg-slate-900/80 rounded-2xl p-4 border border-green-900/30 backdrop-blur">
-                  <p className="text-xs font-semibold text-green-400 uppercase tracking-wide mb-3">Lower Burden (Bottom 5)</p>
+                <div className="bg-slate-900/80 rounded-2xl p-4 border border-amber-900/30 backdrop-blur">
+                  <p className="text-xs font-semibold text-amber-400 uppercase tracking-wide mb-3">Rural Counties</p>
+                  <p className="text-[10px] text-slate-600 mb-2">Smallest — often highest per-capita overdose rates</p>
                   <div className="space-y-2">
                     {bottom5.map((c, i) => (
                       <div key={c.name} className="flex items-center justify-between">
@@ -340,7 +358,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
                           <span className="text-xs text-slate-600 w-4">{i+1}</span>
                           <span className="text-sm text-slate-300">{c.name}</span>
                         </div>
-                        <span className="text-xs font-mono text-green-400">{(c.population/1000).toFixed(0)}K</span>
+                        <span className="text-xs font-mono text-amber-400">{(c.population/1000).toFixed(0)}K pop.</span>
                       </div>
                     ))}
                   </div>
