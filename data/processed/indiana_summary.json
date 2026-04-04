@@ -1,0 +1,65 @@
+{
+  "total_counties": 20,
+  "total_population": 3371501,
+  "yearly_death_totals": {
+    "2020": 15276,
+    "2021": 19753,
+    "2022": 21126,
+    "2023": 19126,
+    "2024": 15118,
+    "2025": 6247
+  },
+  "top_5_by_rate": [
+    {
+      "county": "Scott",
+      "rate_per_100k": 84.42
+    },
+    {
+      "county": "Fayette",
+      "rate_per_100k": 81.5
+    },
+    {
+      "county": "Wayne",
+      "rate_per_100k": 73.21
+    },
+    {
+      "county": "Madison",
+      "rate_per_100k": 58.58
+    },
+    {
+      "county": "Delaware",
+      "rate_per_100k": 54.76
+    }
+  ],
+  "top_5_by_total_deaths": [
+    {
+      "county": "Marion",
+      "total_deaths": 38737
+    },
+    {
+      "county": "Lake",
+      "total_deaths": 11612
+    },
+    {
+      "county": "Allen",
+      "total_deaths": 7454
+    },
+    {
+      "county": "St. Joseph",
+      "total_deaths": 5490
+    },
+    {
+      "county": "Delaware",
+      "total_deaths": 4186
+    }
+  ],
+  "data_sources": [
+    "CDC VSRR Provisional County-Level Drug Overdose Deaths (gb4e-yj24)",
+    "CDC Drug Poisoning Mortality by County (rpvx-m2md)"
+  ],
+  "notes": [
+    "Suppressed counts (1-9) estimated at midpoint (5)",
+    "Model-based rates are smoothed estimates, not raw counts",
+    "This is a policy exploration tool, NOT medical advice"
+  ]
+}

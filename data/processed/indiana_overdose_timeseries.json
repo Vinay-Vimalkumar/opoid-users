@@ -1,0 +1,6642 @@
+{
+  "Marion": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 400
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 417
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 408
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 440
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 482
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 505
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 512
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 522
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 543
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 553
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 571
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 597
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 614
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 615
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 635
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 652
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 650
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 657
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 670
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 702
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 720
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 719
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 736
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 730
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 724
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 755
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 764
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 747
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 725
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 718
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 739
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 729
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 712
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 719
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 699
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 699
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 698
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 684
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 662
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 652
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 651
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 653
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 637
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 641
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 625
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 599
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 595
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 581
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 564
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 545
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 537
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 538
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 521
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 502
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 479
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 448
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 445
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 443
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 440
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 422
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 411
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 411
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 405
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 390
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 390
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 388
+    }
+  ],
+  "Lake": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 146
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 143
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 149
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 153
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 156
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 162
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 170
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 168
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 169
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 173
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 170
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 170
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 176
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 185
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 196
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 203
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 206
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 202
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 204
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 207
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 216
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 213
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 218
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 221
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 220
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 218
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 203
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 194
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 189
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 188
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 186
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 180
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 182
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 190
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 192
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 195
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 197
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 185
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 191
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 197
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 203
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 212
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 204
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 206
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 201
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 195
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 188
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 176
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 173
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 174
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 165
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 156
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 153
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 148
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 145
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 141
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 141
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 133
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 133
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 127
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 120
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 128
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 134
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 132
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 123
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 118
+    }
+  ],
+  "Allen": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 113
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 112
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 108
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 116
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 126
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 116
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 114
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 108
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 113
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 109
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 110
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 116
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 118
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 123
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 136
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 133
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 132
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 134
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 135
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 144
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 141
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 146
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 152
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 151
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 154
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 154
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 141
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 133
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 130
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 135
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 146
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 144
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 134
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 133
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 137
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 137
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 129
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 128
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 133
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 139
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 135
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 129
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 117
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 112
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 108
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 107
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 99
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 96
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 95
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 94
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 87
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 83
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 84
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 83
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 78
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 72
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 73
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 73
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 71
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 66
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 61
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 59
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 66
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 63
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 64
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 66
+    }
+  ],
+  "St. Joseph": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 38
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 45
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 53
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 55
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 62
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 68
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 74
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 77
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 76
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 80
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 87
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 92
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 92
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 91
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 95
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 91
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 89
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 86
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 80
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 86
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 94
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 95
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 95
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 93
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 94
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 97
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 97
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 98
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 99
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 99
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 101
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 102
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 97
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 95
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 94
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 99
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 100
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 97
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 94
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 93
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 91
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 91
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 96
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 93
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 94
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 94
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 88
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 84
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 83
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 82
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 85
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 85
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 87
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 88
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 82
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 76
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 74
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 73
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 74
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 70
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 63
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 59
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 58
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 59
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 59
+    }
+  ],
+  "Vanderburgh": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 35
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 34
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 31
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 34
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 39
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 36
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 40
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 41
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 45
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 47
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 50
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 48
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 53
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 60
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 68
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 69
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 69
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 73
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 74
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 83
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 81
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 78
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 85
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 89
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 86
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 83
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 80
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 77
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 77
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 77
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 75
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 69
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 74
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 84
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 75
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 74
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 79
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 77
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 75
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 75
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 71
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 67
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 59
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 52
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 51
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 48
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 44
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 44
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 45
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 45
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 44
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 41
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 36
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 37
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 38
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 35
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 36
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 31
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 35
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 35
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 33
+    }
+  ],
+  "Tippecanoe": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 42
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 41
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 38
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 38
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 35
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 36
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 43
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 42
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 40
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 39
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 37
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 34
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 40
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 38
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 38
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 42
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 45
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 47
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 42
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 44
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 45
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 44
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 40
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 44
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 50
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 47
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 44
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 48
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 51
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 49
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 51
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 55
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 53
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 52
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 49
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 47
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 44
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 50
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 55
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 47
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 43
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 43
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 41
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 43
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 42
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 46
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 54
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 51
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 46
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 37
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 38
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 37
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 33
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 26
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 26
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 24
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 25
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 23
+    }
+  ],
+  "Delaware": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 49
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 54
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 55
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 59
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 57
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 53
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 54
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 60
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 62
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 60
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 57
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 59
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 61
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 65
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 65
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 63
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 70
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 79
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 84
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 86
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 88
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 90
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 90
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 89
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 87
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 82
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 82
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 79
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 76
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 77
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 71
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 65
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 59
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 65
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 68
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 68
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 67
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 67
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 65
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 63
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 63
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 62
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 62
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 65
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 60
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 58
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 59
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 56
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 59
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 56
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 52
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 50
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 54
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 55
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 49
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 47
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 48
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 49
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 46
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 47
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 43
+    }
+  ],
+  "Wayne": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 49
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 49
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 45
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 54
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 56
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 55
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 55
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 51
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 49
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 45
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 47
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 52
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 41
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 39
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 41
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 43
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 44
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 45
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 52
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 59
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 59
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 60
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 57
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 56
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 59
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 62
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 62
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 60
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 60
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 56
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 51
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 46
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 44
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 40
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 39
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 39
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 39
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 36
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 35
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 33
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 35
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 37
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 37
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 35
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 36
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 44
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 41
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 36
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 35
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 37
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 38
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 36
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 36
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 38
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 36
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 35
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 31
+    }
+  ],
+  "Vigo": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 18
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 20
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 20
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 18
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 17
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 17
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 18
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 18
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 15
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 22
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 22
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 26
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 27
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 28
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 28
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 30
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 30
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 32
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 31
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 37
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 43
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 36
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 37
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 34
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 35
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 35
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 33
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 31
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 33
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 33
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 31
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 27
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 25
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 26
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 25
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 30
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 27
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 27
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 31
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 32
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 29
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 28
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 29
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 27
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 24
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 24
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 24
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 21
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 24
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 23
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 21
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 25
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 28
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 26
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 26
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 29
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 29
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 30
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 31
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 28
+    }
+  ],
+  "Madison": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 54
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 51
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 47
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 44
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 47
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 57
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 57
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 55
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 52
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 51
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 49
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 48
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 51
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 53
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 49
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 44
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 49
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 50
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 53
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 55
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 56
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 63
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 60
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 62
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 65
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 68
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 70
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 71
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 71
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 76
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 79
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 81
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 79
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 72
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 73
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 75
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 77
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 73
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 73
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 71
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 73
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 66
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 62
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 58
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 61
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 65
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 67
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 62
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 59
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 64
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 60
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 60
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 56
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 54
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 51
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 55
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 54
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 53
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 51
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 56
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 55
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 54
+    }
+  ],
+  "Clark": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 41
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 45
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 47
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 44
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 43
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 47
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 56
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 61
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 65
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 62
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 65
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 64
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 67
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 64
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 61
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 64
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 66
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 62
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 58
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 57
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 60
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 60
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 62
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 67
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 64
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 68
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 70
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 69
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 69
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 72
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 67
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 67
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 64
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 70
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 67
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 62
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 62
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 62
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 63
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 64
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 68
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 72
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 73
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 70
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 67
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 68
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 67
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 67
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 63
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 59
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 61
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 59
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 54
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 54
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 51
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 55
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 55
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 54
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 55
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 55
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 59
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 58
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 52
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 51
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 50
+    }
+  ],
+  "Floyd": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 39
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 40
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 36
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 33
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 32
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 34
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 34
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 34
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 33
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 30
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 34
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 33
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 39
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 38
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 38
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 40
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 42
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 40
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 40
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 42
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 42
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 47
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 44
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 42
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 36
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 38
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 40
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 40
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 39
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 39
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 42
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 42
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 43
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 41
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 42
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 43
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 44
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 43
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 41
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 40
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 37
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 40
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 39
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 36
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 34
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 32
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 33
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 38
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 39
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 39
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 45
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 45
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 41
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 42
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 35
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 33
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 31
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 28
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 25
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 28
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 26
+    }
+  ],
+  "Scott": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 12
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 13
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 15
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 18
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 24
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 25
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 25
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 24
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 24
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 25
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 27
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 27
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 28
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 28
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 27
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 23
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 19
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 17
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 16
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 15
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 16
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 12
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 10
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 11
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 12
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 12
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 10
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 11
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 12
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 14
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 18
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 18
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 18
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 13
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 13
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 13
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 14
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 15
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 14
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 12
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 11
+    }
+  ],
+  "Lawrence": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 11
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 15
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 15
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 14
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 11
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 11
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 11
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 12
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 13
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 14
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 13
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 15
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 13
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 10
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 12
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 14
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 19
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 19
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 22
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 22
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 21
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 20
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 15
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 18
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 18
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 17
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 18
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 13
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 13
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 14
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 14
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 12
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 11
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 11
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 12
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 13
+    }
+  ],
+  "Fayette": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 21
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 21
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 26
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 26
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 21
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 24
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 23
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 22
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 22
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 21
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 22
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 24
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 24
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 24
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 20
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 21
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 21
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 18
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 20
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 19
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 18
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 19
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 23
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 23
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 22
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 20
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 17
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 16
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 17
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 17
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 13
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 14
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 12
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 11
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 11
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 10
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 12
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 11
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 10
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 10
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 11
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 12
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 10
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 5
+    }
+  ],
+  "Jay": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 10
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 10
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 10
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 12
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 13
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 14
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 13
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 13
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 11
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 11
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 10
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 10
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 10
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 11
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 13
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 12
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 12
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 10
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 5
+    }
+  ],
+  "Blackford": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 5
+    }
+  ],
+  "Vermillion": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 5
+    }
+  ],
+  "Henry": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 12
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 12
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 11
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 11
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 10
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 5
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 12
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 10
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 10
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 5
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 11
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 12
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 13
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 14
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 14
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 16
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 16
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 12
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 13
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 15
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 12
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 13
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 14
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 14
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 18
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 18
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 17
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 16
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 15
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 18
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 16
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 15
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 13
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 10
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 12
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 14
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 12
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 5
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 12
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 13
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 15
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 16
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 16
+    }
+  ],
+  "Grant": [
+    {
+      "year": 2020,
+      "month": 1,
+      "deaths": 15
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "deaths": 17
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "deaths": 19
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "deaths": 24
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "deaths": 22
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "deaths": 25
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "deaths": 28
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "deaths": 31
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "deaths": 31
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "deaths": 31
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "deaths": 33
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "deaths": 31
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "deaths": 31
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "deaths": 33
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "deaths": 38
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "deaths": 36
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "deaths": 37
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "deaths": 38
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "deaths": 36
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "deaths": 40
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "deaths": 42
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "deaths": 46
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "deaths": 49
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "deaths": 52
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "deaths": 50
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "deaths": 50
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "deaths": 47
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "deaths": 47
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "deaths": 49
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "deaths": 47
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "deaths": 53
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "deaths": 54
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "deaths": 53
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "deaths": 49
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "deaths": 47
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "deaths": 46
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "deaths": 47
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "deaths": 47
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "deaths": 46
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "deaths": 49
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "deaths": 49
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "deaths": 50
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "deaths": 45
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "deaths": 43
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "deaths": 45
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "deaths": 46
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "deaths": 45
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "deaths": 43
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "deaths": 41
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "deaths": 40
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "deaths": 34
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "deaths": 30
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "deaths": 27
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "deaths": 25
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "deaths": 21
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "deaths": 17
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "deaths": 19
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "deaths": 20
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "deaths": 23
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "deaths": 23
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "deaths": 24
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "deaths": 22
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "deaths": 21
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "deaths": 21
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "deaths": 21
+    }
+  ]
+}

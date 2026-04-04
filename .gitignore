@@ -3,7 +3,7 @@ __pycache__/
 .env
 node_modules/
 frontend/dist/
-data/processed/
+# data/processed/
 ml/xgb_model.json
 ml/feature_importance.json
 *.db
