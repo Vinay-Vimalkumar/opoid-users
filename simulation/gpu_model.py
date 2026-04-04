@@ -351,7 +351,14 @@ def run_full_pipeline(
 
 
 if __name__ == "__main__":
-    summary = run_full_pipeline()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--levels", type=int, default=11, help="Number of intervention levels (11=default, 21=fine)")
+    parser.add_argument("--seeds", type=int, default=10, help="Number of random seeds per scenario")
+    args = parser.parse_args()
+
+    levels = [round(i / (args.levels - 1), 4) for i in range(args.levels)]
+    summary = run_full_pipeline(intervention_levels=levels, num_seeds=args.seeds)
     print(f"\n{'='*60}")
     print(f"DONE: {summary['total_scenarios']:,} scenarios in {summary['simulation_time_sec']:.2f}s")
     print(f"Throughput: {summary['throughput_scenarios_per_sec']:,} scenarios/sec")

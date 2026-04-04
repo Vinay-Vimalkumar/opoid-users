@@ -412,4 +412,8 @@ def train_forecaster(epochs=300, lr=1e-3, batch_size=32):
 
 
 if __name__ == "__main__":
-    train_forecaster()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--epochs", type=int, default=300)
+    args = parser.parse_args()
+    train_forecaster(epochs=args.epochs)

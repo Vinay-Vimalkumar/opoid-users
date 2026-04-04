@@ -351,4 +351,9 @@ def train_model(
 
 
 if __name__ == "__main__":
-    train_model()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--epochs", type=int, default=200)
+    parser.add_argument("--batch-size", type=int, default=2048)
+    args = parser.parse_args()
+    train_model(epochs=args.epochs, batch_size=args.batch_size)
