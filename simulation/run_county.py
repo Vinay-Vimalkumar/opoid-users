@@ -1,6 +1,7 @@
 """
 Run all scenarios for a single county (used by SLURM array jobs).
-Each county runs 125 combos × 5 seeds = 625 scenarios.
+Each county runs 1331 combos × 10 seeds = 13,310 scenarios.
+Total across 20 counties: 266,200 scenarios.
 """
 
 import argparse
@@ -10,8 +11,9 @@ import time
 from pathlib import Path
 from model import INDIANA_COUNTIES, Interventions, run_scenario, run_baseline
 
-LEVELS = [0.0, 0.25, 0.5, 0.75, 1.0]
-SEEDS = [42, 123, 456, 789, 1024]
+# 11 levels: 0.0, 0.1, 0.2, ..., 1.0
+LEVELS = [round(x * 0.1, 1) for x in range(11)]
+SEEDS = [42, 123, 456, 789, 1024, 2048, 4096, 8192, 16384, 32768]
 MONTHS = 60
 
 

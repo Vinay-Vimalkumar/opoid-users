@@ -1,6 +1,6 @@
 """
 Run all simulation scenarios locally and write simulation_results.json.
-20 counties x 125 intervention combos x 5 seeds = 12,500 scenarios.
+20 counties x 1331 intervention combos x 5 seeds = 133,100 scenarios.
 """
 
 import json
@@ -10,7 +10,7 @@ from pathlib import Path
 
 from model import INDIANA_COUNTIES, Interventions, run_scenario, run_baseline
 
-LEVELS = [0.0, 0.25, 0.5, 0.75, 1.0]
+LEVELS = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 SEEDS = [42, 123, 456, 789, 1024]
 MONTHS = 60
 OUT_PATH = Path(__file__).parent.parent / "data" / "processed" / "simulation_results.json"

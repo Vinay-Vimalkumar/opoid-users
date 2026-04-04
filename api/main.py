@@ -198,7 +198,15 @@ def simulate(req: SimulateRequest):
 
     result = run_scenario(county, interventions, months=req.months, seed=req.seed)
     baseline = run_baseline(county, months=req.months, seed=req.seed)
-    result.lives_saved = max(0, baseline.total_deaths - result.total_deaths)
+    lives_saved = max(0, baseline.total_deaths - result.total_deaths)
+    result.lives_saved = lives_saved
+
+    effective_rates = {
+        "prescribing_rate": round(county.prescribing_rate * (1 - 0.6 * req.prescribing), 5),
+        "fatality_rate": round(county.fatality_rate * (1 - 0.5 * req.naloxone), 4),
+        "treatment_entry_rate": round(county.treatment_entry_rate * (1 + req.treatment), 4),
+        "treatment_success_rate": round(min(1.0, county.treatment_success_rate * (1 + 0.3 * req.treatment)), 4),
+    }
 
     return {
         "county": result.county,
@@ -207,10 +215,16 @@ def simulate(req: SimulateRequest):
         "total_deaths": result.total_deaths,
         "total_overdoses": result.total_overdoses,
         "total_treated": result.total_treated,
-        "lives_saved": result.lives_saved,
+        "lives_saved": lives_saved,
         "cost": result.cost,
+        "cost_per_life_saved": round(result.cost / lives_saved, 2) if lives_saved > 0 else None,
         "timeline": result.timeline,
         "baseline_deaths": baseline.total_deaths,
+        "baseline_overdoses": baseline.total_overdoses,
+        "overdoses_prevented": max(0, baseline.total_overdoses - result.total_overdoses),
+        "deaths_per_100k": round(result.total_deaths / county.population * 100_000, 1),
+        "baseline_deaths_per_100k": round(baseline.total_deaths / county.population * 100_000, 1),
+        "effective_rates": effective_rates,
     }
 
 
