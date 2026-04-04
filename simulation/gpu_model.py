@@ -68,48 +68,34 @@ def build_scenario_batch(
     n_counties = len(COUNTIES)
     n_total = n_counties * n_combos * num_seeds
 
-    # Pre-allocate parameter tensors [n_total, ...]
-    populations = torch.zeros(n_total, device=device)
-    prescribing_rates = torch.zeros(n_total, device=device)
-    misuse_rates = torch.zeros(n_total, device=device)
-    oud_rates = torch.zeros(n_total, device=device)
-    overdose_rates = torch.zeros(n_total, device=device)
-    fatality_rates = torch.zeros(n_total, device=device)
-    treatment_entry_rates = torch.zeros(n_total, device=device)
-    treatment_success_rates = torch.zeros(n_total, device=device)
-    relapse_rates = torch.zeros(n_total, device=device)
-    recovery_exit_rates = torch.zeros(n_total, device=device)
-    naloxone_levels = torch.zeros(n_total, device=device)
-    prescribing_levels = torch.zeros(n_total, device=device)
-    treatment_levels = torch.zeros(n_total, device=device)
+    # Vectorized batch building — NO Python loops
+    # County params: [n_counties, 9]
+    county_array = np.array([[c[1], c[2], c[3], c[4], c[5], c[6], c[7], c[8], c[9]] for c in COUNTIES], dtype=np.float32)
+    combos_array = np.array(combos, dtype=np.float32)  # [n_combos, 3]
 
-    # Metadata for output
-    county_indices = []
-    combo_indices = []
-    seed_values = []
+    # Use np.repeat/tile to broadcast: county × combo × seed
+    # Shape: county repeats across (n_combos * num_seeds), combo repeats across num_seeds
+    county_expanded = np.repeat(county_array, n_combos * num_seeds, axis=0)  # [n_total, 9]
+    combo_expanded = np.tile(np.repeat(combos_array, num_seeds, axis=0), (n_counties, 1))  # [n_total, 3]
 
-    idx = 0
-    for ci, county in enumerate(COUNTIES):
-        name, pop, presc, mis, oud, od, fat, treat_e, treat_s, rel, rec_exit = county
-        for combo_i, (nal, pres, treat) in enumerate(combos):
-            for seed_i in range(num_seeds):
-                populations[idx] = pop
-                prescribing_rates[idx] = presc
-                misuse_rates[idx] = mis
-                oud_rates[idx] = oud
-                overdose_rates[idx] = od
-                fatality_rates[idx] = fat
-                treatment_entry_rates[idx] = treat_e
-                treatment_success_rates[idx] = treat_s
-                relapse_rates[idx] = rel
-                recovery_exit_rates[idx] = rec_exit
-                naloxone_levels[idx] = nal
-                prescribing_levels[idx] = pres
-                treatment_levels[idx] = treat
-                county_indices.append(ci)
-                combo_indices.append(combo_i)
-                seed_values.append(42 + seed_i * 137)
-                idx += 1
+    county_indices = np.repeat(np.arange(n_counties), n_combos * num_seeds)
+    combo_indices = np.tile(np.repeat(np.arange(n_combos), num_seeds), n_counties)
+    seed_values = np.tile(np.arange(num_seeds) * 137 + 42, n_counties * n_combos)
+
+    # Move to GPU in one shot
+    populations = torch.tensor(county_expanded[:, 0], device=device)
+    prescribing_rates = torch.tensor(county_expanded[:, 1], device=device)
+    misuse_rates = torch.tensor(county_expanded[:, 2], device=device)
+    oud_rates = torch.tensor(county_expanded[:, 3], device=device)
+    overdose_rates = torch.tensor(county_expanded[:, 4], device=device)
+    fatality_rates = torch.tensor(county_expanded[:, 5], device=device)
+    treatment_entry_rates = torch.tensor(county_expanded[:, 6], device=device)
+    treatment_success_rates = torch.tensor(county_expanded[:, 7], device=device)
+    relapse_rates = torch.tensor(county_expanded[:, 8], device=device)
+    recovery_exit_rates = torch.full((n_total,), 0.02, device=device)
+    naloxone_levels = torch.tensor(combo_expanded[:, 0], device=device)
+    prescribing_levels = torch.tensor(combo_expanded[:, 1], device=device)
+    treatment_levels = torch.tensor(combo_expanded[:, 2], device=device)
 
     return {
         "n_total": n_total,
@@ -126,9 +112,9 @@ def build_scenario_batch(
         "naloxone_levels": naloxone_levels,
         "prescribing_levels": prescribing_levels,
         "treatment_levels": treatment_levels,
-        "county_indices": county_indices,
-        "combo_indices": combo_indices,
-        "seed_values": seed_values,
+        "county_indices": county_indices.tolist(),
+        "combo_indices": combo_indices.tolist(),
+        "seed_values": seed_values.tolist(),
         "combos": combos,
     }
 
