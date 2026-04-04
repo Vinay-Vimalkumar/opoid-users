@@ -1,21 +1,21 @@
 {
   "model_type": "OpioidSurrogateNet (PyTorch MLP)",
   "parameters": 796948,
-  "training_samples": 26620,
-  "epochs": 200,
-  "best_epoch": 166,
-  "training_time_sec": 7.78,
+  "training_samples": 185220,
+  "epochs": 500,
+  "best_epoch": 197,
+  "training_time_sec": 62.64,
   "r2_scores": {
-    "total_deaths": 0.9997,
+    "total_deaths": 0.9999,
     "total_overdoses": 0.9999,
-    "total_treated": 0.9999,
-    "lives_saved": 0.9996
+    "total_treated": 1.0,
+    "lives_saved": 0.9999
   },
   "mae_scores": {
-    "total_deaths": 6.9,
-    "total_overdoses": 50.6,
-    "total_treated": 132.1,
-    "lives_saved": 7.1
+    "total_deaths": 4.7,
+    "total_overdoses": 33.2,
+    "total_treated": 93.7,
+    "lives_saved": 3.5
   },
   "device": "cuda",
   "gpu_name": "NVIDIA H100 80GB HBM3"

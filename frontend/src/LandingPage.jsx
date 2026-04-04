@@ -405,7 +405,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
         <div className="reveal max-w-xl mx-auto">
           <h2 className="text-4xl font-black text-white mb-4">Ready to simulate?</h2>
           <p className="text-slate-500 mb-10">Pick a county, set your budget, find the policy that saves the most lives.</p>
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="cta-border-wrap">
               <button
                 onClick={() => onNavigate('map')}
@@ -414,6 +414,12 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
                 Open Map &amp; Simulator →
               </button>
             </div>
+            <button
+              onClick={() => onNavigate('whatif')}
+              className="px-8 py-4 rounded-xl text-slate-400 font-semibold border border-slate-800 hover:border-slate-600 hover:text-white transition text-base"
+            >
+              See the "What If?" analysis
+            </button>
           </div>
         </div>
       </section>
