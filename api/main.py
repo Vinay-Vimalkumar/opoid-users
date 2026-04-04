@@ -632,7 +632,7 @@ if FRONTEND_DIST.exists():
             return FileResponse(str(file_path))
         index_path = FRONTEND_DIST / "index.html"
         if index_path.exists():
-            return FileResponse(str(index_path))
+            return FileResponse(str(index_path), headers={"Cache-Control": "no-store, no-cache, must-revalidate"})
         raise HTTPException(404, "Frontend not built. Run: cd frontend && npm run build")
 
 

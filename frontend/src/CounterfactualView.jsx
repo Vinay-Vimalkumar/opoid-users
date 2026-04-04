@@ -114,7 +114,7 @@ export default function CounterfactualView() {
                 <XAxis dataKey="year" stroke="#64748b" fontSize={11} />
                 <YAxis stroke="#64748b" fontSize={11} />
                 <Tooltip
-                  contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+                  contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
                 />
                 <Legend />
                 <ReferenceLine x={2013} stroke="#facc15" strokeDasharray="4 4" label={{ value: 'Interventions begin', fill: '#facc15', fontSize: 10, position: 'top' }} />
@@ -175,7 +175,7 @@ export default function CounterfactualView() {
                 <XAxis type="number" stroke="#64748b" fontSize={10} />
                 <YAxis type="category" dataKey="county" stroke="#64748b" fontSize={11} width={100} />
                 <Tooltip
-                  contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+                  contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
                   formatter={(v, name) => [Math.round(v), name]}
                 />
                 <Legend />

@@ -38,7 +38,7 @@ export default function TimelineChart({ result, compact = false }) {
           <XAxis dataKey="month" stroke="#64748b" fontSize={9} tickFormatter={m => `${Math.floor(m / 12)}y`} interval={11} />
           <YAxis stroke="#64748b" fontSize={9} width={30} />
           <Tooltip
-            contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 11 }}
+            contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 11, color: '#ffffff' }}
             labelFormatter={m => `Month ${m}`}
           />
           <Area type="monotone" dataKey="deaths" stroke="#ef4444" fill="url(#deathGradC)" name="Cumulative Deaths" dot={false} />
@@ -70,7 +70,7 @@ export default function TimelineChart({ result, compact = false }) {
             />
             <YAxis stroke="#64748b" fontSize={10} />
             <Tooltip
-              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
               labelFormatter={m => `Month ${m} (Year ${(m / 12).toFixed(1)})`}
             />
             <Area type="monotone" dataKey="deaths" stroke="#ef4444" fill="url(#deathGrad)" name="Cumulative Deaths" />
@@ -93,7 +93,7 @@ export default function TimelineChart({ result, compact = false }) {
             />
             <YAxis stroke="#64748b" fontSize={10} />
             <Tooltip
-              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
             />
             <Legend wrapperStyle={{ fontSize: 11 }} />
             <Line type="monotone" dataKey="oud" stroke="#f97316" name="OUD" dot={false} strokeWidth={2} />

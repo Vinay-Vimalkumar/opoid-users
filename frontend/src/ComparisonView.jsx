@@ -29,7 +29,7 @@ export default function ComparisonView({ result }) {
             <XAxis type="number" stroke="#64748b" fontSize={10} />
             <YAxis type="category" dataKey="name" stroke="#64748b" fontSize={11} width={120} />
             <Tooltip
-              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
             />
             <Bar dataKey="deaths" radius={[0, 4, 4, 0]}>
               {data.map((entry, idx) => (

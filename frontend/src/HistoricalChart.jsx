@@ -85,7 +85,7 @@ export default function HistoricalChart({ county }) {
             <YAxis yAxisId="rate"   stroke="#f97316" fontSize={10} orientation="left"  label={{ value: '/100K', angle: -90, position: 'insideLeft', style: { fontSize: 9, fill: '#f97316' } }} />
             <YAxis yAxisId="deaths" stroke="#ef4444" fontSize={10} orientation="right" label={{ value: 'Deaths/yr', angle: 90, position: 'insideRight', style: { fontSize: 9, fill: '#ef4444' } }} />
             <Tooltip
-              contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+              contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
               formatter={(value, name) => [
                 name === 'rate'   ? `${value?.toFixed(1)}/100K` : value?.toLocaleString(),
                 name === 'rate'   ? 'Death Rate (model)'        : 'Provisional Deaths',

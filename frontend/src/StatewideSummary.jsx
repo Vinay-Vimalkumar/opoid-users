@@ -79,7 +79,7 @@ export default function StatewideSummary() {
               <XAxis dataKey="year" stroke="#64748b" fontSize={10} />
               <YAxis stroke="#64748b" fontSize={10} />
               <Tooltip
-                contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+                contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
               />
               <Bar dataKey="deaths" fill="#ef4444" radius={[4, 4, 0, 0]} opacity={0.8} />
             </BarChart>

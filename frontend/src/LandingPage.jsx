@@ -303,7 +303,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
                     <XAxis type="number" stroke="#475569" fontSize={10} tickFormatter={v => v >= 1e6 ? `${(v/1e6).toFixed(1)}M` : v >= 1e3 ? `${(v/1e3).toFixed(0)}K` : v} />
                     <YAxis type="category" dataKey="name" stroke="#475569" fontSize={10} width={80} />
                     <Tooltip
-                      contentStyle={{ background: '#0f172a', border: '1px solid #1e293b', borderRadius: 8, fontSize: 12 }}
+                      contentStyle={{ background: '#0f172a', border: '1px solid #1e293b', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
                       formatter={v => [v.toLocaleString(), 'Population']}
                     />
                     <Bar dataKey="population" radius={[0, 4, 4, 0]}>

@@ -166,7 +166,7 @@ export default function ScenarioCompare({ county }) {
                   tickFormatter={m => `${Math.floor(m / 12)}y`} interval={11} />
                 <YAxis stroke="#64748b" fontSize={10} />
                 <Tooltip
-                  contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+                  contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
                   labelFormatter={m => `Month ${m}`}
                 />
                 <Legend wrapperStyle={{ fontSize: 11 }} />

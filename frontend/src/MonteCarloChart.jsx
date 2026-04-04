@@ -95,7 +95,7 @@ export default function MonteCarloChart({ county, interventions }) {
             tickFormatter={m => `${Math.floor(m / 12)}y`} interval={5} />
           <YAxis stroke="#64748b" fontSize={10} />
           <Tooltip
-            contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+            contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
             labelFormatter={m => `Month ${m}`}
             formatter={(value, name) => {
               const labels = { p90: '90th pctile', p10: '10th pctile', median: 'Median' }

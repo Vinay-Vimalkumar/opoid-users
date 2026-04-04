@@ -68,17 +68,20 @@ export default function App() {
           </button>
 
           {/* Tab nav */}
-          <nav className="flex items-center h-full gap-0">
+          <nav className="flex items-center h-full gap-1.5">
             {TABS.map(tab => (
               <button
                 key={tab.key}
                 onClick={() => setPage(tab.key)}
-                className={`h-full px-4 text-sm font-semibold border-b-2 transition-all duration-200 press-effect ${
+                className={`px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 press-effect ${
                   page === tab.key
-                    ? 'text-white'
-                    : 'border-transparent text-slate-500 hover:text-slate-300'
+                    ? 'text-white shadow-lg'
+                    : 'text-slate-500 hover:text-slate-300 hover:bg-white/5'
                 }`}
-                style={page === tab.key ? { borderBottomColor: isBW ? '#ffffff' : '#f97316' } : {}}
+                style={page === tab.key ? {
+                  background: isBW ? 'rgba(255,255,255,0.12)' : 'linear-gradient(135deg,rgba(249,115,22,0.25),rgba(124,58,237,0.25))',
+                  border: `1px solid ${isBW ? 'rgba(255,255,255,0.15)' : 'rgba(249,115,22,0.35)'}`,
+                } : { border: '1px solid transparent' }}
               >
                 {tab.label}
               </button>
