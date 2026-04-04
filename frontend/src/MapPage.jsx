@@ -444,38 +444,32 @@ export default function MapPage({ theme = 'default' }) {
           width: panelSize === 'sm' ? 220 : panelSize === 'lg' ? 440 : (viewMode === 'graphs' ? 340 : 260),
           transition: 'width 0.3s cubic-bezier(0.16,1,0.3,1)',
         }}>
-          {/* Header with view toggle + size controls */}
+          {/* Header */}
           <div className="flex items-center justify-between mb-3">
-            <div>
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Selected</p>
-              <h2 className={`font-black text-white leading-tight ${panelSize === 'lg' ? 'text-2xl' : 'text-xl'}`}>{selected}</h2>
+            <div className="flex items-center gap-2.5">
+              <div className="w-1 h-8 rounded-full" style={{ background: isBW ? '#888' : 'linear-gradient(180deg,#f97316,#a855f7)' }} />
+              <div>
+                <p className="text-[9px] text-slate-600 uppercase tracking-widest font-semibold">Selected county</p>
+                <h2 className={`font-black text-white leading-tight ${panelSize === 'lg' ? 'text-2xl' : 'text-xl'}`}>{selected}</h2>
+              </div>
             </div>
             <div className="flex items-center gap-1.5">
               {loading && <div className="w-4 h-4 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />}
-              {/* Size buttons */}
-              <div className="flex rounded-lg overflow-hidden border border-slate-700">
+              <div className="flex rounded-lg overflow-hidden border border-slate-800 bg-black/20">
                 {['sm','md','lg'].map(sz => (
-                  <button
-                    key={sz}
-                    onClick={() => setPanelSize(sz)}
-                    className={`px-1.5 py-1 text-[9px] font-bold uppercase transition ${panelSize === sz ? 'bg-white/10 text-white' : 'text-slate-600 hover:text-slate-300'}`}
-                  >
+                  <button key={sz} onClick={() => setPanelSize(sz)}
+                    className={`px-1.5 py-1 text-[9px] font-bold uppercase transition ${panelSize === sz ? 'bg-white/10 text-white' : 'text-slate-700 hover:text-slate-400'}`}>
                     {sz === 'sm' ? 'S' : sz === 'md' ? 'M' : 'L'}
                   </button>
                 ))}
               </div>
-              {/* View toggle */}
-              <div className="flex rounded-lg overflow-hidden border border-slate-700">
-                <button
-                  onClick={() => setViewMode('numbers')}
-                  className={`px-2 py-1 text-[10px] font-semibold transition ${viewMode === 'numbers' ? 'bg-white/10 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                >
+              <div className="flex rounded-lg overflow-hidden border border-slate-800 bg-black/20">
+                <button onClick={() => setViewMode('numbers')}
+                  className={`px-2 py-1 text-[10px] font-semibold transition ${viewMode === 'numbers' ? 'bg-white/10 text-white' : 'text-slate-600 hover:text-slate-300'}`}>
                   123
                 </button>
-                <button
-                  onClick={() => setViewMode('graphs')}
-                  className={`px-2 py-1 text-[10px] font-semibold transition ${viewMode === 'graphs' ? 'bg-white/10 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                >
+                <button onClick={() => setViewMode('graphs')}
+                  className={`px-2 py-1 text-[10px] font-semibold transition ${viewMode === 'graphs' ? 'bg-white/10 text-white' : 'text-slate-600 hover:text-slate-300'}`}>
                   <svg className="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m6 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m2 0v-4a2 2 0 012-2h1a2 2 0 012 2v4" /></svg>
                 </button>
               </div>
@@ -485,18 +479,22 @@ export default function MapPage({ theme = 'default' }) {
           {result && viewMode === 'numbers' && (
             <div className={`grid grid-cols-2 gap-2`}>
               {[
-                { label: 'Lives Saved', val: `+${result.lives_saved}`, color: '#22c55e' },
-                { label: 'Reduction', val: `${reductionPct}%`, color: '#a78bfa' },
-                { label: 'Deaths', val: result.total_deaths?.toLocaleString(), color: '#ffffff' },
-                { label: 'Cost', val: fmt(result.cost), color: '#06b6d4' },
+                { label: 'Lives Saved', val: `+${result.lives_saved}`, color: '#22c55e', glow: true },
+                { label: 'Reduction', val: `${reductionPct}%`, color: '#a78bfa', glow: false },
+                { label: 'Deaths', val: result.total_deaths?.toLocaleString(), color: '#ffffff', glow: false },
+                { label: 'Cost', val: fmt(result.cost), color: '#06b6d4', glow: false },
                 ...(panelSize === 'lg' ? [
-                  { label: 'Baseline', val: result.baseline_deaths?.toLocaleString(), color: '#ef4444' },
-                  { label: 'Overdoses', val: result.total_overdoses?.toLocaleString(), color: '#f97316' },
-                  { label: 'Treated', val: result.total_treated?.toLocaleString(), color: '#3b82f6' },
-                  { label: 'Cost/Life', val: result.lives_saved > 0 ? fmt(Math.round(result.cost / result.lives_saved)) : '—', color: '#94a3b8' },
+                  { label: 'Baseline', val: result.baseline_deaths?.toLocaleString(), color: '#ef4444', glow: false },
+                  { label: 'Overdoses', val: result.total_overdoses?.toLocaleString(), color: '#f97316', glow: false },
+                  { label: 'Treated', val: result.total_treated?.toLocaleString(), color: '#3b82f6', glow: false },
+                  { label: 'Cost/Life', val: result.lives_saved > 0 ? fmt(Math.round(result.cost / result.lives_saved)) : '—', color: '#94a3b8', glow: false },
                 ] : []),
               ].map(s => (
-                <div key={s.label} className={`rounded-lg ${panelSize === 'lg' ? 'p-3' : 'p-2'}`} style={{ background: 'rgba(0,0,0,0.25)' }}>
+                <div key={s.label} className={`rounded-lg ${panelSize === 'lg' ? 'p-3' : 'p-2'}`} style={{
+                  background: s.glow ? `rgba(34,197,94,0.08)` : 'rgba(0,0,0,0.25)',
+                  borderTop: `2px solid ${s.color}44`,
+                  boxShadow: s.glow ? `0 0 16px rgba(34,197,94,0.15), inset 0 1px 0 rgba(34,197,94,0.1)` : 'none',
+                }}>
                   <p className={`text-slate-500 uppercase tracking-wide ${panelSize === 'lg' ? 'text-[10px] mb-0.5' : 'text-[9px]'}`}>{s.label}</p>
                   <p className={`font-black font-mono number-enter ${panelSize === 'lg' ? 'text-lg' : 'text-sm'}`} style={{ color: s.color }}>{s.val}</p>
                 </div>
@@ -602,48 +600,52 @@ export default function MapPage({ theme = 'default' }) {
 
       {/* Top-right: Controls toggle + fullscreen */}
       <div className="absolute top-3 right-3 z-[1000] flex gap-2 fade-up">
-        <button
-          onClick={() => setShowTimeline(v => !v)}
-          className={`px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl transition-all press-effect ${
-            showTimeline ? 'bg-purple-600/80 text-white' : 'text-slate-300 hover:text-white'
-          }`}
-          style={{ background: showTimeline ? undefined : 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
-        >
-          Timeline
-        </button>
-        <button
-          onClick={() => setShowControls(v => !v)}
-          className={`px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl transition-all press-effect ${
-            showControls ? 'bg-orange-600/80 text-white' : 'text-slate-300 hover:text-white'
-          }`}
-          style={{ background: showControls ? undefined : 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
-        >
-          Controls
-        </button>
-        <button
-          onClick={() => setShowNetwork(v => !v)}
-          className={`px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl transition-all press-effect ${
-            showNetwork ? 'bg-cyan-600/80 text-white' : 'text-slate-300 hover:text-white'
-          }`}
-          style={{ background: showNetwork ? undefined : 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
-        >
-          Network
-        </button>
-        <button
-          onClick={() => { setTimeMachine(v => !v); if (!timeMachine) setCurrentYear(2003) }}
-          className={`px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl transition-all press-effect ${
-            timeMachine ? 'bg-red-600/80 text-white' : 'text-slate-300 hover:text-white'
-          }`}
-          style={{ background: timeMachine ? undefined : 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
-        >
-          Time Machine
-        </button>
+        {[
+          {
+            label: 'Timeline', active: showTimeline, onClick: () => setShowTimeline(v => !v),
+            activeColor: 'rgba(147,51,234,0.7)', activeBorder: 'rgba(167,139,250,0.4)',
+            icon: <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>,
+          },
+          {
+            label: 'Controls', active: showControls, onClick: () => setShowControls(v => !v),
+            activeColor: 'rgba(234,88,12,0.7)', activeBorder: 'rgba(249,115,22,0.4)',
+            icon: <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>,
+          },
+          {
+            label: 'Network', active: showNetwork, onClick: () => setShowNetwork(v => !v),
+            activeColor: 'rgba(8,145,178,0.7)', activeBorder: 'rgba(6,182,212,0.4)',
+            icon: <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>,
+          },
+          {
+            label: 'Time Machine', active: timeMachine, onClick: () => { setTimeMachine(v => !v); if (!timeMachine) setCurrentYear(2003) },
+            activeColor: 'rgba(220,38,38,0.7)', activeBorder: 'rgba(248,113,113,0.4)',
+            icon: <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+          },
+        ].map(btn => (
+          <button
+            key={btn.label}
+            onClick={btn.onClick}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl transition-all press-effect"
+            style={{
+              background: btn.active ? btn.activeColor : 'rgba(15,23,42,0.75)',
+              border: `1px solid ${btn.active ? btn.activeBorder : 'rgba(255,255,255,0.08)'}`,
+              color: btn.active ? '#fff' : 'rgba(148,163,184,1)',
+              boxShadow: btn.active ? `0 0 12px ${btn.activeColor}` : 'none',
+            }}
+          >
+            {btn.icon}{btn.label}
+          </button>
+        ))}
         <button
           onClick={toggleFullscreen}
-          className="px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl text-slate-300 hover:text-white transition-all press-effect"
+          className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold backdrop-blur-xl text-slate-300 hover:text-white transition-all press-effect"
           style={{ background: 'rgba(15,23,42,0.75)', border: '1px solid rgba(255,255,255,0.08)' }}
         >
-          {isFullscreen ? 'Exit' : 'Fullscreen'}
+          {isFullscreen
+            ? <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            : <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+          }
+          {isFullscreen ? 'Exit' : 'Full'}
         </button>
       </div>
 
@@ -679,10 +681,19 @@ export default function MapPage({ theme = 'default' }) {
         <div className="absolute bottom-4 right-3 z-[1000] fade-up" style={{ width: 280 }}>
           <div className="glass-panel px-4 py-4">
             <div className="flex items-center justify-between mb-3">
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Interventions</p>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-6 rounded-full" style={{ background: isBW ? '#888' : 'linear-gradient(180deg,#f97316,#a78bfa)' }} />
+                <div>
+                  <p className="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Policy Levers</p>
+                  <p className="text-xs font-bold text-white leading-none mt-0.5">Interventions</p>
+                </div>
+              </div>
               <button
                 onClick={() => setInterventions({ naloxone: 0, prescribing: 0, treatment: 0 })}
-                className="text-[10px] text-slate-500 hover:text-white transition px-1.5 py-0.5 rounded border border-slate-700 hover:border-slate-500"
+                className="text-[10px] font-semibold transition px-2 py-1 rounded-lg"
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: '#64748b' }}
+                onMouseEnter={e => { e.target.style.color='#fff'; e.target.style.borderColor='rgba(255,255,255,0.2)' }}
+                onMouseLeave={e => { e.target.style.color='#64748b'; e.target.style.borderColor='rgba(255,255,255,0.08)' }}
               >
                 Reset
               </button>
@@ -692,15 +703,16 @@ export default function MapPage({ theme = 'default' }) {
             {/* Quick presets */}
             <div className="flex gap-1.5 mt-3">
               {[
-                { label: 'None', v: { naloxone: 0, prescribing: 0, treatment: 0 } },
-                { label: 'Plan A', v: { naloxone: 0.4, prescribing: 0.3, treatment: 0.4 } },
-                { label: 'Plan B', v: { naloxone: 0.8, prescribing: 0.6, treatment: 0.7 } },
-                { label: 'Max', v: { naloxone: 1, prescribing: 1, treatment: 1 } },
+                { label: 'None', v: { naloxone: 0, prescribing: 0, treatment: 0 }, color: '#64748b', bg: 'rgba(100,116,139,0.1)' },
+                { label: 'Plan A', v: { naloxone: 0.4, prescribing: 0.3, treatment: 0.4 }, color: '#06b6d4', bg: 'rgba(6,182,212,0.1)' },
+                { label: 'Plan B', v: { naloxone: 0.8, prescribing: 0.6, treatment: 0.7 }, color: '#a78bfa', bg: 'rgba(167,139,250,0.1)' },
+                { label: 'Max', v: { naloxone: 1, prescribing: 1, treatment: 1 }, color: '#22c55e', bg: 'rgba(34,197,94,0.1)' },
               ].map(p => (
                 <button
                   key={p.label}
                   onClick={() => setInterventions(p.v)}
-                  className="flex-1 px-2 py-1.5 text-[10px] font-semibold rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition press-effect"
+                  className="flex-1 px-2 py-1.5 text-[10px] font-bold rounded-lg transition press-effect"
+                  style={{ background: p.bg, border: `1px solid ${p.color}44`, color: p.color }}
                 >
                   {p.label}
                 </button>
