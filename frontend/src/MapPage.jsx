@@ -153,6 +153,7 @@ export default function MapPage({ theme = 'default' }) {
   const [colorScheme, setColorScheme] = useState('heat')
   const [ripplePos, setRipplePos] = useState(null)
   const [viewMode, setViewMode] = useState('numbers') // 'numbers' | 'graphs'
+  const [panelSize, setPanelSize] = useState('md') // 'sm' | 'md' | 'lg'
   const containerRef = useRef(null)
   const debounceRef = useRef(null)
   const pulseKeyRef = useRef(0)
@@ -386,16 +387,32 @@ export default function MapPage({ theme = 'default' }) {
       </div>
 
       {/* Top-left: Selected county info — Numbers or Graphs */}
-      <div className="absolute top-3 left-3 z-[1000] fade-up">
-        <div className="glass-panel px-5 py-4" style={{ minWidth: viewMode === 'graphs' ? 320 : 240 }}>
-          {/* Header with view toggle */}
+      <div className="absolute top-3 left-3 z-[1000] fade-up" style={{ transition: 'width 0.3s cubic-bezier(0.16,1,0.3,1)' }}>
+        <div className="glass-panel px-5 py-4" style={{
+          width: panelSize === 'sm' ? 220 : panelSize === 'lg' ? 440 : (viewMode === 'graphs' ? 340 : 260),
+          transition: 'width 0.3s cubic-bezier(0.16,1,0.3,1)',
+        }}>
+          {/* Header with view toggle + size controls */}
           <div className="flex items-center justify-between mb-3">
             <div>
               <p className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Selected</p>
-              <h2 className="text-xl font-black text-white leading-tight">{selected}</h2>
+              <h2 className={`font-black text-white leading-tight ${panelSize === 'lg' ? 'text-2xl' : 'text-xl'}`}>{selected}</h2>
             </div>
             <div className="flex items-center gap-1.5">
               {loading && <div className="w-4 h-4 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />}
+              {/* Size buttons */}
+              <div className="flex rounded-lg overflow-hidden border border-slate-700">
+                {['sm','md','lg'].map(sz => (
+                  <button
+                    key={sz}
+                    onClick={() => setPanelSize(sz)}
+                    className={`px-1.5 py-1 text-[9px] font-bold uppercase transition ${panelSize === sz ? 'bg-white/10 text-white' : 'text-slate-600 hover:text-slate-300'}`}
+                  >
+                    {sz === 'sm' ? 'S' : sz === 'md' ? 'M' : 'L'}
+                  </button>
+                ))}
+              </div>
+              {/* View toggle */}
               <div className="flex rounded-lg overflow-hidden border border-slate-700">
                 <button
                   onClick={() => setViewMode('numbers')}
@@ -414,16 +431,22 @@ export default function MapPage({ theme = 'default' }) {
           </div>
 
           {result && viewMode === 'numbers' && (
-            <div className="grid grid-cols-2 gap-2">
+            <div className={`grid grid-cols-2 gap-2`}>
               {[
                 { label: 'Lives Saved', val: `+${result.lives_saved}`, color: '#22c55e' },
                 { label: 'Reduction', val: `${reductionPct}%`, color: '#a78bfa' },
                 { label: 'Deaths', val: result.total_deaths?.toLocaleString(), color: '#f59e0b' },
                 { label: 'Cost', val: fmt(result.cost), color: '#06b6d4' },
+                ...(panelSize === 'lg' ? [
+                  { label: 'Baseline', val: result.baseline_deaths?.toLocaleString(), color: '#ef4444' },
+                  { label: 'Overdoses', val: result.total_overdoses?.toLocaleString(), color: '#f97316' },
+                  { label: 'Treated', val: result.total_treated?.toLocaleString(), color: '#3b82f6' },
+                  { label: 'Cost/Life', val: result.lives_saved > 0 ? fmt(Math.round(result.cost / result.lives_saved)) : '—', color: '#94a3b8' },
+                ] : []),
               ].map(s => (
-                <div key={s.label} className="rounded-lg p-2" style={{ background: 'rgba(0,0,0,0.25)' }}>
-                  <p className="text-[9px] text-slate-500 uppercase tracking-wide">{s.label}</p>
-                  <p className="text-sm font-black font-mono number-enter" style={{ color: s.color }}>{s.val}</p>
+                <div key={s.label} className={`rounded-lg ${panelSize === 'lg' ? 'p-3' : 'p-2'}`} style={{ background: 'rgba(0,0,0,0.25)' }}>
+                  <p className={`text-slate-500 uppercase tracking-wide ${panelSize === 'lg' ? 'text-[10px] mb-0.5' : 'text-[9px]'}`}>{s.label}</p>
+                  <p className={`font-black font-mono number-enter ${panelSize === 'lg' ? 'text-lg' : 'text-sm'}`} style={{ color: s.color }}>{s.val}</p>
                 </div>
               ))}
             </div>
@@ -455,7 +478,7 @@ export default function MapPage({ theme = 'default' }) {
                 {/* Deaths comparison bar */}
                 <div>
                   <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Deaths Comparison</p>
-                  <ResponsiveContainer width="100%" height={70}>
+                  <ResponsiveContainer width="100%" height={panelSize === 'lg' ? 110 : panelSize === 'sm' ? 55 : 70}>
                     <BarChart data={barData} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
                       <Bar dataKey="deaths" radius={[4,4,0,0]}>
                         {barData.map((d, i) => <Cell key={i} fill={d.fill} fillOpacity={0.8} />)}
@@ -471,7 +494,7 @@ export default function MapPage({ theme = 'default' }) {
                   {/* Outcome donut */}
                   <div className="flex-1">
                     <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Outcome</p>
-                    <ResponsiveContainer width="100%" height={80}>
+                    <ResponsiveContainer width="100%" height={panelSize === 'lg' ? 120 : panelSize === 'sm' ? 60 : 80}>
                       <PieChart>
                         <Pie data={pieData} dataKey="value" cx="50%" cy="50%" innerRadius={20} outerRadius={32} paddingAngle={3} strokeWidth={0}>
                           {pieData.map((d, i) => <Cell key={i} fill={d.color} fillOpacity={0.85} />)}
@@ -488,7 +511,7 @@ export default function MapPage({ theme = 'default' }) {
                   {/* Intervention levels */}
                   <div className="flex-1">
                     <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Interventions</p>
-                    <ResponsiveContainer width="100%" height={80}>
+                    <ResponsiveContainer width="100%" height={panelSize === 'lg' ? 120 : panelSize === 'sm' ? 60 : 80}>
                       <BarChart data={interventionData} layout="vertical" margin={{ left: 0, right: 0 }}>
                         <XAxis type="number" domain={[0, 100]} hide />
                         <YAxis type="category" dataKey="name" tick={{ fontSize: 9, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={30} />
@@ -505,7 +528,7 @@ export default function MapPage({ theme = 'default' }) {
                 {timelineData.length > 0 && (
                   <div>
                     <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Cumulative Deaths (5yr)</p>
-                    <ResponsiveContainer width="100%" height={50}>
+                    <ResponsiveContainer width="100%" height={panelSize === 'lg' ? 80 : panelSize === 'sm' ? 35 : 50}>
                       <AreaChart data={timelineData} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="deathGrad" x1="0" y1="0" x2="0" y2="1">
