@@ -1,5 +1,6 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
-import { MapContainer, TileLayer, CircleMarker, Tooltip as LeafletTooltip, ZoomControl, useMap, Polyline, Circle } from 'react-leaflet'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
+import { MapContainer, TileLayer, CircleMarker, Marker, Tooltip as LeafletTooltip, ZoomControl, useMap, Polyline, Circle } from 'react-leaflet'
+import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import InterventionSliders from './InterventionSliders'
 import TimelineChart from './TimelineChart'
@@ -21,29 +22,29 @@ const COUNTY_COORDS = {
 
 // ── Tile layer options ──
 const TILE_LAYERS = {
-  satellite: {
-    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    attribution: '&copy; Esri',
-    label: 'SAT',
-    preview: 'linear-gradient(135deg, #1a3a1a, #2d4a2d, #1a3a1a)',
-  },
   dark: {
-    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-    attribution: '&copy; CARTO',
-    label: 'DRK',
-    preview: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)',
+    url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; Stadia Maps',
+    label: 'Dark',
+    preview: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f172a)',
   },
   midnight: {
     url: 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
     attribution: '&copy; CARTO',
-    label: 'MID',
-    preview: 'linear-gradient(135deg, #0a0a23, #1a1a3e, #0d0d2b)',
+    label: 'Minimal',
+    preview: 'linear-gradient(135deg, #0a0a1a, #111127, #0d0d1e)',
   },
-  topo: {
-    url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-    attribution: '&copy; OpenTopoMap',
-    label: 'TOP',
-    preview: 'linear-gradient(135deg, #c8d5b9, #8db580, #fce4a8)',
+  satellite: {
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    attribution: '&copy; Esri',
+    label: 'Satellite',
+    preview: 'linear-gradient(135deg, #1a3a1a, #2d4a2d, #1a3a1a)',
+  },
+  light: {
+    url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; Stadia Maps',
+    label: 'Light',
+    preview: 'linear-gradient(135deg, #e8e8e8, #d0d0d0, #f0f0f0)',
   },
 }
 
@@ -263,165 +264,90 @@ export default function MapPage({ theme = 'default' }) {
           />
         ))}
 
-        {/* County markers */}
+        {/* County markers — custom HTML markers for clean look */}
         {counties.map(county => {
           const pos = COUNTY_COORDS[county.name]
           if (!pos) return null
           const norm = county.population / maxPop
           const isActive = county.name === selected
           const isHovered = county.name === hoveredCounty
-          const isNeighbor = networkLines.some(n => n.name === county.name)
-          const baseR = Math.max(8, Math.min(20, Math.sqrt(county.population / 6000)))
+          const size = Math.max(14, Math.min(36, Math.sqrt(county.population / 4000)))
           const color = isActive ? (isBW ? '#ddd' : '#a78bfa') : riskColor(norm, colorScheme)
           const cachedData = hoverData[county.name]
 
-          return [
-            // Animated pulsing rings for selected county
-            isActive && (
-              <CircleMarker
-                key={`${county.name}-pulse1-${pulseKeyRef.current}`}
-                center={pos}
-                radius={baseR + 12}
-                pathOptions={{
-                  color,
-                  weight: 2,
-                  fillColor: 'transparent',
-                  fillOpacity: 0,
-                  opacity: 0.6,
-                  className: 'county-pulse-ring',
-                }}
-                interactive={false}
-              />
-            ),
-            isActive && (
-              <CircleMarker
-                key={`${county.name}-pulse2-${pulseKeyRef.current}`}
-                center={pos}
-                radius={baseR + 18}
-                pathOptions={{
-                  color,
-                  weight: 1.5,
-                  fillColor: 'transparent',
-                  fillOpacity: 0,
-                  opacity: 0.3,
-                  className: 'county-pulse-ring',
-                  dashArray: '4 4',
-                }}
-                interactive={false}
-              />
-            ),
-            // Hover ring
-            isHovered && !isActive && (
-              <CircleMarker
-                key={`${county.name}-hover`}
-                center={pos}
-                radius={baseR + 5}
-                pathOptions={{ color: '#fff', weight: 1, fillColor: 'transparent', fillOpacity: 0, opacity: 0.5 }}
-                interactive={false}
-              />
-            ),
-            // Main marker with glow
-            <CircleMarker
+          const icon = L.divIcon({
+            className: '',
+            iconSize: [size * (isActive ? 1.4 : 1), size * (isActive ? 1.4 : 1)],
+            iconAnchor: [size * (isActive ? 0.7 : 0.5), size * (isActive ? 0.7 : 0.5)],
+            html: `
+              <div class="county-marker ${isActive ? 'active' : ''} ${isHovered ? 'hovered' : ''}" style="
+                --marker-color: ${color};
+                --marker-size: ${size * (isActive ? 1.4 : 1)}px;
+              ">
+                <div class="county-marker-core"></div>
+                <div class="county-marker-ring"></div>
+                ${isActive ? '<div class="county-marker-pulse"></div><div class="county-marker-pulse delay"></div>' : ''}
+                ${cachedData && isActive ? `<div class="county-marker-label">${county.name}</div>` : ''}
+              </div>
+            `,
+          })
+
+          return (
+            <Marker
               key={county.name}
-              center={pos}
-              radius={isActive ? baseR + 3 : isHovered ? baseR + 2 : baseR}
-              pathOptions={{
-                color: isActive ? '#fff' : isHovered ? '#e2e8f0' : color,
-                weight: isActive ? 2.5 : isHovered ? 1.5 : 1,
-                fillColor: color,
-                fillOpacity: isActive ? 0.95 : isHovered ? 0.85 : 0.6,
-                className: 'marker-glow',
-              }}
+              position={pos}
+              icon={icon}
               eventHandlers={{
                 click: () => { setSelected(county.name); setRipplePos(pos); pulseKeyRef.current++ },
                 mouseover: () => { setHoveredCounty(county.name); prefetchCounty(county.name) },
                 mouseout: () => setHoveredCounty(null),
               }}
             >
-              <LeafletTooltip
-                direction="top"
-                offset={[0, -8]}
-                className="county-tooltip"
-                permanent={false}
-              >
-                <div style={{ minWidth: 180, fontSize: 11, lineHeight: 1.6, fontFamily: "'Space Grotesk', sans-serif" }}>
-                  <div style={{ fontWeight: 800, fontSize: 13, marginBottom: 4, color: '#fff' }}>
+              <LeafletTooltip direction="top" offset={[0, -size/2 - 8]}>
+                <div style={{ minWidth: 200, fontSize: 11, lineHeight: 1.7, fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <div style={{ fontWeight: 800, fontSize: 14, marginBottom: 6, color: '#fff', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: color, display: 'inline-block', boxShadow: `0 0 8px ${color}` }} />
                     {county.name} County
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: 3, marginBottom: 3 }}>
+                  <div class="tt-row" style={{ display: 'flex', justifyContent: 'space-between', padding: '2px 0' }}>
                     <span style={{ color: '#94a3b8' }}>Population</span>
                     <span style={{ fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>{county.population?.toLocaleString()}</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '2px 0', borderBottom: '1px solid rgba(148,163,184,0.15)', paddingBottom: 6, marginBottom: 6 }}>
                     <span style={{ color: '#94a3b8' }}>Risk Level</span>
-                    <span style={{ fontWeight: 700, color: riskColor(norm, colorScheme) }}>{riskLabel(norm)}</span>
+                    <span style={{ fontWeight: 700, color }}>{riskLabel(norm)}</span>
                   </div>
-                  {cachedData && (
+                  ${cachedData ? '' : ''}
+                  {cachedData ? (
                     <>
-                      <div style={{ borderTop: '1px solid #334155', marginTop: 4, paddingTop: 4 }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span style={{ color: '#94a3b8' }}>Baseline Deaths</span>
-                          <span style={{ fontWeight: 700, color: '#ef4444', fontFamily: "'JetBrains Mono', monospace" }}>{cachedData.baseline_deaths?.toLocaleString()}</span>
+                      {[
+                        ['Baseline Deaths', cachedData.baseline_deaths?.toLocaleString(), '#ef4444'],
+                        ['With Intervention', cachedData.total_deaths?.toLocaleString(), '#f59e0b'],
+                        ['Lives Saved', `+${cachedData.lives_saved?.toLocaleString()}`, '#22c55e'],
+                        ['Total Cost', fmt(cachedData.cost), '#94a3b8'],
+                      ].map(([label, val, c]) => (
+                        <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '1px 0' }}>
+                          <span style={{ color: '#94a3b8' }}>{label}</span>
+                          <span style={{ fontWeight: 700, color: c, fontFamily: "'JetBrains Mono', monospace" }}>{val}</span>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span style={{ color: '#94a3b8' }}>After Intervention</span>
-                          <span style={{ fontWeight: 700, color: '#f59e0b', fontFamily: "'JetBrains Mono', monospace" }}>{cachedData.total_deaths?.toLocaleString()}</span>
+                      ))}
+                      {cachedData.lives_saved > 0 && cachedData.baseline_deaths > 0 && (
+                        <div style={{ marginTop: 6, background: 'rgba(34,197,94,0.1)', borderRadius: 6, padding: '4px 8px', textAlign: 'center' }}>
+                          <span style={{ color: '#22c55e', fontWeight: 700, fontSize: 12, fontFamily: "'JetBrains Mono', monospace" }}>
+                            {Math.round(cachedData.lives_saved / cachedData.baseline_deaths * 100)}% fewer deaths
+                          </span>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span style={{ color: '#94a3b8' }}>Lives Saved</span>
-                          <span style={{ fontWeight: 700, color: '#22c55e', fontFamily: "'JetBrains Mono', monospace" }}>+{cachedData.lives_saved?.toLocaleString()}</span>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span style={{ color: '#94a3b8' }}>Cost</span>
-                          <span style={{ fontWeight: 600, fontFamily: "'JetBrains Mono', monospace" }}>{fmt(cachedData.cost)}</span>
-                        </div>
-                      </div>
-                      <div style={{ marginTop: 4, fontSize: 9, color: '#64748b', textAlign: 'center' }}>
-                        Click to select
-                      </div>
+                      )}
                     </>
-                  )}
-                  {!cachedData && (
-                    <div style={{ marginTop: 4, fontSize: 9, color: '#64748b', textAlign: 'center' }}>
-                      Hover to load data...
+                  ) : (
+                    <div style={{ color: '#475569', fontSize: 10, textAlign: 'center', padding: '4px 0' }}>
+                      Loading simulation...
                     </div>
                   )}
                 </div>
               </LeafletTooltip>
-            </CircleMarker>,
-
-            // County label for selected
-            isActive && (
-              <CircleMarker
-                key={`${county.name}-label`}
-                center={[pos[0] - 0.15, pos[1]]}
-                radius={0}
-                interactive={false}
-              >
-                <LeafletTooltip direction="center" permanent className="county-label-tooltip">
-                  <span style={{ fontSize: 11, fontWeight: 700, color: '#a78bfa', letterSpacing: '1px', fontFamily: "'Space Grotesk', sans-serif" }}>
-                    {county.name.toUpperCase()}
-                  </span>
-                </LeafletTooltip>
-              </CircleMarker>
-            ),
-
-            // Neighbor labels (permanent, transparent)
-            isNeighbor && !isActive && (
-              <CircleMarker
-                key={`${county.name}-neighbor-label`}
-                center={[pos[0] - 0.1, pos[1]]}
-                radius={0}
-                interactive={false}
-              >
-                <LeafletTooltip direction="center" permanent className="county-neighbor-label">
-                  <span style={{ fontSize: 9, fontWeight: 600, color: '#94a3b8', letterSpacing: '0.5px', fontFamily: "'Space Grotesk', sans-serif" }}>
-                    {county.name}
-                  </span>
-                </LeafletTooltip>
-              </CircleMarker>
-            ),
-          ]
+            </Marker>
+          )
         })}
       </MapContainer>
 

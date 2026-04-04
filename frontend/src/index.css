@@ -170,6 +170,96 @@ h1, h2, h3, h4, h5, h6 {
 
 .leaflet-container { background: #0f172a; }
 
+/* ── Custom county markers ── */
+.county-marker {
+  position: relative;
+  width: var(--marker-size);
+  height: var(--marker-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.county-marker:hover,
+.county-marker.hovered {
+  transform: scale(1.25);
+  z-index: 100 !important;
+}
+.county-marker-core {
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.3), var(--marker-color) 60%);
+  box-shadow:
+    0 0 10px var(--marker-color),
+    0 0 20px color-mix(in srgb, var(--marker-color) 50%, transparent),
+    inset 0 -2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.county-marker:hover .county-marker-core,
+.county-marker.hovered .county-marker-core {
+  box-shadow:
+    0 0 16px var(--marker-color),
+    0 0 32px color-mix(in srgb, var(--marker-color) 60%, transparent),
+    inset 0 -2px 4px rgba(0,0,0,0.3);
+}
+.county-marker-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--marker-color);
+  opacity: 0.3;
+  z-index: 1;
+  transition: opacity 0.2s ease;
+}
+.county-marker:hover .county-marker-ring,
+.county-marker.hovered .county-marker-ring { opacity: 0.6; }
+.county-marker.active .county-marker-ring {
+  opacity: 0.7;
+  border-width: 2px;
+  border-color: #fff;
+}
+.county-marker.active .county-marker-core {
+  box-shadow:
+    0 0 20px var(--marker-color),
+    0 0 40px color-mix(in srgb, var(--marker-color) 60%, transparent),
+    0 0 60px color-mix(in srgb, var(--marker-color) 30%, transparent),
+    inset 0 -2px 4px rgba(0,0,0,0.3);
+}
+.county-marker-pulse {
+  position: absolute;
+  inset: -40%;
+  border-radius: 50%;
+  border: 1.5px solid var(--marker-color);
+  opacity: 0;
+  animation: marker-ripple 2.5s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.county-marker-pulse.delay { animation-delay: 1.25s; }
+@keyframes marker-ripple {
+  0%   { transform: scale(0.5); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.county-marker-label {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  font-family: 'Space Grotesk', sans-serif;
+  z-index: 3;
+}
+.leaflet-marker-icon { background: none !important; border: none !important; }
+.leaflet-marker-shadow { display: none !important; }
+
 /* ── Range slider ── */
 input[type='range'] {
   -webkit-appearance: none;
