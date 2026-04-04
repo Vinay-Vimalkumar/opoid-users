@@ -148,7 +148,10 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
   useScrollReveal([counties])
 
   useEffect(() => {
-    fetch(`${API}/counties`).then(r => r.json()).then(setCounties).catch(() => {})
+    fetch(`${API}/counties`)
+      .then(r => r.json())
+      .then(data => { if (Array.isArray(data)) setCounties(data) })
+      .catch(() => {})
   }, [])
 
   const maxPop = counties.length ? Math.max(...counties.map(c => c.population)) : 1
