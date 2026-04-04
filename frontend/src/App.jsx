@@ -17,6 +17,7 @@ const THEMES = [
   { key: 'emerald',  label: 'Emerald',        dots: ['#10b981', '#059669'] },
   { key: 'rose',     label: 'Rose',           dots: ['#f43f5e', '#ec4899'] },
   { key: 'midnight', label: 'Midnight',       dots: ['#6366f1', '#8b5cf6'] },
+  { key: 'light',    label: 'Light Blue',     dots: ['#2563eb', '#0ea5e9'] },
   { key: 'bw',       label: 'Monochrome',     dots: ['#ffffff', '#555555'] },
 ]
 

@@ -534,7 +534,7 @@ export default function MapPage({ theme = 'default' }) {
                         {barData.map((d, i) => <Cell key={i} fill={d.fill} fillOpacity={0.8} />)}
                       </Bar>
                       <XAxis dataKey="name" tick={{ fontSize: 9, fill: '#ffffff' }} axisLine={false} tickLine={false} />
-                      <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 11, color: '#ffffff' }} />
+                      <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 11, color: '#fff' }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff' }} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -549,7 +549,7 @@ export default function MapPage({ theme = 'default' }) {
                         <Pie data={pieData} dataKey="value" cx="50%" cy="50%" innerRadius={20} outerRadius={32} paddingAngle={3} strokeWidth={0}>
                           {pieData.map((d, i) => <Cell key={i} fill={d.color} fillOpacity={0.85} />)}
                         </Pie>
-                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10, color: '#ffffff' }} />
+                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10, color: '#fff' }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff' }} />
                       </PieChart>
                     </ResponsiveContainer>
                     <div className="flex justify-center gap-3 text-[8px] text-white">
@@ -568,7 +568,7 @@ export default function MapPage({ theme = 'default' }) {
                         <Bar dataKey="value" radius={[0,4,4,0]} barSize={10}>
                           {interventionData.map((d, i) => <Cell key={i} fill={d.fill} fillOpacity={0.8} />)}
                         </Bar>
-                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10, color: '#ffffff' }} formatter={v => `${v}%`} />
+                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10, color: '#fff' }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff' }} formatter={v => `${v}%`} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -587,7 +587,7 @@ export default function MapPage({ theme = 'default' }) {
                           </linearGradient>
                         </defs>
                         <Area type="monotone" dataKey="deaths" stroke="#ef4444" strokeWidth={1.5} fill="url(#deathGrad)" />
-                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10, color: '#ffffff' }} labelFormatter={m => `Month ${m}`} />
+                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10, color: '#fff' }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff' }} labelFormatter={m => `Month ${m}`} />
                       </AreaChart>
                     </ResponsiveContainer>
                   </div>
