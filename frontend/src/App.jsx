@@ -15,6 +15,8 @@ import StatewideSummary from './StatewideSummary'
 import MonteCarloChart from './MonteCarloChart'
 import FrontierChart from './FrontierChart'
 import CountySelector from './CountySelector'
+import CounterfactualView from './CounterfactualView'
+import MethodologyView from './MethodologyView'
 
 const API = '/api'
 
@@ -26,7 +28,7 @@ export default function App() {
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
   const [apiError, setApiError] = useState(false)
-  const [viewMode, setViewMode] = useState('single') // 'single' | 'all' | 'compare' | 'sensitivity' | 'chat'
+  const [viewMode, setViewMode] = useState('single') // 'single' | 'all' | 'compare' | 'sensitivity' | 'whatif' | 'methodology' | 'chat'
   const [featureImportance, setFeatureImportance] = useState(null)
 
   // Optimize state
@@ -147,6 +149,8 @@ export default function App() {
     { key: 'compare', label: 'Compare' },
     { key: 'sensitivity', label: 'Sensitivity' },
     { key: 'all', label: 'All Counties' },
+    { key: 'whatif', label: 'What If?' },
+    { key: 'methodology', label: 'How It Works' },
     { key: 'chat', label: 'AI Chat' },
   ]
 
@@ -198,6 +202,10 @@ export default function App() {
             <StatewideSummary />
             <MultiCountyView onSelectCounty={handleMultiCountySelect} />
           </div>
+        ) : viewMode === 'whatif' ? (
+          <CounterfactualView />
+        ) : viewMode === 'methodology' ? (
+          <MethodologyView />
         ) : viewMode === 'compare' ? (
           <div>
             <CountySelector selected={selectedCounty} onChange={setSelectedCounty} />

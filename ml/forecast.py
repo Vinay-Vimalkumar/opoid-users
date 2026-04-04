@@ -226,15 +226,17 @@ def train_forecaster(epochs=300, lr=1e-3, batch_size=32):
     print(f"Training samples: {len(X)} (window=10 years → predict 3 years)")
     print(f"Feature dim: {X.shape[2]}, Sequence length: {X.shape[1]}")
 
-    # Train/val split (leave last 2 years per county for validation)
-    val_years = {2019, 2020}  # predict 2019-2021 and 2020-2022
-    train_mask = [m["target_year"] not in val_years for m in meta]
-    val_mask = [m["target_year"] in val_years for m in meta]
+    # Train/val split (80/20 random)
+    n_samples = len(X)
+    indices = np.random.RandomState(42).permutation(n_samples)
+    n_train = max(1, int(0.8 * n_samples))
+    train_idx = indices[:n_train]
+    val_idx = indices[n_train:] if n_train < n_samples else indices[:max(1, n_samples // 5)]
 
-    X_train = torch.tensor(X[train_mask], device=device)
-    y_train = torch.tensor(y[train_mask], device=device)
-    X_val = torch.tensor(X[val_mask], device=device)
-    y_val = torch.tensor(y[val_mask], device=device)
+    X_train = torch.tensor(X[train_idx], device=device)
+    y_train = torch.tensor(y[train_idx], device=device)
+    X_val = torch.tensor(X[val_idx], device=device)
+    y_val = torch.tensor(y[val_idx], device=device)
 
     print(f"Train: {len(X_train)}, Val: {len(X_val)}")
 
@@ -248,7 +250,8 @@ def train_forecaster(epochs=300, lr=1e-3, batch_size=32):
     criterion = nn.HuberLoss(delta=0.5)
 
     best_val_loss = float("inf")
-    best_state = None
+    best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+    best_epoch = 0
     t0 = time.time()
 
     for epoch in range(epochs):

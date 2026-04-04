@@ -5488,7 +5488,7 @@
         {
           "step": 60,
           "deaths": 40,
-          "cost": 1129319,
+          "cost": 1129320,
           "naloxone": 0.129,
           "prescribing": 0.126,
           "treatment": 0.127,
@@ -7278,7 +7278,7 @@
         {
           "step": 100,
           "deaths": 3,
-          "cost": 4567253,
+          "cost": 4567254,
           "naloxone": 1.0,
           "prescribing": 0.797,
           "treatment": 0.785,
@@ -8676,7 +8676,7 @@
         {
           "step": 60,
           "deaths": 10,
-          "cost": 4780091,
+          "cost": 4780090,
           "naloxone": 0.794,
           "prescribing": 0.744,
           "treatment": 0.726,
@@ -8694,7 +8694,7 @@
         {
           "step": 100,
           "deaths": 9,
-          "cost": 4622662,
+          "cost": 4622661,
           "naloxone": 0.945,
           "prescribing": 0.71,
           "treatment": 0.709,
@@ -8703,7 +8703,7 @@
         {
           "step": 120,
           "deaths": 9,
-          "cost": 4645788,
+          "cost": 4645787,
           "naloxone": 1.0,
           "prescribing": 0.711,
           "treatment": 0.718,
@@ -9266,7 +9266,7 @@
         {
           "step": 60,
           "deaths": 28,
-          "cost": 4466562,
+          "cost": 4466561,
           "naloxone": 0.407,
           "prescribing": 0.396,
           "treatment": 0.396,

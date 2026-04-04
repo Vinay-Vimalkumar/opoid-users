@@ -27,6 +27,10 @@ BASE_DIR = Path(__file__).parent.parent
 FRONTEND_DIST = BASE_DIR / "frontend" / "dist"
 COUNTY_PROFILES_PATH = BASE_DIR / "data" / "processed" / "county_profiles.json"
 MODEL_PATH = BASE_DIR / "ml" / "xgb_model.json"
+COUNTERFACTUAL_PATH = BASE_DIR / "data" / "processed" / "counterfactual_results.json"
+CALIBRATION_PATH = BASE_DIR / "data" / "processed" / "calibration_results.json"
+FORECAST_PATH = BASE_DIR / "data" / "processed" / "county_forecasts.json"
+OPTIMIZATION_PATH = BASE_DIR / "data" / "processed" / "gradient_optimization_results.json"
 
 app = FastAPI(title="DrugDiffuse API", version="1.0.0")
 api = APIRouter(prefix="/api")
@@ -369,6 +373,48 @@ def optimize_portfolio_endpoint(req: PortfolioRequest):
         return result
     except Exception as e:
         raise HTTPException(500, f"Portfolio optimization failed: {str(e)}")
+
+
+@api.get("/counterfactual")
+def counterfactual():
+    """Return pre-computed counterfactual analysis results."""
+    if not COUNTERFACTUAL_PATH.exists():
+        raise HTTPException(503, "Counterfactual data not found. Run: python simulation/counterfactual.py")
+    with open(COUNTERFACTUAL_PATH) as f:
+        return json.load(f)
+
+
+@api.get("/calibration")
+def calibration():
+    """Return model calibration results (fitted params + R² per county)."""
+    if not CALIBRATION_PATH.exists():
+        raise HTTPException(503, "Calibration data not found. Run: python simulation/calibrate.py")
+    with open(CALIBRATION_PATH) as f:
+        return json.load(f)
+
+
+@api.get("/forecasts")
+def forecasts():
+    """Return LSTM death rate forecasts per county."""
+    if not FORECAST_PATH.exists():
+        raise HTTPException(503, "Forecast data not found. Run: python ml/forecast.py")
+    with open(FORECAST_PATH) as f:
+        return json.load(f)
+
+
+@api.get("/gradient-optimize/{county}")
+def gradient_optimize(county: str, budget: float = 2000000):
+    """Return pre-computed gradient optimization results for a county."""
+    if not OPTIMIZATION_PATH.exists():
+        raise HTTPException(503, "Gradient optimization not found. Run: python ml/gradient_optimizer.py")
+    with open(OPTIMIZATION_PATH) as f:
+        data = json.load(f)
+    budget_key = f"budget_{int(budget)}"
+    results = data.get(budget_key, [])
+    match = next((r for r in results if r["county"] == county), None)
+    if not match:
+        raise HTTPException(404, f"No results for {county} at budget ${budget:,.0f}")
+    return match
 
 
 @api.post("/chat")
