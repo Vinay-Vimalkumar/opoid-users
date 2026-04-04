@@ -384,7 +384,7 @@ If the user doesn't specify a county, ask which one. Default to Marion if ambigu
     messages.append({"role": "user", "content": req.message})
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=1024,
         system=system_prompt,
         messages=messages,
