@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts'
 
-export default function TimelineChart({ result }) {
+export default function TimelineChart({ result, compact = false }) {
   const data = useMemo(() => {
     if (!result?.timeline) return []
     return Object.entries(result.timeline).map(([month, snap]) => ({
@@ -21,6 +21,29 @@ export default function TimelineChart({ result }) {
       <div className="h-64 flex items-center justify-center text-slate-500 text-sm">
         Run a simulation to see results
       </div>
+    )
+  }
+
+  if (compact) {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <AreaChart data={data}>
+          <defs>
+            <linearGradient id="deathGradC" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+          <XAxis dataKey="month" stroke="#64748b" fontSize={9} tickFormatter={m => `${Math.floor(m / 12)}y`} interval={11} />
+          <YAxis stroke="#64748b" fontSize={9} width={30} />
+          <Tooltip
+            contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 11 }}
+            labelFormatter={m => `Month ${m}`}
+          />
+          <Area type="monotone" dataKey="deaths" stroke="#ef4444" fill="url(#deathGradC)" name="Cumulative Deaths" dot={false} />
+        </AreaChart>
+      </ResponsiveContainer>
     )
   }
 

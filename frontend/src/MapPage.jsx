@@ -423,7 +423,7 @@ export default function MapPage({ theme = 'default' }) {
       </div>
 
       {/* Color scheme picker — bottom-left above legend */}
-      <div className="color-scheme-picker" style={{ bottom: 50 }}>
+      <div className="color-scheme-picker" style={{ bottom: showTimeline && result ? 280 : 90, transition: 'bottom 0.3s cubic-bezier(0.16,1,0.3,1)' }}>
         {Object.entries(COLOR_SCHEMES).map(([key, scheme]) => (
           <button
             key={key}
@@ -648,7 +648,7 @@ export default function MapPage({ theme = 'default' }) {
       </div>
 
       {/* Bottom-left: Legend */}
-      <div className="absolute bottom-4 left-3 z-[1000] glass-panel px-3 py-2 flex items-center gap-3 text-[10px] text-slate-400" style={{ borderRadius: 12 }}>
+      <div className="absolute left-3 z-[1000] glass-panel px-3 py-2 flex items-center gap-3 text-[10px] text-slate-400 transition-all duration-300" style={{ borderRadius: 12, bottom: showTimeline && result ? 240 : 16, transition: 'bottom 0.3s cubic-bezier(0.16,1,0.3,1)' }}>
         <span className="font-bold text-slate-300 text-[11px]">Risk</span>
         {COLOR_SCHEMES[colorScheme].colors.map((c, i) => {
           const labels = ['Low','Mod','High','Critical']
@@ -842,7 +842,7 @@ export default function MapPage({ theme = 'default' }) {
               <button onClick={() => setShowTimeline(false)} className="text-slate-500 hover:text-white text-xs transition">X</button>
             </div>
             <div style={{ height: 160 }}>
-              <TimelineChart result={result} />
+              <TimelineChart result={result} compact />
             </div>
           </div>
         </div>
