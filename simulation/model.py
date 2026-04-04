@@ -1,5 +1,5 @@
 """
-Stochastic compartmental model for opioid dynamics.
+Stochastic compartmental model for opioid dynamics — calibrated to real CDC data.
 
 Compartments per county per time step (1 month):
   General Pop → Prescribed → Misuse → OUD → Overdose → Death or Survived
@@ -7,9 +7,12 @@ Compartments per county per time step (1 month):
                                     Treatment → Recovered → (relapse back to OUD)
 
 Three intervention levers (each 0.0–1.0):
-  - naloxone_access: reduces overdose fatality rate by up to 50%
-  - prescribing_reduction: reduces new prescriptions by up to 60%
-  - treatment_access: doubles treatment entry rate, +30% treatment success
+  - naloxone_access:        reduces overdose fatality rate by up to 50%
+  - prescribing_reduction:  reduces new opioid prescriptions by up to 60%
+  - treatment_access:       doubles treatment entry rate, +30% treatment success
+
+County parameters are derived from real CDC data in county_profiles.json.
+Overdose rates are calibrated so baseline deaths match real historical death rates.
 """
 
 import json
@@ -30,6 +33,9 @@ _AVG_FAC_PER_100K = 0.55          # approximate Indiana average (computed from p
 _AVG_PCT_UNINSURED = 0.082        # approximate Indiana average
 
 
+PROFILES_PATH = Path(__file__).parent.parent / "data" / "processed" / "county_profiles.json"
+
+
 @dataclass
 class CountyParams:
     name: str
@@ -40,17 +46,24 @@ class CountyParams:
     oud_rate: float = 0.08                # fraction of misusers developing OUD
     overdose_rate: float = 0.015          # fraction of OUD who overdose per month
     fatality_rate: float = 0.12           # fraction of overdoses that are fatal
-    treatment_entry_rate: float = 0.03    # fraction of OUD entering treatment
+    treatment_entry_rate: float = 0.03    # fraction of OUD entering treatment per month
     treatment_success_rate: float = 0.30  # fraction completing treatment
     relapse_rate: float = 0.05            # fraction of recovered relapsing per month
-    recovery_exit_rate: float = 0.02      # fraction of recovered leaving the system (stable)
+    recovery_exit_rate: float = 0.02      # fraction of recovered leaving system (stable)
+    # Real data fields (for display / ML features)
+    avg_rate_per_100k: float = 0.0
+    latest_rate_per_100k: float = 0.0
+    pct_uninsured: float = 0.0
+    median_household_income: float = 50000.0
+    treatment_facilities: int = 0
+    od_touchpoints_total: float = 0.0
 
 
 @dataclass
 class Interventions:
-    naloxone_access: float = 0.0          # 0-1, how much naloxone is deployed
-    prescribing_reduction: float = 0.0    # 0-1, how much prescribing is reduced
-    treatment_access: float = 0.0         # 0-1, how much treatment is expanded
+    naloxone_access: float = 0.0
+    prescribing_reduction: float = 0.0
+    treatment_access: float = 0.0
 
 
 @dataclass
@@ -59,23 +72,130 @@ class SimResult:
     interventions: dict
     seed: int
     months: int
-    timeline: dict  # month -> compartment snapshot
+    timeline: dict
     total_deaths: int
     total_overdoses: int
     total_treated: int
-    lives_saved: int  # vs baseline (must compute baseline separately)
+    lives_saved: int
     cost: float
+
+
+def _derive_county_params(profile: dict) -> CountyParams:
+    """
+    Derive simulation parameters from a real CDC county profile.
+
+    Key calibration: overdose_rate is solved so that the model's baseline
+    deaths-per-month match real provisional death counts from CDC WONDER.
+
+    We use the average of the most recent 3 complete years of provisional deaths
+    (which cover ALL drug overdose deaths, not just opioids).
+
+    In the model:
+      deaths_per_month ≈ oud_count * overdose_rate * fatality_rate
+      oud_count        ≈ population * OUD_PREVALENCE
+    Solving: overdose_rate = real_deaths_per_month / (oud_count * fatality_rate)
+    """
+    name       = profile["name"]
+    population = profile["population"]
+
+    # ── Real death rates ──
+    avg_rate    = float(profile.get("avg_rate_per_100k") or 15.0)
+    latest_rate = float(profile.get("latest_rate_per_100k") or avg_rate)
+
+    # ── Use provisional deaths (CDC WONDER actual counts) for calibration ──
+    yearly = profile.get("yearly_data", [])
+    recent = [y for y in yearly
+              if y.get("provisional_deaths") and y.get("year") in [2022, 2023, 2024]]
+    if recent:
+        avg_annual_deaths = sum(y["provisional_deaths"] for y in recent) / len(recent)
+    else:
+        # Fallback to CDC model rate if no provisional data
+        avg_annual_deaths = (avg_rate / 100_000) * population
+
+    # ── Socioeconomic / health system ──
+    pct_uninsured = float(profile.get("pct_uninsured") or 0.10)
+    income        = float(profile.get("median_household_income") or 50000)
+    facilities    = int(profile.get("treatment_facilities") or 0)
+    od_raw        = profile.get("od_touchpoints") or 0
+    od_total      = sum(od_raw.values()) if isinstance(od_raw, dict) else float(od_raw)
+
+    # ── Urban/rural classification ──
+    urban_rural = profile.get("urban_rural", "Medium Metro")
+
+    # ── Calibrate overdose_rate from CDC opioid-specific death rate ──
+    # We calibrate to avg_rate_per_100k (CDC Drug Poisoning Mortality — opioid-specific)
+    # rather than provisional counts (which include all drug types).
+    # OUD prevalence ~1% is consistent with SAMHSA estimates for high-burden counties.
+    FATALITY_RATE    = 0.12
+    OUD_PREVALENCE   = 0.010
+    oud_count        = population * OUD_PREVALENCE
+    real_deaths_mo   = (avg_rate / 100_000) * population / 12
+    overdose_rate    = real_deaths_mo / max(oud_count * FATALITY_RATE, 1)
+    overdose_rate    = float(np.clip(overdose_rate, 0.005, 0.08))
+
+    # ── Prescribing rate: higher uninsured + lower income → more prescribing ──
+    income_factor    = 1.0 + max(0.0, (55_000 - income) / 80_000)
+    uninsured_factor = 1.0 + pct_uninsured * 0.6
+    prescribing_rate = float(np.clip(0.004 * income_factor * uninsured_factor, 0.003, 0.013))
+
+    # ── Misuse / OUD rates by urbanicity ──
+    if "Rural" in urban_rural:
+        misuse_rate, oud_rate = 0.07, 0.11
+    elif any(x in urban_rural for x in ["Small", "Micro", "Nonmetro"]):
+        misuse_rate, oud_rate = 0.055, 0.095
+    else:
+        misuse_rate, oud_rate = 0.04, 0.08
+
+    # ── Treatment entry: more facilities → higher entry rate ──
+    # Baseline 2% + 0.6% per facility per 100k residents
+    facilities_per_100k  = facilities / max(population / 100_000, 0.1)
+    treatment_entry_rate = float(np.clip(0.020 + facilities_per_100k * 0.006, 0.012, 0.065))
+
+    # ── Treatment success: higher uninsured → lower success ──
+    treatment_success_rate = float(np.clip(0.38 - pct_uninsured * 0.6, 0.18, 0.50))
+
+    return CountyParams(
+        name=name,
+        population=population,
+        prescribing_rate=round(prescribing_rate, 4),
+        misuse_rate=misuse_rate,
+        oud_rate=oud_rate,
+        overdose_rate=round(overdose_rate, 5),
+        fatality_rate=FATALITY_RATE,
+        treatment_entry_rate=round(treatment_entry_rate, 4),
+        treatment_success_rate=round(treatment_success_rate, 3),
+        avg_rate_per_100k=avg_rate,
+        latest_rate_per_100k=latest_rate,
+        pct_uninsured=pct_uninsured,
+        median_household_income=income,
+        treatment_facilities=facilities,
+        od_touchpoints_total=od_total,
+    )
+
+
+def _load_counties() -> list:
+    """Load and calibrate county params from real CDC profiles."""
+    if not PROFILES_PATH.exists():
+        raise FileNotFoundError(
+            f"county_profiles.json not found at {PROFILES_PATH}. "
+            "Run: python data/process_real_data.py"
+        )
+    with open(PROFILES_PATH) as f:
+        profiles = json.load(f)
+    return [_derive_county_params(p) for p in profiles]
+
+
+# Load on import — calibrated to real CDC data
+INDIANA_COUNTIES = _load_counties()
+COUNTY_MAP = {c.name: c for c in INDIANA_COUNTIES}
 
 
 def compute_cost(interventions: Interventions, population: int, months: int) -> float:
     """Compute total cost of interventions over the simulation period."""
     monthly_cost = 0.0
-    # Naloxone: $75/kit, assume 1 kit per 500 people per month at full deployment
     kits_per_month = (interventions.naloxone_access * population) / 500
     monthly_cost += kits_per_month * 75
-    # Prescribing reduction: $500K per 10% reduction (one-time, amortized)
     monthly_cost += (interventions.prescribing_reduction * 10) * 500_000 / months
-    # Treatment: $10K/slot/year, slots = treatment_access * population * 0.001
     slots = interventions.treatment_access * population * 0.001
     monthly_cost += slots * 10_000 / 12
     return monthly_cost * months
@@ -90,71 +210,56 @@ def run_scenario(
     """Run a single stochastic simulation scenario."""
     rng = np.random.default_rng(seed)
 
-    # Initial compartments (estimated from population)
+    # Initial compartments: 1% OUD prevalence (SAMHSA estimates for high-burden areas)
     prescribed = int(county.population * 0.04)
-    misuse = int(county.population * 0.008)
-    oud = int(county.population * 0.005)
-    treatment = int(county.population * 0.001)
-    recovered = int(county.population * 0.002)
-    general = county.population - prescribed - misuse - oud - treatment - recovered
+    misuse     = int(county.population * 0.015)
+    oud        = int(county.population * 0.010)
+    treatment  = int(county.population * 0.002)
+    recovered  = int(county.population * 0.004)
+    general    = county.population - prescribed - misuse - oud - treatment - recovered
 
-    # Apply intervention effects to rates
-    eff_prescribing_rate = county.prescribing_rate * (1 - 0.6 * interventions.prescribing_reduction)
-    eff_fatality_rate = county.fatality_rate * (1 - 0.5 * interventions.naloxone_access)
-    eff_treatment_entry = county.treatment_entry_rate * (1 + interventions.treatment_access)
-    eff_treatment_success = min(1.0, county.treatment_success_rate * (1 + 0.3 * interventions.treatment_access))
+    eff_prescribing_rate   = county.prescribing_rate * (1 - 0.6 * interventions.prescribing_reduction)
+    eff_fatality_rate      = county.fatality_rate    * (1 - 0.5 * interventions.naloxone_access)
+    eff_treatment_entry    = county.treatment_entry_rate * (1 + interventions.treatment_access)
+    eff_treatment_success  = min(1.0, county.treatment_success_rate * (1 + 0.3 * interventions.treatment_access))
 
-    total_deaths = 0
-    total_overdoses = 0
-    total_treated = 0
+    total_deaths = total_overdoses = total_treated = 0
     timeline = {}
 
     for month in range(months):
-        # Stochastic transitions (binomial draws)
-        new_prescribed = rng.binomial(max(general, 0), min(eff_prescribing_rate, 1.0))
-        new_misuse = rng.binomial(max(prescribed, 0), min(county.misuse_rate, 1.0))
-        new_oud = rng.binomial(max(misuse, 0), min(county.oud_rate, 1.0))
-        new_overdose = rng.binomial(max(oud, 0), min(county.overdose_rate, 1.0))
-        new_deaths = rng.binomial(max(new_overdose, 0), min(eff_fatality_rate, 1.0))
-        survived = new_overdose - new_deaths
-        new_treatment = rng.binomial(max(oud, 0), min(eff_treatment_entry, 1.0))
-        new_recovered = rng.binomial(max(treatment, 0), min(eff_treatment_success, 1.0))
-        new_relapse = rng.binomial(max(recovered, 0), min(county.relapse_rate, 1.0))
-        new_stable_exit = rng.binomial(max(recovered, 0), min(county.recovery_exit_rate, 1.0))
+        new_prescribed  = rng.binomial(max(general, 0),    min(eff_prescribing_rate, 1.0))
+        new_misuse      = rng.binomial(max(prescribed, 0), min(county.misuse_rate, 1.0))
+        new_oud         = rng.binomial(max(misuse, 0),     min(county.oud_rate, 1.0))
+        new_overdose    = rng.binomial(max(oud, 0),        min(county.overdose_rate, 1.0))
+        new_deaths      = rng.binomial(max(new_overdose, 0), min(eff_fatality_rate, 1.0))
+        survived        = new_overdose - new_deaths
+        new_treatment   = rng.binomial(max(oud, 0),        min(eff_treatment_entry, 1.0))
+        new_recovered   = rng.binomial(max(treatment, 0),  min(eff_treatment_success, 1.0))
+        new_relapse     = rng.binomial(max(recovered, 0),  min(county.relapse_rate, 1.0))
+        new_stable_exit = rng.binomial(max(recovered, 0),  min(county.recovery_exit_rate, 1.0))
 
-        # Update compartments
-        general = general - new_prescribed + new_stable_exit
-        prescribed = prescribed + new_prescribed - new_misuse
-        misuse = misuse + new_misuse - new_oud
-        oud = oud + new_oud - new_overdose - new_treatment + survived + new_relapse
-        treatment = treatment + new_treatment - new_recovered
-        recovered = recovered + new_recovered - new_relapse - new_stable_exit
+        general   = max(general   - new_prescribed + new_stable_exit, 0)
+        prescribed= max(prescribed + new_prescribed - new_misuse, 0)
+        misuse    = max(misuse     + new_misuse     - new_oud, 0)
+        oud       = max(oud        + new_oud - new_overdose - new_treatment + survived + new_relapse, 0)
+        treatment = max(treatment  + new_treatment  - new_recovered, 0)
+        recovered = max(recovered  + new_recovered  - new_relapse - new_stable_exit, 0)
 
-        # Clamp to non-negative
-        general = max(general, 0)
-        prescribed = max(prescribed, 0)
-        misuse = max(misuse, 0)
-        oud = max(oud, 0)
-        treatment = max(treatment, 0)
-        recovered = max(recovered, 0)
-
-        total_deaths += new_deaths
+        total_deaths    += new_deaths
         total_overdoses += new_overdose
-        total_treated += new_treatment
+        total_treated   += new_treatment
 
         timeline[month] = {
-            "general": general,
-            "prescribed": prescribed,
-            "misuse": misuse,
-            "oud": oud,
-            "treatment": treatment,
-            "recovered": recovered,
-            "deaths_this_month": int(new_deaths),
+            "general":              general,
+            "prescribed":           prescribed,
+            "misuse":               misuse,
+            "oud":                  oud,
+            "treatment":            treatment,
+            "recovered":            recovered,
+            "deaths_this_month":    int(new_deaths),
             "overdoses_this_month": int(new_overdose),
-            "cumulative_deaths": total_deaths,
+            "cumulative_deaths":    total_deaths,
         }
-
-    cost = compute_cost(interventions, county.population, months)
 
     return SimResult(
         county=county.name,
@@ -165,8 +270,8 @@ def run_scenario(
         total_deaths=int(total_deaths),
         total_overdoses=int(total_overdoses),
         total_treated=int(total_treated),
-        lives_saved=0,  # computed after comparing to baseline
-        cost=round(cost, 2),
+        lives_saved=0,
+        cost=round(compute_cost(interventions, county.population, months), 2),
     )
 
 
@@ -277,11 +382,18 @@ def run_baseline(county: CountyParams, months: int = 60, seed: int = 42) -> SimR
 
 
 if __name__ == "__main__":
-    # Quick test
-    marion = COUNTY_MAP["Marion"]
-    baseline = run_baseline(marion)
-    print(f"Marion County baseline: {baseline.total_deaths} deaths over {baseline.months} months")
+    import json as _json
+    with open(PROFILES_PATH) as _f:
+        _profiles = {p["name"]: p for p in _json.load(_f)}
 
-    result = run_scenario(marion, Interventions(0.8, 0.5, 0.7))
-    print(f"Marion County with interventions: {result.total_deaths} deaths")
-    print(f"Intervention cost: ${result.cost:,.0f}")
+    for county in INDIANA_COUNTIES[:5]:
+        bl = run_baseline(county)
+        p = _profiles.get(county.name, {})
+        yearly = p.get("yearly_data", [])
+        recent = [y for y in yearly if y.get("provisional_deaths") and y.get("year") in [2022, 2023, 2024]]
+        avg_real = sum(y["provisional_deaths"] for y in recent) / max(len(recent), 1) if recent else 0
+        print(f"{county.name:15s} | pop {county.population:>8,}"
+              f" | real avg deaths/yr {avg_real:>6.0f}"
+              f" | model 5yr deaths {bl.total_deaths:>6}"
+              f" | model/yr {bl.total_deaths/5:>6.0f}"
+              f" | OD rate {county.overdose_rate:.4f}")

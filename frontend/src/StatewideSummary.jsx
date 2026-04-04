@@ -9,12 +9,19 @@ export default function StatewideSummary() {
 
   useEffect(() => {
     fetch(`${API}/summary`)
-      .then(r => r.json())
-      .then(setSummary)
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
+      .then(data => {
+        if (!data?.yearly_death_totals) throw new Error('bad response')
+        setSummary(data)
+      })
       .catch(() => {})
   }, [])
 
-  if (!summary) return null
+  if (!summary) return (
+    <div className="h-32 flex items-center justify-center text-slate-600 text-sm">
+      Loading statewide data… (make sure the API server is running)
+    </div>
+  )
 
   const yearlyData = Object.entries(summary.yearly_death_totals || {})
     .filter(([y]) => parseInt(y) >= 2020 && parseInt(y) <= 2024)

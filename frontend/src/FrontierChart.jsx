@@ -16,8 +16,12 @@ export default function FrontierChart({ county }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ county, budget_max: budgetMax, steps: 20 }),
     })
-      .then(r => r.json())
-      .then(d => { setData(d); setLoading(false) })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
+      .then(d => {
+        if (!d?.frontier) throw new Error('bad response')
+        setData(d)
+        setLoading(false)
+      })
       .catch(() => setLoading(false))
   }, [county, budgetMax])
 
@@ -60,7 +64,11 @@ export default function FrontierChart({ county }) {
 
       {loading ? (
         <div className="h-48 flex items-center justify-center text-slate-500 text-sm">
-          Computing frontier (20 budget levels x 216 combos)...
+          Computing frontier… (this may take 10–20 seconds)
+        </div>
+      ) : !data ? (
+        <div className="h-48 flex items-center justify-center text-slate-600 text-sm">
+          Failed to load — make sure the API server is running.
         </div>
       ) : (
         <>
