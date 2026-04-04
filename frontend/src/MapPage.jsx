@@ -4,6 +4,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import InterventionSliders from './InterventionSliders'
 import TimelineChart from './TimelineChart'
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, AreaChart, Area } from 'recharts'
 
 const API = '/api'
 
@@ -151,6 +152,7 @@ export default function MapPage({ theme = 'default' }) {
   const [tileLayer, setTileLayer] = useState('dark')
   const [colorScheme, setColorScheme] = useState('heat')
   const [ripplePos, setRipplePos] = useState(null)
+  const [viewMode, setViewMode] = useState('numbers') // 'numbers' | 'graphs'
   const containerRef = useRef(null)
   const debounceRef = useRef(null)
   const pulseKeyRef = useRef(0)
@@ -383,20 +385,35 @@ export default function MapPage({ theme = 'default' }) {
         ))}
       </div>
 
-      {/* Top-left: Selected county info */}
+      {/* Top-left: Selected county info — Numbers or Graphs */}
       <div className="absolute top-3 left-3 z-[1000] fade-up">
-        <div className="glass-panel px-5 py-4" style={{ minWidth: 240 }}>
+        <div className="glass-panel px-5 py-4" style={{ minWidth: viewMode === 'graphs' ? 320 : 240 }}>
+          {/* Header with view toggle */}
           <div className="flex items-center justify-between mb-3">
             <div>
               <p className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Selected</p>
               <h2 className="text-xl font-black text-white leading-tight">{selected}</h2>
             </div>
-            {loading && (
-              <div className="w-5 h-5 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
-            )}
+            <div className="flex items-center gap-1.5">
+              {loading && <div className="w-4 h-4 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />}
+              <div className="flex rounded-lg overflow-hidden border border-slate-700">
+                <button
+                  onClick={() => setViewMode('numbers')}
+                  className={`px-2 py-1 text-[10px] font-semibold transition ${viewMode === 'numbers' ? 'bg-white/10 text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                >
+                  123
+                </button>
+                <button
+                  onClick={() => setViewMode('graphs')}
+                  className={`px-2 py-1 text-[10px] font-semibold transition ${viewMode === 'graphs' ? 'bg-white/10 text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                >
+                  <svg className="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m6 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m2 0v-4a2 2 0 012-2h1a2 2 0 012 2v4" /></svg>
+                </button>
+              </div>
+            </div>
           </div>
 
-          {result && (
+          {result && viewMode === 'numbers' && (
             <div className="grid grid-cols-2 gap-2">
               {[
                 { label: 'Lives Saved', val: `+${result.lives_saved}`, color: '#22c55e' },
@@ -406,11 +423,105 @@ export default function MapPage({ theme = 'default' }) {
               ].map(s => (
                 <div key={s.label} className="rounded-lg p-2" style={{ background: 'rgba(0,0,0,0.25)' }}>
                   <p className="text-[9px] text-slate-500 uppercase tracking-wide">{s.label}</p>
-                  <p className="text-sm font-black font-mono" style={{ color: s.color }}>{s.val}</p>
+                  <p className="text-sm font-black font-mono number-enter" style={{ color: s.color }}>{s.val}</p>
                 </div>
               ))}
             </div>
           )}
+
+          {result && viewMode === 'graphs' && (() => {
+            const barData = [
+              { name: 'Baseline', deaths: result.baseline_deaths, fill: '#ef4444' },
+              { name: 'After', deaths: result.total_deaths, fill: '#f59e0b' },
+              { name: 'Saved', deaths: result.lives_saved, fill: '#22c55e' },
+            ]
+            const pieData = [
+              { name: 'Prevented', value: result.lives_saved, color: '#22c55e' },
+              { name: 'Remaining', value: result.total_deaths, color: '#ef4444' },
+            ]
+            const interventionData = [
+              { name: 'Nal', value: Math.round(interventions.naloxone * 100), fill: '#f97316' },
+              { name: 'Pres', value: Math.round(interventions.prescribing * 100), fill: '#a78bfa' },
+              { name: 'Treat', value: Math.round(interventions.treatment * 100), fill: '#06b6d4' },
+            ]
+            // Monthly deaths from timeline
+            const timelineData = result.timeline ? Object.entries(result.timeline).map(([m, snap]) => ({
+              month: parseInt(m),
+              deaths: snap.cumulative_deaths,
+            })) : []
+
+            return (
+              <div className="space-y-3">
+                {/* Deaths comparison bar */}
+                <div>
+                  <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Deaths Comparison</p>
+                  <ResponsiveContainer width="100%" height={70}>
+                    <BarChart data={barData} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
+                      <Bar dataKey="deaths" radius={[4,4,0,0]}>
+                        {barData.map((d, i) => <Cell key={i} fill={d.fill} fillOpacity={0.8} />)}
+                      </Bar>
+                      <XAxis dataKey="name" tick={{ fontSize: 9, fill: '#64748b' }} axisLine={false} tickLine={false} />
+                      <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 11 }} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* Outcome pie + intervention bars side by side */}
+                <div className="flex gap-3">
+                  {/* Outcome donut */}
+                  <div className="flex-1">
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Outcome</p>
+                    <ResponsiveContainer width="100%" height={80}>
+                      <PieChart>
+                        <Pie data={pieData} dataKey="value" cx="50%" cy="50%" innerRadius={20} outerRadius={32} paddingAngle={3} strokeWidth={0}>
+                          {pieData.map((d, i) => <Cell key={i} fill={d.color} fillOpacity={0.85} />)}
+                        </Pie>
+                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10 }} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                    <div className="flex justify-center gap-3 text-[8px]">
+                      <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500" />Saved</span>
+                      <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-red-500" />Deaths</span>
+                    </div>
+                  </div>
+
+                  {/* Intervention levels */}
+                  <div className="flex-1">
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Interventions</p>
+                    <ResponsiveContainer width="100%" height={80}>
+                      <BarChart data={interventionData} layout="vertical" margin={{ left: 0, right: 0 }}>
+                        <XAxis type="number" domain={[0, 100]} hide />
+                        <YAxis type="category" dataKey="name" tick={{ fontSize: 9, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={30} />
+                        <Bar dataKey="value" radius={[0,4,4,0]} barSize={10}>
+                          {interventionData.map((d, i) => <Cell key={i} fill={d.fill} fillOpacity={0.8} />)}
+                        </Bar>
+                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10 }} formatter={v => `${v}%`} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+
+                {/* Mini cumulative deaths curve */}
+                {timelineData.length > 0 && (
+                  <div>
+                    <p className="text-[9px] text-slate-500 uppercase tracking-wide mb-1">Cumulative Deaths (5yr)</p>
+                    <ResponsiveContainer width="100%" height={50}>
+                      <AreaChart data={timelineData} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
+                        <defs>
+                          <linearGradient id="deathGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#ef4444" stopOpacity={0.4} />
+                            <stop offset="100%" stopColor="#ef4444" stopOpacity={0} />
+                          </linearGradient>
+                        </defs>
+                        <Area type="monotone" dataKey="deaths" stroke="#ef4444" strokeWidth={1.5} fill="url(#deathGrad)" />
+                        <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 10 }} labelFormatter={m => `Month ${m}`} />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  </div>
+                )}
+              </div>
+            )
+          })()}
         </div>
       </div>
 
