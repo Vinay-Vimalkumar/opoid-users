@@ -1,0 +1,22 @@
+{
+  "model_type": "OpioidSurrogateNet (PyTorch MLP)",
+  "parameters": 796948,
+  "training_samples": 26620,
+  "epochs": 200,
+  "best_epoch": 166,
+  "training_time_sec": 7.78,
+  "r2_scores": {
+    "total_deaths": 0.9997,
+    "total_overdoses": 0.9999,
+    "total_treated": 0.9999,
+    "lives_saved": 0.9996
+  },
+  "mae_scores": {
+    "total_deaths": 6.9,
+    "total_overdoses": 50.6,
+    "total_treated": 132.1,
+    "lives_saved": 7.1
+  },
+  "device": "cuda",
+  "gpu_name": "NVIDIA H100 80GB HBM3"
+}

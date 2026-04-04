@@ -112,7 +112,7 @@ export default function MultiCountyView({ onSelectCounty }) {
               width={100}
             />
             <Tooltip
-              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+              contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
               formatter={(value) => [
                 sortBy === 'rate' ? `${value} per 100K` : `${value} deaths`,
                 chartLabel

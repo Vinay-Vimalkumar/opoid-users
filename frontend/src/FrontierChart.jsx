@@ -83,7 +83,7 @@ export default function FrontierChart({ county }) {
               />
               <YAxis stroke="#64748b" fontSize={10} />
               <Tooltip
-                contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
+                contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
                 labelFormatter={v => `Budget: $${v}M`}
                 formatter={(value, name) => [value, 'Lives Saved']}
               />
