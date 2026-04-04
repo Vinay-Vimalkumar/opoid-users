@@ -1,0 +1,336 @@
+{
+  "scott_county": {
+    "county": "Scott",
+    "context": "Scott County made national headlines in 2015 when an HIV outbreak linked to injection drug use infected 235 people in a county of 24,000. The CDC called it the worst drug-related HIV outbreak in U.S. history.",
+    "question": "What if interventions had been deployed before the crisis?",
+    "intervention_start_year": 2013,
+    "population": 24355,
+    "comparison": [
+      {
+        "year": 2003,
+        "actual_deaths": 5.4,
+        "baseline_simulated": 4,
+        "moderate_intervention": 4,
+        "aggressive_intervention": 4
+      },
+      {
+        "year": 2004,
+        "actual_deaths": 5.7,
+        "baseline_simulated": 5,
+        "moderate_intervention": 5,
+        "aggressive_intervention": 5
+      },
+      {
+        "year": 2005,
+        "actual_deaths": 6.3,
+        "baseline_simulated": 5,
+        "moderate_intervention": 5,
+        "aggressive_intervention": 5
+      },
+      {
+        "year": 2006,
+        "actual_deaths": 7.2,
+        "baseline_simulated": 6,
+        "moderate_intervention": 6,
+        "aggressive_intervention": 6
+      },
+      {
+        "year": 2007,
+        "actual_deaths": 7.5,
+        "baseline_simulated": 7,
+        "moderate_intervention": 7,
+        "aggressive_intervention": 7
+      },
+      {
+        "year": 2008,
+        "actual_deaths": 7.5,
+        "baseline_simulated": 7,
+        "moderate_intervention": 7,
+        "aggressive_intervention": 7
+      },
+      {
+        "year": 2009,
+        "actual_deaths": 7.6,
+        "baseline_simulated": 8,
+        "moderate_intervention": 8,
+        "aggressive_intervention": 8
+      },
+      {
+        "year": 2010,
+        "actual_deaths": 7.8,
+        "baseline_simulated": 9,
+        "moderate_intervention": 9,
+        "aggressive_intervention": 9
+      },
+      {
+        "year": 2011,
+        "actual_deaths": 8.3,
+        "baseline_simulated": 9,
+        "moderate_intervention": 9,
+        "aggressive_intervention": 9
+      },
+      {
+        "year": 2012,
+        "actual_deaths": 8.2,
+        "baseline_simulated": 10,
+        "moderate_intervention": 10,
+        "aggressive_intervention": 10
+      },
+      {
+        "year": 2013,
+        "actual_deaths": 8.7,
+        "baseline_simulated": 10,
+        "moderate_intervention": 3,
+        "aggressive_intervention": 2
+      },
+      {
+        "year": 2014,
+        "actual_deaths": 9.1,
+        "baseline_simulated": 11,
+        "moderate_intervention": 3,
+        "aggressive_intervention": 2
+      },
+      {
+        "year": 2015,
+        "actual_deaths": 10.1,
+        "baseline_simulated": 12,
+        "moderate_intervention": 3,
+        "aggressive_intervention": 2
+      },
+      {
+        "year": 2016,
+        "actual_deaths": 12.2,
+        "baseline_simulated": 12,
+        "moderate_intervention": 4,
+        "aggressive_intervention": 3
+      },
+      {
+        "year": 2017,
+        "actual_deaths": 13.5,
+        "baseline_simulated": 12,
+        "moderate_intervention": 4,
+        "aggressive_intervention": 3
+      },
+      {
+        "year": 2018,
+        "actual_deaths": 12.9,
+        "baseline_simulated": 13,
+        "moderate_intervention": 5,
+        "aggressive_intervention": 3
+      },
+      {
+        "year": 2019,
+        "actual_deaths": 13.5,
+        "baseline_simulated": 13,
+        "moderate_intervention": 5,
+        "aggressive_intervention": 3
+      },
+      {
+        "year": 2020,
+        "actual_deaths": 17.4,
+        "baseline_simulated": 13,
+        "moderate_intervention": 5,
+        "aggressive_intervention": 3
+      },
+      {
+        "year": 2021,
+        "actual_deaths": 20.6,
+        "baseline_simulated": 14,
+        "moderate_intervention": 6,
+        "aggressive_intervention": 4
+      }
+    ],
+    "findings": {
+      "headline": "If Scott County had deployed interventions in 2013, 47% of overdose deaths from 2013-2021 could have been prevented.",
+      "moderate_scenario": {
+        "description": "Naloxone 40%, Prescribing reduction 20%, Treatment expansion 30%",
+        "lives_saved": 72,
+        "percent_reduction": 40.0
+      },
+      "aggressive_scenario": {
+        "description": "Naloxone 70%, Prescribing reduction 40%, Treatment expansion 60%",
+        "lives_saved": 85,
+        "percent_reduction": 47.2
+      },
+      "crisis_period_2015_2021": {
+        "actual_deaths": 100.2,
+        "with_moderate_intervention": 32,
+        "with_aggressive_intervention": 21,
+        "lives_saveable_aggressive": 79
+      }
+    },
+    "calibrated": true
+  },
+  "statewide_2016": {
+    "intervention": "Naloxone 50%, Prescribing reduction 30%, Treatment expansion 40%",
+    "start_year": 2016,
+    "period": "2016-2021",
+    "total_actual_deaths": 6530,
+    "total_counterfactual_deaths": 1385,
+    "total_lives_saved": 5146,
+    "pct_reduction": 78.8,
+    "county_results": [
+      {
+        "county": "Allen",
+        "population": 388608,
+        "actual_deaths_2016_2021": 545.3,
+        "counterfactual_deaths": 111,
+        "lives_saved": 434,
+        "pct_reduction": 79.6
+      },
+      {
+        "county": "Blackford",
+        "population": 12091,
+        "actual_deaths_2016_2021": 28.6,
+        "counterfactual_deaths": 8,
+        "lives_saved": 21,
+        "pct_reduction": 72.0
+      },
+      {
+        "county": "Clark",
+        "population": 122738,
+        "actual_deaths_2016_2021": 276.7,
+        "counterfactual_deaths": 57,
+        "lives_saved": 220,
+        "pct_reduction": 79.4
+      },
+      {
+        "county": "Delaware",
+        "population": 111871,
+        "actual_deaths_2016_2021": 277.9,
+        "counterfactual_deaths": 61,
+        "lives_saved": 217,
+        "pct_reduction": 78.0
+      },
+      {
+        "county": "Fayette",
+        "population": 23360,
+        "actual_deaths_2016_2021": 84.1,
+        "counterfactual_deaths": 21,
+        "lives_saved": 63,
+        "pct_reduction": 75.0
+      },
+      {
+        "county": "Floyd",
+        "population": 80454,
+        "actual_deaths_2016_2021": 163.1,
+        "counterfactual_deaths": 34,
+        "lives_saved": 129,
+        "pct_reduction": 79.2
+      },
+      {
+        "county": "Grant",
+        "population": 66263,
+        "actual_deaths_2016_2021": 158.0,
+        "counterfactual_deaths": 35,
+        "lives_saved": 123,
+        "pct_reduction": 77.8
+      },
+      {
+        "county": "Henry",
+        "population": 48935,
+        "actual_deaths_2016_2021": 109.7,
+        "counterfactual_deaths": 23,
+        "lives_saved": 87,
+        "pct_reduction": 79.0
+      },
+      {
+        "county": "Jay",
+        "population": 20248,
+        "actual_deaths_2016_2021": 40.8,
+        "counterfactual_deaths": 11,
+        "lives_saved": 30,
+        "pct_reduction": 73.0
+      },
+      {
+        "county": "Lake",
+        "population": 498558,
+        "actual_deaths_2016_2021": 650.4,
+        "counterfactual_deaths": 139,
+        "lives_saved": 511,
+        "pct_reduction": 78.6
+      },
+      {
+        "county": "Lawrence",
+        "population": 45070,
+        "actual_deaths_2016_2021": 63.0,
+        "counterfactual_deaths": 14,
+        "lives_saved": 49,
+        "pct_reduction": 77.8
+      },
+      {
+        "county": "Madison",
+        "population": 130782,
+        "actual_deaths_2016_2021": 338.9,
+        "counterfactual_deaths": 73,
+        "lives_saved": 266,
+        "pct_reduction": 78.5
+      },
+      {
+        "county": "Marion",
+        "population": 971102,
+        "actual_deaths_2016_2021": 2305.4,
+        "counterfactual_deaths": 475,
+        "lives_saved": 1830,
+        "pct_reduction": 79.4
+      },
+      {
+        "county": "Scott",
+        "population": 24355,
+        "actual_deaths_2016_2021": 90.1,
+        "counterfactual_deaths": 20,
+        "lives_saved": 70,
+        "pct_reduction": 77.8
+      },
+      {
+        "county": "St. Joseph",
+        "population": 272212,
+        "actual_deaths_2016_2021": 376.8,
+        "counterfactual_deaths": 79,
+        "lives_saved": 298,
+        "pct_reduction": 79.0
+      },
+      {
+        "county": "Tippecanoe",
+        "population": 187076,
+        "actual_deaths_2016_2021": 242.8,
+        "counterfactual_deaths": 47,
+        "lives_saved": 196,
+        "pct_reduction": 80.6
+      },
+      {
+        "county": "Vanderburgh",
+        "population": 179987,
+        "actual_deaths_2016_2021": 382.1,
+        "counterfactual_deaths": 82,
+        "lives_saved": 300,
+        "pct_reduction": 78.5
+      },
+      {
+        "county": "Vermillion",
+        "population": 15341,
+        "actual_deaths_2016_2021": 21.4,
+        "counterfactual_deaths": 6,
+        "lives_saved": 15,
+        "pct_reduction": 72.0
+      },
+      {
+        "county": "Vigo",
+        "population": 105994,
+        "actual_deaths_2016_2021": 159.2,
+        "counterfactual_deaths": 34,
+        "lives_saved": 125,
+        "pct_reduction": 78.6
+      },
+      {
+        "county": "Wayne",
+        "population": 66456,
+        "actual_deaths_2016_2021": 216.2,
+        "counterfactual_deaths": 55,
+        "lives_saved": 161,
+        "pct_reduction": 74.6
+      }
+    ],
+    "headline": "If Indiana had deployed moderate interventions statewide in 2016, an estimated 5,146 lives could have been saved across 20 counties (79% reduction in deaths)."
+  }
+}
