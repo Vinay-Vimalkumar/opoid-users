@@ -5,21 +5,332 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: #0f172a;
+  background: #020617;
   color: #e2e8f0;
 }
 
-.leaflet-container {
-  background: #1e293b;
+/* ── Gradient text (default: opioid awareness orange→purple) ── */
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
+/* ── Card hover ── */
+.card-hover {
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
-::-webkit-scrollbar-track {
-  background: #1e293b;
+.card-hover:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.08);
+  transform: translateY(-2px);
 }
-::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 3px;
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #0f172a; }
+::-webkit-scrollbar-thumb  { background: #334155; border-radius: 3px; }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+/* ── Animated tracing border button ── */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-spin {
+  to { --angle: 360deg; }
+}
+
+.cta-border-wrap {
+  display: inline-block;
+  position: relative;
+  border-radius: 14px;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    #f97316 50deg,
+    #ec4899 100deg,
+    #a855f7 140deg,
+    transparent 180deg
+  );
+  animation: border-spin 3s linear infinite;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.2), 0 0 40px rgba(168, 85, 247, 0.1);
+}
+
+.cta-border-inner {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1c0533, #0d1929);
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Floating background shapes ── */
+@keyframes pill-float {
+  0%, 100% { transform: translateY(0px)   rotate(var(--r, 0deg));   opacity: 0.05; }
+  50%       { transform: translateY(-22px) rotate(var(--r2, 8deg));  opacity: 0.09; }
+}
+@keyframes cross-float {
+  0%, 100% { transform: translateY(0px)   scale(1);    opacity: 0.05; }
+  50%       { transform: translateY(-18px) scale(1.08); opacity: 0.1;  }
+}
+@keyframes hex-drift {
+  0%   { transform: translateY(0px)   translateX(0px)  rotate(0deg);   opacity: 0.03; }
+  33%  { transform: translateY(-12px) translateX(6px)  rotate(30deg);  opacity: 0.06; }
+  66%  { transform: translateY(6px)   translateX(-4px) rotate(-15deg); opacity: 0.04; }
+  100% { transform: translateY(0px)   translateX(0px)  rotate(0deg);   opacity: 0.03; }
+}
+
+.bg-pill {
+  position: absolute;
+  width: 44px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1.5px solid #f97316;
+  animation: pill-float var(--dur, 9s) ease-in-out infinite;
+}
+.bg-cross {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  animation: cross-float var(--dur, 11s) ease-in-out infinite;
+  opacity: 0.06;
+}
+.bg-cross::before,
+.bg-cross::after {
+  content: '';
+  position: absolute;
+  background: #a855f7;
+  border-radius: 2px;
+}
+.bg-cross::before { width: 100%; height: 30%; top: 35%; left: 0; }
+.bg-cross::after  { width: 30%; height: 100%; top: 0; left: 35%; }
+.bg-dot-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid #9333ea;
+  animation: hex-drift var(--dur, 14s) ease-in-out infinite;
+}
+
+/* ── Leaflet tooltip: dark bg, WHITE text ── */
+.leaflet-tooltip {
+  background: rgba(2, 6, 23, 0.95) !important;
+  border: 1px solid #334155 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-size: 11px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+.leaflet-tooltip-top::before  { border-top-color:    rgba(2, 6, 23, 0.95) !important; }
+.leaflet-tooltip-bottom::before { border-bottom-color: rgba(2, 6, 23, 0.95) !important; }
+.leaflet-tooltip-left::before { border-left-color:   rgba(2, 6, 23, 0.95) !important; }
+.leaflet-tooltip-right::before { border-right-color:  rgba(2, 6, 23, 0.95) !important; }
+
+.leaflet-container { background: #0f172a; }
+
+/* ── Range slider ── */
+input[type='range'] {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    #f97316 0%,
+    #9333ea var(--pct, 30%),
+    #1e293b var(--pct, 30%),
+    #1e293b 100%
+  );
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f97316;
+  cursor: pointer;
+  border: 2px solid #7c3aed;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.55);
+  margin-top: -6px;
+  transition: transform 0.15s;
+}
+input[type='range']::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+/* ── Glow utilities ── */
+.glow-orange { box-shadow: 0 0 16px rgba(249,115,22,0.4); }
+.glow-purple { box-shadow: 0 0 16px rgba(168,85,247,0.4); }
+.glow-red    { box-shadow: 0 0 16px rgba(239,68,68,0.4);  }
+.glow-cyan   { box-shadow: 0 0 16px rgba(6,182,212,0.4);  }
+
+/* ════════════════════════════════════════════════
+   BLACK & WHITE THEME OVERRIDES
+   Goal: ZERO blue tint anywhere — pure black/grey chrome
+   Data colors (red/orange risk indicators, chart lines) stay untouched
+   ════════════════════════════════════════════════ */
+
+/* Force body and html to true black */
+[data-theme="bw"] body,
+[data-theme="bw"] html { background: #090909 !important; }
+
+/* ── All slate backgrounds → neutral black/grey ── */
+/* solid */
+[data-theme="bw"] .bg-slate-950 { background-color: #080808 !important; }
+[data-theme="bw"] .bg-slate-900 { background-color: #101010 !important; }
+[data-theme="bw"] .bg-slate-800 { background-color: #1c1c1c !important; }
+[data-theme="bw"] .bg-slate-700 { background-color: #2a2a2a !important; }
+
+/* opacity variants — Tailwind generates .bg-slate-X\/Y classes */
+[data-theme="bw"] .bg-slate-950\/95 { background-color: rgba(8,8,8,0.95)  !important; }
+[data-theme="bw"] .bg-slate-950\/90 { background-color: rgba(8,8,8,0.90)  !important; }
+[data-theme="bw"] .bg-slate-950\/80 { background-color: rgba(8,8,8,0.80)  !important; }
+[data-theme="bw"] .bg-slate-950\/60 { background-color: rgba(8,8,8,0.60)  !important; }
+[data-theme="bw"] .bg-slate-900\/80 { background-color: rgba(10,10,10,0.80) !important; }
+[data-theme="bw"] .bg-slate-900\/60 { background-color: rgba(10,10,10,0.60) !important; }
+[data-theme="bw"] .bg-slate-900\/40 { background-color: rgba(10,10,10,0.40) !important; }
+[data-theme="bw"] .bg-slate-900\/30 { background-color: rgba(10,10,10,0.30) !important; }
+[data-theme="bw"] .bg-slate-900\/20 { background-color: rgba(10,10,10,0.20) !important; }
+[data-theme="bw"] .bg-slate-800\/60 { background-color: rgba(22,22,22,0.60) !important; }
+[data-theme="bw"] .bg-slate-800\/30 { background-color: rgba(22,22,22,0.30) !important; }
+
+/* ── All slate borders → neutral grey ── */
+[data-theme="bw"] .border-slate-900   { border-color: #111111 !important; }
+[data-theme="bw"] .border-slate-800   { border-color: #1e1e1e !important; }
+[data-theme="bw"] .border-slate-700   { border-color: #2a2a2a !important; }
+[data-theme="bw"] .border-slate-600   { border-color: #333333 !important; }
+/* opacity variants */
+[data-theme="bw"] .border-slate-800\/80 { border-color: rgba(30,30,30,0.8) !important; }
+[data-theme="bw"] .border-slate-800\/50 { border-color: rgba(30,30,30,0.5) !important; }
+
+/* ── All slate text → neutral grey (white→dark scale) ── */
+[data-theme="bw"] .text-slate-200 { color: #e0e0e0 !important; }
+[data-theme="bw"] .text-slate-300 { color: #cccccc !important; }
+[data-theme="bw"] .text-slate-400 { color: #aaaaaa !important; }
+[data-theme="bw"] .text-slate-500 { color: #787878 !important; }
+[data-theme="bw"] .text-slate-600 { color: #555555 !important; }
+[data-theme="bw"] .text-slate-700 { color: #333333 !important; }
+
+/* Leaflet container → true black, not navy */
+[data-theme="bw"] .leaflet-container { background: #0a0a0a !important; }
+
+/* Gradient text → silver */
+[data-theme="bw"] .gradient-text {
+  background: linear-gradient(135deg, #e8e8e8, #777777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover → subtle white glow */
+[data-theme="bw"] .card-hover:hover {
+  border-color: rgba(220, 220, 220, 0.18) !important;
+  box-shadow: 0 0 24px rgba(220, 220, 220, 0.04) !important;
+}
+
+/* Animated border → silver trace */
+[data-theme="bw"] .cta-border-wrap {
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    #e0e0e0 50deg,
+    #888888 100deg,
+    transparent 160deg
+  );
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+[data-theme="bw"] .cta-border-inner {
+  background: linear-gradient(135deg, #141414, #0e0e0e) !important;
+}
+
+/* Background floating shapes → grey */
+[data-theme="bw"] .bg-pill  { border-color: #555555; }
+[data-theme="bw"] .bg-cross::before,
+[data-theme="bw"] .bg-cross::after { background: #444444; }
+[data-theme="bw"] .bg-dot-ring { border-color: #3a3a3a; }
+
+/* Scrollbar */
+[data-theme="bw"] ::-webkit-scrollbar-track { background: #0a0a0a; }
+[data-theme="bw"] ::-webkit-scrollbar-thumb { background: #2a2a2a; }
+
+/* Range slider → grey fill */
+[data-theme="bw"] input[type='range']::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    90deg,
+    #cccccc 0%,
+    #666666 var(--pct, 30%),
+    #1a1a1a var(--pct, 30%),
+    #1a1a1a 100%
+  );
+}
+[data-theme="bw"] input[type='range']::-webkit-slider-thumb {
+  background: #cccccc;
+  border-color: #555555;
+  box-shadow: 0 0 8px rgba(200, 200, 200, 0.3);
+}
+
+/* Leaflet tooltip → stays dark bg, white text in B&W too */
+[data-theme="bw"] .leaflet-tooltip {
+  background: rgba(8, 8, 8, 0.96) !important;
+  border-color: #2a2a2a !important;
+}
+
+/* ── UI accent text: orange/purple/cyan → grey ── */
+[data-theme="bw"] .text-orange-400 { color: #b0b0b0 !important; }
+[data-theme="bw"] .text-orange-500 { color: #aaaaaa !important; }
+[data-theme="bw"] .text-purple-400 { color: #999999 !important; }
+[data-theme="bw"] .text-purple-300 { color: #cccccc !important; }
+[data-theme="bw"] .text-cyan-400   { color: #aaaaaa !important; }
+[data-theme="bw"] .text-cyan-500   { color: #999999 !important; }
+[data-theme="bw"] .text-cyan-300   { color: #cccccc !important; }
+[data-theme="bw"] .text-green-400  { color: #aaaaaa !important; }
+/* Note: red stays red as it signals danger/high-risk data */
+
+/* ── UI accent borders → grey ── */
+[data-theme="bw"] .border-cyan-500    { border-color: #ffffff !important; }
+[data-theme="bw"] .border-cyan-800    { border-color: #333333 !important; }
+[data-theme="bw"] .border-purple-800\/50 { border-color: rgba(60,60,60,0.5) !important; }
+[data-theme="bw"] .border-purple-700\/60 { border-color: rgba(60,60,60,0.6) !important; }
+[data-theme="bw"] .border-orange-800  { border-color: #2a2a2a !important; }
+
+/* ── UI accent backgrounds → grey ── */
+[data-theme="bw"] .bg-slate-900    { background-color: #0e0e0e !important; }
+[data-theme="bw"] .bg-slate-950    { background-color: #080808 !important; }
+[data-theme="bw"] .bg-green-950\/60 { background-color: rgba(20,20,20,0.6) !important; }
+[data-theme="bw"] .bg-slate-800    { background-color: #1a1a1a !important; }
+[data-theme="bw"] .bg-slate-700    { background-color: #2a2a2a !important; }
+
+/* ── Landing page badge (Catapult Hackathon) ── */
+[data-theme="bw"] .border-orange-900\/60 { border-color: rgba(50,50,50,0.6) !important; }
+[data-theme="bw"] .bg-orange-950\/30    { background-color: rgba(18,18,18,0.4) !important; }
+
+/* ── Map: selected county badge dot ── */
+[data-theme="bw"] .bg-purple-400 { background-color: #888888 !important; }
+
+/* ── Chat sidebar user message bubble ── */
+[data-theme="bw"] .bg-cyan-700\/80 { background-color: rgba(35,35,35,0.8) !important; }
+
+/* ── Stat pills in map panel header ── */
+[data-theme="bw"] .text-cyan-400.font-mono  { color: #aaaaaa !important; }
+[data-theme="bw"] .text-green-400.font-bold { color: #bbbbbb !important; }

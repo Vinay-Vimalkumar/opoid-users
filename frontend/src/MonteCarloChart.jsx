@@ -21,8 +21,12 @@ export default function MonteCarloChart({ county, interventions }) {
         num_seeds: 50,
       }),
     })
-      .then(r => r.json())
-      .then(d => { setData(d); setLoading(false) })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
+      .then(d => {
+        if (!d?.timeline) throw new Error('bad response')
+        setData(d)
+        setLoading(false)
+      })
       .catch(() => setLoading(false))
   }, [county, interventions?.naloxone, interventions?.prescribing, interventions?.treatment])
 
