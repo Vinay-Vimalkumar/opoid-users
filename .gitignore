@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+node_modules/
+frontend/dist/
+data/processed/
+ml/xgb_model.json
+ml/feature_importance.json
+*.db
+.vite/
