@@ -22,14 +22,21 @@ export default function ChatInterface({ onResult }) {
 
     const userMsg = input.trim()
     setInput('')
-    setMessages(prev => [...prev, { role: 'user', content: userMsg }])
+    const updatedMessages = [...messages, { role: 'user', content: userMsg }]
+    setMessages(updatedMessages)
     setLoading(true)
+
+    // Send conversation history (exclude system intro and simulation metadata)
+    const history = updatedMessages
+      .filter(m => m.role === 'user' || m.role === 'assistant')
+      .map(m => ({ role: m.role, content: m.content }))
+      .slice(0, -1) // exclude the current message (sent separately)
 
     try {
       const res = await fetch(`${API}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg }),
+        body: JSON.stringify({ message: userMsg, history }),
       })
       const data = await res.json()
 

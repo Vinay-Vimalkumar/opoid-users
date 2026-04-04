@@ -1,6 +1,7 @@
 """
 FastAPI backend for DrugDiffuse.
-Endpoints: /simulate, /optimize, /chat, /counties, /baseline
+All API endpoints are served under /api/.
+Frontend static build is served from frontend/dist/.
 """
 
 import sys
@@ -10,17 +11,25 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "simulation"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "ml"))
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from starlette.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import List, Optional
 import json
 import numpy as np
 
 from model import COUNTY_MAP, INDIANA_COUNTIES, Interventions, run_scenario, run_baseline, CountyParams
 from optimize import find_optimal, load_model
 
+BASE_DIR = Path(__file__).parent.parent
+FRONTEND_DIST = BASE_DIR / "frontend" / "dist"
+COUNTY_PROFILES_PATH = BASE_DIR / "data" / "processed" / "county_profiles.json"
+MODEL_PATH = BASE_DIR / "ml" / "xgb_model.json"
+
 app = FastAPI(title="DrugDiffuse API", version="1.0.0")
+api = APIRouter(prefix="/api")
 
 app.add_middleware(
     CORSMiddleware,
@@ -48,25 +57,139 @@ class OptimizeRequest(BaseModel):
     months: int = Field(default=60, ge=1, le=120)
 
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+
 class ChatRequest(BaseModel):
     message: str
     county: Optional[str] = None
+    history: Optional[List[ChatMessage]] = None
 
 
-# --- Endpoints ---
+class CompareRequest(BaseModel):
+    counties: List[str]
 
-@app.get("/counties")
+
+class MonteCarloRequest(BaseModel):
+    county: str
+    naloxone: float = Field(ge=0, le=1)
+    prescribing: float = Field(ge=0, le=1)
+    treatment: float = Field(ge=0, le=1)
+    months: int = Field(default=60, ge=1, le=120)
+    num_seeds: int = Field(default=50, ge=5, le=200)
+
+
+class FrontierRequest(BaseModel):
+    county: str
+    budget_max: float = Field(default=10_000_000, gt=0)
+    steps: int = Field(default=20, ge=5, le=50)
+
+
+# --- API Endpoints (all under /api) ---
+
+@api.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "counties": len(INDIANA_COUNTIES),
+        "model_loaded": MODEL_PATH.exists(),
+    }
+
+
+@api.get("/counties")
 def list_counties():
-    """List all available counties with their populations."""
     return [
         {"name": c.name, "population": c.population}
         for c in INDIANA_COUNTIES
     ]
 
 
-@app.post("/simulate")
+@api.get("/feature_importance")
+def feature_importance():
+    fi_path = BASE_DIR / "ml" / "feature_importance.json"
+    if not fi_path.exists():
+        raise HTTPException(404, "Feature importance not computed. Run: python ml/train_model.py")
+    with open(fi_path) as f:
+        return json.load(f)
+
+
+@api.get("/timeseries/{name}")
+def get_timeseries(name: str):
+    ts_path = BASE_DIR / "data" / "processed" / "indiana_overdose_timeseries.json"
+    if not ts_path.exists():
+        raise HTTPException(404, "Timeseries data not generated. Run: python data/process_real_data.py")
+    with open(ts_path) as f:
+        all_ts = json.load(f)
+    if name not in all_ts:
+        raise HTTPException(404, f"No timeseries data for county '{name}'")
+    return all_ts[name]
+
+
+@api.get("/summary")
+def get_summary():
+    summary_path = BASE_DIR / "data" / "processed" / "indiana_summary.json"
+    if not summary_path.exists():
+        raise HTTPException(404, "Summary data not generated. Run: python data/process_real_data.py")
+    with open(summary_path) as f:
+        return json.load(f)
+
+
+@api.get("/county/{name}")
+def get_county(name: str):
+    if name not in COUNTY_MAP:
+        raise HTTPException(404, f"County '{name}' not found")
+
+    if COUNTY_PROFILES_PATH.exists():
+        try:
+            with open(COUNTY_PROFILES_PATH, "r") as f:
+                profiles = json.load(f)
+            if isinstance(profiles, dict):
+                profile = profiles.get(name)
+            elif isinstance(profiles, list):
+                profile = next((p for p in profiles if p.get("name") == name or p.get("county") == name), None)
+            else:
+                profile = None
+            if profile:
+                return profile
+        except (json.JSONDecodeError, IOError):
+            pass
+
+    county = COUNTY_MAP[name]
+    return {"name": county.name, "population": county.population}
+
+
+@api.post("/compare")
+def compare(req: CompareRequest):
+    if not req.counties:
+        raise HTTPException(400, "Must provide at least one county")
+
+    results = []
+    errors = []
+    for name in req.counties:
+        if name not in COUNTY_MAP:
+            errors.append(f"County '{name}' not found")
+            continue
+        county = COUNTY_MAP[name]
+        result = run_baseline(county)
+        results.append({
+            "county": result.county,
+            "months": result.months,
+            "baseline_deaths": result.total_deaths,
+            "total_overdoses": result.total_overdoses,
+            "population": county.population,
+            "deaths_per_100k": round(result.total_deaths / county.population * 100_000, 1),
+        })
+
+    response = {"results": results}
+    if errors:
+        response["errors"] = errors
+    return response
+
+
+@api.post("/simulate")
 def simulate(req: SimulateRequest):
-    """Run a simulation scenario."""
     if req.county not in COUNTY_MAP:
         raise HTTPException(404, f"County '{req.county}' not found")
 
@@ -91,9 +214,8 @@ def simulate(req: SimulateRequest):
     }
 
 
-@app.post("/baseline")
+@api.post("/baseline")
 def baseline(county: str, months: int = 60, seed: int = 42):
-    """Run baseline (no intervention) scenario."""
     if county not in COUNTY_MAP:
         raise HTTPException(404, f"County '{county}' not found")
 
@@ -107,11 +229,111 @@ def baseline(county: str, months: int = 60, seed: int = 42):
     }
 
 
-@app.post("/optimize")
-def optimize(req: OptimizeRequest):
-    """Find optimal intervention bundle for a county within budget."""
+@api.post("/montecarlo")
+def montecarlo(req: MonteCarloRequest):
     if req.county not in COUNTY_MAP:
         raise HTTPException(404, f"County '{req.county}' not found")
+
+    county = COUNTY_MAP[req.county]
+    interventions = Interventions(req.naloxone, req.prescribing, req.treatment)
+
+    all_timelines = []
+    all_deaths = []
+    all_lives_saved = []
+
+    for seed in range(req.num_seeds):
+        result = run_scenario(county, interventions, months=req.months, seed=seed)
+        bl = run_baseline(county, months=req.months, seed=seed)
+        lives = max(0, bl.total_deaths - result.total_deaths)
+        all_deaths.append(result.total_deaths)
+        all_lives_saved.append(lives)
+        all_timelines.append(result.timeline)
+
+    months_data = {}
+    for m in range(req.months):
+        deaths_at_m = [t[m]["cumulative_deaths"] for t in all_timelines]
+        deaths_at_m.sort()
+        n = len(deaths_at_m)
+        months_data[m] = {
+            "month": m,
+            "median": deaths_at_m[n // 2],
+            "p10": deaths_at_m[max(0, n // 10)],
+            "p90": deaths_at_m[min(n - 1, 9 * n // 10)],
+            "min": deaths_at_m[0],
+            "max": deaths_at_m[-1],
+        }
+
+    all_deaths.sort()
+    all_lives_saved.sort()
+    n = len(all_deaths)
+
+    return {
+        "county": req.county,
+        "num_seeds": req.num_seeds,
+        "deaths_median": all_deaths[n // 2],
+        "deaths_p10": all_deaths[max(0, n // 10)],
+        "deaths_p90": all_deaths[min(n - 1, 9 * n // 10)],
+        "lives_saved_median": all_lives_saved[n // 2],
+        "lives_saved_p10": all_lives_saved[max(0, n // 10)],
+        "lives_saved_p90": all_lives_saved[min(n - 1, 9 * n // 10)],
+        "timeline": months_data,
+        "cost": result.cost,
+    }
+
+
+@api.post("/frontier")
+def cost_effectiveness_frontier(req: FrontierRequest):
+    if req.county not in COUNTY_MAP:
+        raise HTTPException(404, f"County '{req.county}' not found")
+
+    county = COUNTY_MAP[req.county]
+    budget_step = req.budget_max / req.steps
+    frontier = []
+
+    from model import compute_cost
+    import itertools
+    levels = [0, 0.2, 0.4, 0.6, 0.8, 1.0]
+
+    for step in range(req.steps + 1):
+        budget = budget_step * step
+        best_lives = 0
+        best_combo = None
+        best_cost = 0
+
+        for n, p, t in itertools.product(levels, repeat=3):
+            iv = Interventions(n, p, t)
+            cost = compute_cost(iv, county.population, 60)
+            if cost > budget:
+                continue
+            result = run_scenario(county, iv, seed=42)
+            bl_result = run_baseline(county, seed=42)
+            lives = max(0, bl_result.total_deaths - result.total_deaths)
+            if lives > best_lives:
+                best_lives = lives
+                best_combo = {"naloxone": n, "prescribing": p, "treatment": t}
+                best_cost = cost
+
+        frontier.append({
+            "budget": round(budget, 0),
+            "best_lives_saved": best_lives,
+            "best_cost": round(best_cost, 2) if best_cost else 0,
+            "best_interventions": best_combo,
+        })
+
+    return {"county": req.county, "frontier": frontier}
+
+
+@api.post("/optimize")
+def optimize(req: OptimizeRequest):
+    if req.county not in COUNTY_MAP:
+        raise HTTPException(404, f"County '{req.county}' not found")
+
+    if not MODEL_PATH.exists():
+        raise HTTPException(
+            503,
+            "XGBoost model not found. Please train it first by running: "
+            "python ml/train_model.py"
+        )
 
     try:
         result = find_optimal(req.county, req.budget, months=req.months)
@@ -120,9 +342,8 @@ def optimize(req: OptimizeRequest):
         raise HTTPException(500, f"Optimization failed: {str(e)}")
 
 
-@app.post("/chat")
+@api.post("/chat")
 async def chat(req: ChatRequest):
-    """AI chat endpoint — parses natural language into simulation parameters."""
     try:
         import anthropic
     except ImportError:
@@ -155,16 +376,22 @@ Always frame this as a policy exploration tool, NOT medical advice.
 Be concise and data-driven. Reference specific numbers when possible.
 If the user doesn't specify a county, ask which one. Default to Marion if ambiguous."""
 
+    messages = []
+    if req.history:
+        for msg in req.history[-10:]:
+            if msg.role in ("user", "assistant"):
+                messages.append({"role": msg.role, "content": msg.content})
+    messages.append({"role": "user", "content": req.message})
+
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=1024,
         system=system_prompt,
-        messages=[{"role": "user", "content": req.message}],
+        messages=messages,
     )
 
     ai_response = response.content[0].text
 
-    # Try to extract JSON params and run simulation
     import re
     json_match = re.search(r'```json\s*(\{.*?\})\s*```', ai_response, re.DOTALL)
 
@@ -197,6 +424,26 @@ If the user doesn't specify a county, ask which one. Default to Marion if ambigu
         "response": ai_response,
         "simulation": sim_result,
     }
+
+
+# --- Register API router, then static files ---
+app.include_router(api)
+
+# Serve frontend static build
+if FRONTEND_DIST.exists():
+    assets_dir = FRONTEND_DIST / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="static-assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_spa(full_path: str):
+        file_path = FRONTEND_DIST / full_path
+        if full_path and file_path.exists() and file_path.is_file():
+            return FileResponse(str(file_path))
+        index_path = FRONTEND_DIST / "index.html"
+        if index_path.exists():
+            return FileResponse(str(index_path))
+        raise HTTPException(404, "Frontend not built. Run: cd frontend && npm run build")
 
 
 if __name__ == "__main__":

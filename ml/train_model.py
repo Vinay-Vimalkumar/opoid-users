@@ -19,11 +19,11 @@ FEATURE_IMPORTANCE_PATH = Path(__file__).parent / "feature_importance.json"
 
 # County populations for feature engineering
 COUNTY_POPS = {
-    "Marion": 977203, "Lake": 498700, "Allen": 379299, "St. Joseph": 271826,
-    "Vanderburgh": 181451, "Tippecanoe": 193391, "Delaware": 114135, "Wayne": 65884,
-    "Vigo": 107848, "Madison": 128500, "Clark": 119256, "Floyd": 78522,
-    "Scott": 24181, "Lawrence": 45370, "Fayette": 23102, "Jay": 20436,
-    "Blackford": 11758, "Vermillion": 15498, "Henry": 47972, "Grant": 65769,
+    "Marion": 971102, "Lake": 498558, "Allen": 388608, "St. Joseph": 272212,
+    "Vanderburgh": 179987, "Tippecanoe": 187076, "Delaware": 111871, "Wayne": 66456,
+    "Vigo": 105994, "Madison": 130782, "Clark": 122738, "Floyd": 80454,
+    "Scott": 24355, "Lawrence": 45070, "Fayette": 23360, "Jay": 20248,
+    "Blackford": 12091, "Vermillion": 15341, "Henry": 48935, "Grant": 66263,
 }
 
 

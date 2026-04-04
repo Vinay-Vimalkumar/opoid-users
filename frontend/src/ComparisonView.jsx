@@ -43,7 +43,7 @@ export default function ComparisonView({ result }) {
           <p className="text-5xl font-bold text-green-400 font-mono">{result.lives_saved}</p>
           <p className="text-sm text-slate-400 mt-1">lives saved over 5 years</p>
           <div className="mt-3 text-xs text-slate-500 space-y-1">
-            <p>Naloxone: {Math.round(result.interventions.naloxone_access * 100)}% | Prescribing: {Math.round(result.interventions.prescribing_reduction * 100)}% | Treatment: {Math.round(result.interventions.treatment_access * 100)}%</p>
+            <p>Naloxone: {Math.round((result.interventions?.naloxone_access ?? 0) * 100)}% | Prescribing: {Math.round((result.interventions?.prescribing_reduction ?? 0) * 100)}% | Treatment: {Math.round((result.interventions?.treatment_access ?? 0) * 100)}%</p>
             <p className="text-slate-600">Total cost: ${(result.cost / 1_000_000).toFixed(2)}M</p>
           </div>
         </div>
