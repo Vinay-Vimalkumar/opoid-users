@@ -202,7 +202,25 @@
     "peak_rate_per_100k": 32.28,
     "avg_rate_per_100k": 15.96,
     "total_provisional_deaths": 7454,
-    "peak_annual_deaths": 1678
+    "peak_annual_deaths": 1678,
+    "treatment_facilities": 2,
+    "treatment_facility_names": [
+      "BHG Fort Wayne Treatment Center",
+      "Bowen Health Recovery Center"
+    ],
+    "od_touchpoints": {
+      "ED visit": 78.0,
+      "EMS interaction": 49.0,
+      "Jail booking": 19.0,
+      "Rx dispensation": 38.0,
+      "Release from prison": 1.0
+    },
+    "median_household_income": 66194.0,
+    "pct_uninsured": 0.0814,
+    "drug_od_mortality_rate_chr": 10.2625,
+    "pct_smokers": 0.188,
+    "pct_excessive_drinking": 11.1381,
+    "mentally_unhealthy_days": 4.2673
   },
   {
     "name": "Blackford",
@@ -407,7 +425,22 @@
     "peak_rate_per_100k": 53.8,
     "avg_rate_per_100k": 26.6,
     "total_provisional_deaths": 330,
-    "peak_annual_deaths": 60
+    "peak_annual_deaths": 60,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "EMS interaction": 1.0,
+      "Jail booking": 1.25,
+      "Release from prison": 1.0,
+      "ED visit": 1.0,
+      "Rx dispensation": 1.0
+    },
+    "median_household_income": 51799.0,
+    "pct_uninsured": 0.0788,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.223,
+    "pct_excessive_drinking": 14.2629,
+    "mentally_unhealthy_days": 4.9838
   },
   {
     "name": "Clark",
@@ -612,7 +645,24 @@
     "peak_rate_per_100k": 52.29,
     "avg_rate_per_100k": 25.85,
     "total_provisional_deaths": 4009,
-    "peak_annual_deaths": 809
+    "peak_annual_deaths": 809,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Southern Indiana Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 30.0,
+      "Release from prison": 7.0,
+      "Jail booking": 16.0,
+      "Rx dispensation": 28.0,
+      "ED visit": 39.0
+    },
+    "median_household_income": 71718.0,
+    "pct_uninsured": 0.0743,
+    "drug_od_mortality_rate_chr": 4.6712,
+    "pct_smokers": 0.191,
+    "pct_excessive_drinking": 8.2101,
+    "mentally_unhealthy_days": 4.1492
   },
   {
     "name": "Delaware",
@@ -817,7 +867,24 @@
     "peak_rate_per_100k": 54.76,
     "avg_rate_per_100k": 27.07,
     "total_provisional_deaths": 4186,
-    "peak_annual_deaths": 921
+    "peak_annual_deaths": 921,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Muncie Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 16891.0,
+      "Jail booking": 2475.0,
+      "Release from prison": 59.0,
+      "Rx dispensation": 30671.0,
+      "ED visit": 43651.0
+    },
+    "median_household_income": 55704.0,
+    "pct_uninsured": 0.0866,
+    "drug_od_mortality_rate_chr": 7.6532,
+    "pct_smokers": 0.225,
+    "pct_excessive_drinking": 13.2999,
+    "mentally_unhealthy_days": 4.9737
   },
   {
     "name": "Fayette",
@@ -1022,7 +1089,22 @@
     "peak_rate_per_100k": 81.5,
     "avg_rate_per_100k": 40.3,
     "total_provisional_deaths": 1040,
-    "peak_annual_deaths": 265
+    "peak_annual_deaths": 265,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Release from prison": 1.0,
+      "Jail booking": 1.0,
+      "ED visit": 5.0,
+      "EMS interaction": 4.0,
+      "Rx dispensation": 2.0
+    },
+    "median_household_income": 60483.0,
+    "pct_uninsured": 0.0746,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.26,
+    "pct_excessive_drinking": 11.5637,
+    "mentally_unhealthy_days": 4.8465
   },
   {
     "name": "Floyd",
@@ -1227,7 +1309,22 @@
     "peak_rate_per_100k": 46.6,
     "avg_rate_per_100k": 23.04,
     "total_provisional_deaths": 2513,
-    "peak_annual_deaths": 494
+    "peak_annual_deaths": 494,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Release from prison": 2.0,
+      "EMS interaction": 20.0,
+      "Jail booking": 6.0,
+      "ED visit": 28.0,
+      "Rx dispensation": 19.0
+    },
+    "median_household_income": 79008.0,
+    "pct_uninsured": 0.0689,
+    "drug_od_mortality_rate_chr": 4.7233,
+    "pct_smokers": 0.177,
+    "pct_excessive_drinking": 10.531,
+    "mentally_unhealthy_days": 4.1494
   },
   {
     "name": "Grant",
@@ -1432,7 +1529,24 @@
     "peak_rate_per_100k": 53.69,
     "avg_rate_per_100k": 26.54,
     "total_provisional_deaths": 2401,
-    "peak_annual_deaths": 592
+    "peak_annual_deaths": 592,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Community Medical Services - Marion"
+    ],
+    "od_touchpoints": {
+      "ED visit": 22.0,
+      "EMS interaction": 12.0,
+      "Jail booking": 2.0,
+      "Rx dispensation": 10.0,
+      "Release from prison": 12.0
+    },
+    "median_household_income": 53872.0,
+    "pct_uninsured": 0.0719,
+    "drug_od_mortality_rate_chr": 7.5652,
+    "pct_smokers": 0.215,
+    "pct_excessive_drinking": 16.3582,
+    "mentally_unhealthy_days": 4.9038
   },
   {
     "name": "Henry",
@@ -1637,7 +1751,22 @@
     "peak_rate_per_100k": 50.89,
     "avg_rate_per_100k": 25.16,
     "total_provisional_deaths": 828,
-    "peak_annual_deaths": 192
+    "peak_annual_deaths": 192,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Rx dispensation": 7.0,
+      "ED visit": 2.14,
+      "Jail booking": 2.0,
+      "EMS interaction": 1.62,
+      "Release from prison": 47.0
+    },
+    "median_household_income": 62048.0,
+    "pct_uninsured": 0.072,
+    "drug_od_mortality_rate_chr": 3.5385,
+    "pct_smokers": 0.226,
+    "pct_excessive_drinking": 13.2884,
+    "mentally_unhealthy_days": 4.6982
   },
   {
     "name": "Jay",
@@ -1842,7 +1971,22 @@
     "peak_rate_per_100k": 44.57,
     "avg_rate_per_100k": 22.03,
     "total_provisional_deaths": 489,
-    "peak_annual_deaths": 132
+    "peak_annual_deaths": 132,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 1.0,
+      "Jail booking": 18.0,
+      "Rx dispensation": 21.0,
+      "EMS interaction": 1.0,
+      "Release from prison": 1.0
+    },
+    "median_household_income": 61030.0,
+    "pct_uninsured": 0.0893,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.233,
+    "pct_excessive_drinking": 14.3579,
+    "mentally_unhealthy_days": 4.9491
   },
   {
     "name": "Lake",
@@ -2047,7 +2191,26 @@
     "peak_rate_per_100k": 29.84,
     "avg_rate_per_100k": 14.74,
     "total_provisional_deaths": 11612,
-    "peak_annual_deaths": 2447
+    "peak_annual_deaths": 2447,
+    "treatment_facilities": 3,
+    "treatment_facility_names": [
+      "Edgewater New-Life",
+      "Medmark Treatment Centers Merrillville",
+      "Semoran - New Season Treatment Center"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 92.0,
+      "Jail booking": 48.0,
+      "Rx dispensation": 80.0,
+      "ED visit": 143.0,
+      "Release from prison": 17.0
+    },
+    "median_household_income": 69182.0,
+    "pct_uninsured": 0.0772,
+    "drug_od_mortality_rate_chr": 17.0695,
+    "pct_smokers": 0.169,
+    "pct_excessive_drinking": 8.9256,
+    "mentally_unhealthy_days": 4.5346
   },
   {
     "name": "Lawrence",
@@ -2252,7 +2415,22 @@
     "peak_rate_per_100k": 31.09,
     "avg_rate_per_100k": 15.37,
     "total_provisional_deaths": 969,
-    "peak_annual_deaths": 242
+    "peak_annual_deaths": 242,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 8.0,
+      "EMS interaction": 6.0,
+      "Rx dispensation": 5.0,
+      "Jail booking": 2.0,
+      "Release from prison": 3.0
+    },
+    "median_household_income": 64958.0,
+    "pct_uninsured": 0.08,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.208,
+    "pct_excessive_drinking": 14.1524,
+    "mentally_unhealthy_days": 4.6412
   },
   {
     "name": "Madison",
@@ -2457,7 +2635,22 @@
     "peak_rate_per_100k": 58.58,
     "avg_rate_per_100k": 28.97,
     "total_provisional_deaths": 3923,
-    "peak_annual_deaths": 852
+    "peak_annual_deaths": 852,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 51.0,
+      "EMS interaction": 34.0,
+      "Jail booking": 8.0,
+      "Release from prison": 306.0,
+      "Rx dispensation": 34.0
+    },
+    "median_household_income": 62000.0,
+    "pct_uninsured": 0.0796,
+    "drug_od_mortality_rate_chr": 6.2623,
+    "pct_smokers": 0.227,
+    "pct_excessive_drinking": 12.5243,
+    "mentally_unhealthy_days": 4.3923
   },
   {
     "name": "Marion",
@@ -2662,7 +2855,26 @@
     "peak_rate_per_100k": 53.85,
     "avg_rate_per_100k": 26.59,
     "total_provisional_deaths": 38737,
-    "peak_annual_deaths": 8730
+    "peak_annual_deaths": 8730,
+    "treatment_facilities": 3,
+    "treatment_facility_names": [
+      "Indianapolis Comprehensive Treatment Center",
+      "New Vista North",
+      "Sandra Eskenazi Mental Health Center Caring Recovery OTP"
+    ],
+    "od_touchpoints": {
+      "Release from prison": 829.0,
+      "Rx dispensation": 221977.0,
+      "ED visit": 430416.0,
+      "EMS interaction": 137589.0,
+      "Jail booking": 8135.0
+    },
+    "median_household_income": 66653.0,
+    "pct_uninsured": 0.0977,
+    "drug_od_mortality_rate_chr": 20.5886,
+    "pct_smokers": 0.176,
+    "pct_excessive_drinking": 11.4702,
+    "mentally_unhealthy_days": 4.3261
   },
   {
     "name": "Scott",
@@ -2867,7 +3079,22 @@
     "peak_rate_per_100k": 84.42,
     "avg_rate_per_100k": 41.74,
     "total_provisional_deaths": 1038,
-    "peak_annual_deaths": 276
+    "peak_annual_deaths": 276,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Jail booking": 1.0,
+      "Release from prison": 1.0,
+      "EMS interaction": 4.0,
+      "Rx dispensation": 8.0,
+      "ED visit": 4.0
+    },
+    "median_household_income": 62584.0,
+    "pct_uninsured": 0.0861,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.232,
+    "pct_excessive_drinking": 9.7609,
+    "mentally_unhealthy_days": 4.9694
   },
   {
     "name": "St. Joseph",
@@ -3072,7 +3299,24 @@
     "peak_rate_per_100k": 31.17,
     "avg_rate_per_100k": 15.41,
     "total_provisional_deaths": 5490,
-    "peak_annual_deaths": 1166
+    "peak_annual_deaths": 1166,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Victory Clinical Services II"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 99.0,
+      "Jail booking": 99.0,
+      "Release from prison": 99.0,
+      "Rx dispensation": 99.0,
+      "ED visit": 99.0
+    },
+    "median_household_income": 65977.0,
+    "pct_uninsured": 0.0804,
+    "drug_od_mortality_rate_chr": 9.1144,
+    "pct_smokers": 0.167,
+    "pct_excessive_drinking": 10.1383,
+    "mentally_unhealthy_days": 4.3671
   },
   {
     "name": "Tippecanoe",
@@ -3277,7 +3521,24 @@
     "peak_rate_per_100k": 28.35,
     "avg_rate_per_100k": 14.01,
     "total_provisional_deaths": 2788,
-    "peak_annual_deaths": 584
+    "peak_annual_deaths": 584,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "MedMark Treatment Centers Lafayette"
+    ],
+    "od_touchpoints": {
+      "ED visit": 34.0,
+      "EMS interaction": 24.0,
+      "Jail booking": 12.0,
+      "Rx dispensation": 17.0,
+      "Release from prison": 114.0
+    },
+    "median_household_income": 61681.0,
+    "pct_uninsured": 0.0874,
+    "drug_od_mortality_rate_chr": 3.4345,
+    "pct_smokers": 0.175,
+    "pct_excessive_drinking": 9.75,
+    "mentally_unhealthy_days": 4.5201
   },
   {
     "name": "Vanderburgh",
@@ -3482,7 +3743,24 @@
     "peak_rate_per_100k": 47.29,
     "avg_rate_per_100k": 23.38,
     "total_provisional_deaths": 3783,
-    "peak_annual_deaths": 931
+    "peak_annual_deaths": 931,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Evansville Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "ED visit": 48.0,
+      "EMS interaction": 30.0,
+      "Jail booking": 13.0,
+      "Rx dispensation": 37.0,
+      "Release from prison": 2.0
+    },
+    "median_household_income": 60923.0,
+    "pct_uninsured": 0.0791,
+    "drug_od_mortality_rate_chr": 8.8332,
+    "pct_smokers": 0.169,
+    "pct_excessive_drinking": 14.4094,
+    "mentally_unhealthy_days": 4.382
   },
   {
     "name": "Vermillion",
@@ -3687,7 +3965,21 @@
     "peak_rate_per_100k": 31.05,
     "avg_rate_per_100k": 15.35,
     "total_provisional_deaths": 330,
-    "peak_annual_deaths": 60
+    "peak_annual_deaths": 60,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 15.0,
+      "EMS interaction": 1.0,
+      "Jail booking": 1.0,
+      "Rx dispensation": 1.0
+    },
+    "median_household_income": 58743.0,
+    "pct_uninsured": 0.0736,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.218,
+    "pct_excessive_drinking": 11.6497,
+    "mentally_unhealthy_days": 4.6939
   },
   {
     "name": "Vigo",
@@ -3892,7 +4184,24 @@
     "peak_rate_per_100k": 33.39,
     "avg_rate_per_100k": 16.51,
     "total_provisional_deaths": 1745,
-    "peak_annual_deaths": 418
+    "peak_annual_deaths": 418,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "WIN Recovery-Vigo"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 12.0,
+      "Release from prison": 1.0,
+      "Jail booking": 8.0,
+      "ED visit": 21.0,
+      "Rx dispensation": 24.0
+    },
+    "median_household_income": 50665.0,
+    "pct_uninsured": 0.0933,
+    "drug_od_mortality_rate_chr": 5.2106,
+    "pct_smokers": 0.212,
+    "pct_excessive_drinking": 14.5275,
+    "mentally_unhealthy_days": 4.6549
   },
   {
     "name": "Wayne",
@@ -4097,6 +4406,23 @@
     "peak_rate_per_100k": 73.21,
     "avg_rate_per_100k": 36.19,
     "total_provisional_deaths": 2981,
-    "peak_annual_deaths": 688
+    "peak_annual_deaths": 688,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Richmond Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "ED visit": 67.0,
+      "EMS interaction": 67.0,
+      "Jail booking": 67.0,
+      "Release from prison": 67.0,
+      "Rx dispensation": 67.0
+    },
+    "median_household_income": 52956.0,
+    "pct_uninsured": 0.0845,
+    "drug_od_mortality_rate_chr": 7.774,
+    "pct_smokers": 0.229,
+    "pct_excessive_drinking": 13.7311,
+    "mentally_unhealthy_days": 4.7413
   }
 ]
