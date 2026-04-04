@@ -1,6 +1,9 @@
 """
 Find optimal intervention bundles per county given a budget constraint.
 Grid search over intervention space using the trained XGBoost model.
+
+Also provides optimize_portfolio() for multi-county budget allocation via
+DP knapsack.
 """
 
 import json
@@ -10,7 +13,7 @@ import xgboost as xgb
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / "simulation"))
-from model import COUNTY_MAP, Interventions, compute_cost
+from model import COUNTY_MAP, INDIANA_COUNTIES, Interventions, compute_cost
 
 MODEL_PATH = Path(__file__).parent / "xgb_model.json"
 PROFILES_PATH = Path(__file__).parent.parent / "data" / "processed" / "county_profiles.json"
@@ -119,6 +122,130 @@ def find_optimal(county_name: str, budget: float, months: int = 60):
         "estimated_cost": round(best_cost, 2),
         "lives_saved_per_million": round(best_score, 2),
         "estimated_lives_saved": round(lives_saved, 1),
+    }
+
+
+def _vectorized_costs(combos: np.ndarray, population: int, months: int) -> np.ndarray:
+    """Compute costs for all combos without Python loops."""
+    n_ = combos[:, 0]
+    p_ = combos[:, 1]
+    t_ = combos[:, 2]
+    monthly = (
+        (n_ * population / 500) * 75
+        + (p_ * 10) * 500_000 / months
+        + (t_ * population * 0.001) * 10_000 / 12
+    )
+    return monthly * months
+
+
+def _build_feature_matrix(combos: np.ndarray, cf: dict) -> np.ndarray:
+    """Build 9-feature matrix for model.predict(), matching FEATURES order."""
+    n = len(combos)
+    return np.column_stack([
+        combos,
+        np.full(n, cf.get("population", 0)),
+        np.full(n, cf.get("overdose_rate_per_100k", 0.0)),
+        np.full(n, cf.get("pct_uninsured", 0.0)),
+        np.full(n, cf.get("od_touchpoints", 0)),
+        np.full(n, cf.get("treatment_facilities", 0)),
+        np.full(n, cf.get("median_household_income", 50000)),
+    ])
+
+
+def optimize_portfolio(
+    county_names: list,
+    total_budget: float,
+    months: int = 60,
+    budget_steps: int = 50,
+) -> dict:
+    """
+    Allocate total_budget across counties to maximize total estimated lives saved.
+
+    Uses a DP knapsack over a discretized budget grid:
+      - Precomputes lives_saved at each budget level for every county (ML model).
+      - O(n_counties × budget_steps²) DP — fast for ≤ 20 counties, ≤ 100 steps.
+
+    Returns per-county allocations plus a total lives saved estimate.
+    """
+    model = load_model()
+    county_features = load_county_features()
+    combos = np.array(list(itertools.product(LEVELS, repeat=3)))  # (9261, 3)
+
+    step_size = total_budget / budget_steps
+    budget_levels = np.arange(budget_steps + 1) * step_size  # 0, step, 2*step, ...
+
+    n = len(county_names)
+    # lives_table[i][j] = estimated lives saved for county i at budget j*step_size
+    lives_table = np.zeros((n, budget_steps + 1))
+    interventions_table = [[None] * (budget_steps + 1) for _ in range(n)]
+    costs_table = np.zeros((n, budget_steps + 1))
+
+    for i, name in enumerate(county_names):
+        county = COUNTY_MAP[name]
+        cf = county_features.get(name, {})
+
+        combo_costs = _vectorized_costs(combos, county.population, months)
+        X = _build_feature_matrix(combos, cf)
+        scores = model.predict(X)
+        total_lives = scores * (combo_costs / 1_000_000)
+
+        for j, budget in enumerate(budget_levels):
+            if budget == 0:
+                continue
+            mask = combo_costs <= budget
+            if not mask.any():
+                continue
+            best_idx = int(np.argmax(total_lives[mask]))
+            # map back to original combo index
+            orig_idx = np.where(mask)[0][best_idx]
+            lives_table[i][j] = float(total_lives[orig_idx])
+            interventions_table[i][j] = {
+                "naloxone": float(combos[orig_idx][0]),
+                "prescribing": float(combos[orig_idx][1]),
+                "treatment": float(combos[orig_idx][2]),
+            }
+            costs_table[i][j] = float(combo_costs[orig_idx])
+
+    # DP knapsack: dp[i][b] = max lives using first i counties with b budget steps
+    dp = np.zeros((n + 1, budget_steps + 1))
+    choice = np.zeros((n + 1, budget_steps + 1), dtype=int)
+
+    for i in range(1, n + 1):
+        for b in range(budget_steps + 1):
+            dp[i][b] = dp[i - 1][b]
+            choice[i][b] = 0
+            for k in range(1, b + 1):
+                val = dp[i - 1][b - k] + lives_table[i - 1][k]
+                if val > dp[i][b]:
+                    dp[i][b] = val
+                    choice[i][b] = k
+
+    # Backtrack to find per-county allocation
+    allocations = []
+    unallocated = []
+    b = budget_steps
+    for i in range(n, 0, -1):
+        k = choice[i][b]
+        name = county_names[i - 1]
+        if k > 0:
+            allocations.append({
+                "county": name,
+                "allocated_budget": round(k * step_size, 2),
+                "optimal_interventions": interventions_table[i - 1][k],
+                "estimated_cost": round(costs_table[i - 1][k], 2),
+                "estimated_lives_saved": round(lives_table[i - 1][k], 1),
+            })
+        else:
+            unallocated.append(name)
+        b -= k
+
+    allocations.sort(key=lambda x: -x["estimated_lives_saved"])
+
+    return {
+        "total_budget": total_budget,
+        "total_estimated_lives_saved": round(float(dp[n][budget_steps]), 1),
+        "allocations": allocations,
+        "zero_allocation_counties": unallocated,
     }
 
 

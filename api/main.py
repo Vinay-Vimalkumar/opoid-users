@@ -21,7 +21,7 @@ import json
 import numpy as np
 
 from model import COUNTY_MAP, INDIANA_COUNTIES, Interventions, run_scenario, run_baseline, CountyParams
-from optimize import find_optimal, load_model
+from optimize import find_optimal, load_model, optimize_portfolio
 
 BASE_DIR = Path(__file__).parent.parent
 FRONTEND_DIST = BASE_DIR / "frontend" / "dist"
@@ -85,6 +85,13 @@ class FrontierRequest(BaseModel):
     county: str
     budget_max: float = Field(default=10_000_000, gt=0)
     steps: int = Field(default=20, ge=5, le=50)
+
+
+class PortfolioRequest(BaseModel):
+    counties: Optional[List[str]] = None  # None = all 20 counties
+    total_budget: float = Field(gt=0)
+    months: int = Field(default=60, ge=1, le=120)
+    budget_steps: int = Field(default=50, ge=10, le=100)
 
 
 # --- API Endpoints (all under /api) ---
@@ -300,38 +307,20 @@ def cost_effectiveness_frontier(req: FrontierRequest):
     if req.county not in COUNTY_MAP:
         raise HTTPException(404, f"County '{req.county}' not found")
 
-    county = COUNTY_MAP[req.county]
+    if not MODEL_PATH.exists():
+        raise HTTPException(503, "XGBoost model not found. Run: python ml/train_model.py")
+
     budget_step = req.budget_max / req.steps
     frontier = []
 
-    from model import compute_cost
-    import itertools
-    levels = [0, 0.2, 0.4, 0.6, 0.8, 1.0]
-
     for step in range(req.steps + 1):
         budget = budget_step * step
-        best_lives = 0
-        best_combo = None
-        best_cost = 0
-
-        for n, p, t in itertools.product(levels, repeat=3):
-            iv = Interventions(n, p, t)
-            cost = compute_cost(iv, county.population, 60)
-            if cost > budget:
-                continue
-            result = run_scenario(county, iv, seed=42)
-            bl_result = run_baseline(county, seed=42)
-            lives = max(0, bl_result.total_deaths - result.total_deaths)
-            if lives > best_lives:
-                best_lives = lives
-                best_combo = {"naloxone": n, "prescribing": p, "treatment": t}
-                best_cost = cost
-
+        result = find_optimal(req.county, budget, months=req.months)
         frontier.append({
             "budget": round(budget, 0),
-            "best_lives_saved": best_lives,
-            "best_cost": round(best_cost, 2) if best_cost else 0,
-            "best_interventions": best_combo,
+            "best_lives_saved": result["estimated_lives_saved"],
+            "best_cost": result["estimated_cost"],
+            "best_interventions": result["optimal_interventions"],
         })
 
     return {"county": req.county, "frontier": frontier}
@@ -354,6 +343,32 @@ def optimize(req: OptimizeRequest):
         return result
     except Exception as e:
         raise HTTPException(500, f"Optimization failed: {str(e)}")
+
+
+@api.post("/optimize-portfolio")
+def optimize_portfolio_endpoint(req: PortfolioRequest):
+    """
+    Allocate a fixed total budget across multiple counties to maximize
+    total estimated lives saved. Uses DP knapsack over the ML model.
+    """
+    if not MODEL_PATH.exists():
+        raise HTTPException(503, "XGBoost model not found. Run: python ml/train_model.py")
+
+    county_names = req.counties or [c.name for c in INDIANA_COUNTIES]
+    invalid = [n for n in county_names if n not in COUNTY_MAP]
+    if invalid:
+        raise HTTPException(400, f"Unknown counties: {invalid}")
+
+    try:
+        result = optimize_portfolio(
+            county_names=county_names,
+            total_budget=req.total_budget,
+            months=req.months,
+            budget_steps=req.budget_steps,
+        )
+        return result
+    except Exception as e:
+        raise HTTPException(500, f"Portfolio optimization failed: {str(e)}")
 
 
 @api.post("/chat")

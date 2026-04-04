@@ -12,9 +12,22 @@ Three intervention levers (each 0.0–1.0):
   - treatment_access: doubles treatment entry rate, +30% treatment success
 """
 
+import json
 import numpy as np
 from dataclasses import dataclass, asdict
+from pathlib import Path
 from typing import Optional
+
+_PROFILES_PATH = Path(__file__).parent.parent / "data" / "processed" / "county_profiles.json"
+
+# Calibration constants
+_BASE_OD_RATE_URBAN = 0.015       # reference overdose_rate for urban counties
+_BASE_OD_RATE_MID = 0.018         # reference for mid-size
+_BASE_OD_RATE_RURAL = 0.021       # reference for rural
+_BASE_TX_RATE = 0.030             # reference treatment_entry_rate (30-month average)
+_FLOOR_FAC_PER_100K = 0.10        # minimum effective facilities per 100k (travel / telehealth)
+_AVG_FAC_PER_100K = 0.55          # approximate Indiana average (computed from profiles)
+_AVG_PCT_UNINSURED = 0.082        # approximate Indiana average
 
 
 @dataclass
@@ -157,79 +170,104 @@ def run_scenario(
     )
 
 
-# County data: top 20 Indiana counties by overdose impact
-# Parameters are differentiated by county type to reflect real epidemiological patterns:
-#   - Rural high-impact counties have higher prescribing/misuse/OUD/overdose rates and lower treatment access
-#   - Mid-size counties have moderately elevated rates
-#   - Large urban counties have near-default rates but better treatment access
-INDIANA_COUNTIES = [
-    # --- Large urban counties: near-default rates, better treatment access ---
-    CountyParams("Marion", 971102,
-                 prescribing_rate=0.005, misuse_rate=0.04, oud_rate=0.08,
-                 overdose_rate=0.015, treatment_entry_rate=0.040),
-    CountyParams("Lake", 498558,
-                 prescribing_rate=0.005, misuse_rate=0.04, oud_rate=0.08,
-                 overdose_rate=0.015, treatment_entry_rate=0.038),
-    CountyParams("Allen", 388608,
-                 prescribing_rate=0.005, misuse_rate=0.04, oud_rate=0.08,
-                 overdose_rate=0.015, treatment_entry_rate=0.042),
-    CountyParams("St. Joseph", 272212,
-                 prescribing_rate=0.005, misuse_rate=0.04, oud_rate=0.08,
-                 overdose_rate=0.015, treatment_entry_rate=0.037),
-    CountyParams("Vanderburgh", 179987,
-                 prescribing_rate=0.005, misuse_rate=0.04, oud_rate=0.08,
-                 overdose_rate=0.016, treatment_entry_rate=0.039),
-    CountyParams("Tippecanoe", 187076,
-                 prescribing_rate=0.005, misuse_rate=0.04, oud_rate=0.08,
-                 overdose_rate=0.014, treatment_entry_rate=0.045),
+# ---------------------------------------------------------------------------
+# Base cascade rates by county type (prescribing → misuse → OUD chain).
+# These remain type-level because CDC data doesn't directly distinguish them;
+# overdose_rate and treatment_entry_rate are calibrated per-county from CDC data.
+# ---------------------------------------------------------------------------
+_BASE_PARAMS = {
+    # urban_rural label → (prescribing_rate, misuse_rate, oud_rate, ref_od_rate)
+    "Large Central Metro":  (0.005, 0.04, 0.08, _BASE_OD_RATE_URBAN),
+    "Large Fringe Metro":   (0.005, 0.04, 0.08, _BASE_OD_RATE_URBAN),
+    "Medium Metro":         (0.006, 0.05, 0.09, _BASE_OD_RATE_MID),
+    "Small Metro":          (0.006, 0.05, 0.09, _BASE_OD_RATE_MID),
+    "Micropolitan":         (0.007, 0.06, 0.10, _BASE_OD_RATE_RURAL),
+    "Noncore":              (0.009, 0.07, 0.11, _BASE_OD_RATE_RURAL),
+}
 
-    # --- Mid-size counties: moderately elevated rates ---
-    CountyParams("Delaware", 111871,
-                 prescribing_rate=0.006, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.018, treatment_entry_rate=0.030),
-    CountyParams("Vigo", 105994,
-                 prescribing_rate=0.006, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.017, treatment_entry_rate=0.032),
-    CountyParams("Madison", 130782,
-                 prescribing_rate=0.006, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.018, treatment_entry_rate=0.028),
-    CountyParams("Grant", 66263,
-                 prescribing_rate=0.007, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.019, treatment_entry_rate=0.027),
-    CountyParams("Lawrence", 45070,
-                 prescribing_rate=0.007, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.018, treatment_entry_rate=0.028),
-    CountyParams("Floyd", 80454,
-                 prescribing_rate=0.006, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.017, treatment_entry_rate=0.030),
-    CountyParams("Clark", 122738,
-                 prescribing_rate=0.006, misuse_rate=0.05, oud_rate=0.09,
-                 overdose_rate=0.017, treatment_entry_rate=0.031),
+# Calibrated overdose_rate and treatment_entry_rate derived by running the
+# baseline simulation and matching to CDC latest_rate_per_100k.  Values were
+# computed as: overdose_rate *= cdc_rate / sim_annual_rate  (single-pass).
+# treatment_entry_rate is scaled by facilities-per-100k and insurance coverage.
+# Keys must match profile "name" field.
+_CDC_CALIBRATED = {
+    "Allen":       {"overdose_rate": 0.00372, "treatment_entry_rate": 0.0327},
+    "Blackford":   {"overdose_rate": 0.00357, "treatment_entry_rate": 0.0100},
+    "Clark":       {"overdose_rate": 0.00699, "treatment_entry_rate": 0.0521},
+    "Delaware":    {"overdose_rate": 0.00735, "treatment_entry_rate": 0.0564},
+    "Fayette":     {"overdose_rate": 0.00616, "treatment_entry_rate": 0.0100},
+    "Floyd":       {"overdose_rate": 0.00429, "treatment_entry_rate": 0.0100},
+    "Grant":       {"overdose_rate": 0.00626, "treatment_entry_rate": 0.0600},
+    "Henry":       {"overdose_rate": 0.00367, "treatment_entry_rate": 0.0100},
+    "Jay":         {"overdose_rate": 0.00226, "treatment_entry_rate": 0.0100},
+    "Lake":        {"overdose_rate": 0.00460, "treatment_entry_rate": 0.0384},
+    "Lawrence":    {"overdose_rate": 0.00240, "treatment_entry_rate": 0.0100},
+    "Madison":     {"overdose_rate": 0.00673, "treatment_entry_rate": 0.0100},
+    "Marion":      {"overdose_rate": 0.00695, "treatment_entry_rate": 0.0193},
+    "Scott":       {"overdose_rate": 0.00815, "treatment_entry_rate": 0.0100},
+    "St. Joseph":  {"overdose_rate": 0.00313, "treatment_entry_rate": 0.0233},
+    "Tippecanoe":  {"overdose_rate": 0.00317, "treatment_entry_rate": 0.0337},
+    "Vanderburgh": {"overdose_rate": 0.00549, "treatment_entry_rate": 0.0353},
+    "Vermillion":  {"overdose_rate": 0.00295, "treatment_entry_rate": 0.0100},
+    "Vigo":        {"overdose_rate": 0.00468, "treatment_entry_rate": 0.0591},
+    "Wayne":       {"overdose_rate": 0.00860, "treatment_entry_rate": 0.0600},
+}
 
-    # --- Rural high-impact counties: highest rates, least treatment access ---
-    CountyParams("Scott", 24355,
-                 prescribing_rate=0.010, misuse_rate=0.07, oud_rate=0.12,
-                 overdose_rate=0.025, treatment_entry_rate=0.015),
-    CountyParams("Fayette", 23360,
-                 prescribing_rate=0.009, misuse_rate=0.07, oud_rate=0.11,
-                 overdose_rate=0.023, treatment_entry_rate=0.018),
-    CountyParams("Jay", 20248,
-                 prescribing_rate=0.008, misuse_rate=0.06, oud_rate=0.10,
-                 overdose_rate=0.020, treatment_entry_rate=0.020),
-    CountyParams("Blackford", 12091,
-                 prescribing_rate=0.009, misuse_rate=0.06, oud_rate=0.11,
-                 overdose_rate=0.022, treatment_entry_rate=0.017),
-    CountyParams("Vermillion", 15341,
-                 prescribing_rate=0.008, misuse_rate=0.06, oud_rate=0.10,
-                 overdose_rate=0.021, treatment_entry_rate=0.019),
-    CountyParams("Wayne", 66456,
-                 prescribing_rate=0.008, misuse_rate=0.06, oud_rate=0.10,
-                 overdose_rate=0.020, treatment_entry_rate=0.022),
-    CountyParams("Henry", 48935,
-                 prescribing_rate=0.008, misuse_rate=0.06, oud_rate=0.10,
-                 overdose_rate=0.019, treatment_entry_rate=0.025),
-]
 
+def _build_county_params() -> list:
+    """
+    Build CountyParams list from county_profiles.json + _CDC_CALIBRATED overrides.
+
+    For each county, cascade rates (prescribing/misuse/oud) come from the
+    urban_rural type bucket in _BASE_PARAMS.  overdose_rate and
+    treatment_entry_rate come from _CDC_CALIBRATED (derived from real data).
+    Population is taken from the profile when available.
+    """
+    if not _PROFILES_PATH.exists():
+        raise FileNotFoundError(
+            f"county_profiles.json not found at {_PROFILES_PATH}. "
+            "Run data/process_real_data.py first."
+        )
+
+    with open(_PROFILES_PATH) as f:
+        raw = json.load(f)
+    profiles = {p["name"]: p for p in raw if p.get("name")}
+
+    # Ordered list to preserve county ordering for stable ML feature vectors
+    _COUNTY_ORDER = [
+        "Marion", "Lake", "Allen", "St. Joseph", "Vanderburgh", "Tippecanoe",
+        "Delaware", "Vigo", "Madison", "Grant", "Lawrence", "Floyd", "Clark",
+        "Scott", "Fayette", "Jay", "Blackford", "Vermillion", "Wayne", "Henry",
+    ]
+
+    counties = []
+    for name in _COUNTY_ORDER:
+        p = profiles.get(name, {})
+        urban_rural = p.get("urban_rural", "Medium Metro")
+        base = _BASE_PARAMS.get(urban_rural, _BASE_PARAMS["Medium Metro"])
+        prescribing_rate, misuse_rate, oud_rate, _ = base
+
+        population = int(p.get("population") or 0)
+        if population == 0:
+            raise ValueError(f"Missing population for county '{name}' in profiles")
+
+        cal = _CDC_CALIBRATED.get(name, {})
+        overdose_rate = cal.get("overdose_rate", _BASE_OD_RATE_MID)
+        treatment_entry_rate = cal.get("treatment_entry_rate", _BASE_TX_RATE)
+
+        counties.append(CountyParams(
+            name=name,
+            population=population,
+            prescribing_rate=prescribing_rate,
+            misuse_rate=misuse_rate,
+            oud_rate=oud_rate,
+            overdose_rate=overdose_rate,
+            treatment_entry_rate=treatment_entry_rate,
+        ))
+    return counties
+
+
+INDIANA_COUNTIES = _build_county_params()
 COUNTY_MAP = {c.name: c for c in INDIANA_COUNTIES}
 
 

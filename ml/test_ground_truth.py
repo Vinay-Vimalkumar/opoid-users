@@ -4,7 +4,7 @@ Ground truth tests for the trained XGBoost model.
 Each test compares model predictions against actual simulation averages
 (averaged over 5 random seeds) for known (county, lever) combinations.
 
-Tolerance: ±20 lives_saved_per_million — ~3x the hold-out RMSE of 6.62,
+Tolerance: ±10 lives_saved_per_million — ~5x the hold-out RMSE of 1.85,
 accounting for the fact that test scenarios were not in the training split.
 
 Run:
@@ -32,20 +32,20 @@ FEATURES = [
     "od_touchpoints", "treatment_facilities", "median_household_income",
 ]
 
-# Tolerance: ±20 lives_saved_per_million (~3× hold-out RMSE of 6.62)
-TOLERANCE = 20.0
+# Tolerance: ±10 lives_saved_per_million (~5× hold-out RMSE of 1.85)
+TOLERANCE = 10.0
 
 # Ground truth: (county, naloxone, prescribing, treatment) → simulation average
-# Values computed by averaging over seeds [42, 123, 456, 789, 1024].
+# Values recomputed from CDC-calibrated simulation, averaged over seeds [42, 123, 456, 789, 1024].
 GROUND_TRUTH = [
     # county,      nal,  rx,   tx,   expected_lives_per_million
-    ("Marion",     1.0,  1.0,  1.0,  55.5871),
-    ("Marion",     0.5,  0.5,  0.5,  68.0504),
-    ("Marion",     1.0,  0.0,  0.0,  260.6889),  # naloxone-only
-    ("Marion",     0.0,  1.0,  0.0,  315.4000),  # prescribing-only
-    ("Marion",     0.0,  0.0,  1.0,  23.1531),   # treatment-only
-    ("Blackford",  1.0,  1.0,  1.0,  26.3592),
-    ("Lake",       0.5,  0.5,  0.5,  64.8440),
+    ("Marion",     1.0,  1.0,  1.0,  30.8981),
+    ("Marion",     0.5,  0.5,  0.5,  37.1330),
+    ("Marion",     1.0,  0.0,  0.0,  148.8572),  # naloxone-only
+    ("Marion",     0.0,  1.0,  0.0,  176.8000),  # prescribing-only
+    ("Marion",     0.0,  0.0,  1.0,    8.9012),  # treatment-only
+    ("Blackford",  1.0,  1.0,  1.0,   4.2707),
+    ("Lake",       0.5,  0.5,  0.5,  19.0964),
 ]
 
 # Directional sanity checks: increasing a lever should not massively collapse
