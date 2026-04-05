@@ -247,6 +247,33 @@ export default function MapPage({ theme = 'default' }) {
     return () => clearInterval(playRef.current)
   }, [playing])
 
+  // Estimate simulation locally when API is unavailable
+  const estimateLocally = useCallback((county, ivs) => {
+    const pop = counties.find(c => c.name === county)?.population || 100000
+    const baseDeaths = Math.round(pop * 0.0027) // ~2.7 per 1000 over 5yr
+    const nalEffect = ivs.naloxone * 0.5
+    const presEffect = ivs.prescribing * 0.3
+    const treatEffect = ivs.treatment * 0.4
+    const reduction = Math.min(0.85, nalEffect + presEffect + treatEffect)
+    const deaths = Math.round(baseDeaths * (1 - reduction))
+    const saved = baseDeaths - deaths
+    const cost = Math.round((ivs.naloxone * pop / 500 * 75 + ivs.prescribing * 10 * 500000 / 60 + ivs.treatment * pop * 0.001 * 10000 / 12) * 60)
+    // Generate simple timeline
+    const timeline = {}
+    for (let m = 0; m < 60; m++) {
+      const frac = (m + 1) / 60
+      timeline[m] = {
+        cumulative_deaths: Math.round(deaths * frac),
+        deaths_this_month: Math.round(deaths / 60),
+        overdoses_this_month: Math.round(deaths / 60 / 0.12),
+        oud: Math.round(pop * 0.005 * (1 - reduction * frac)),
+        treatment: Math.round(pop * 0.001 * (1 + ivs.treatment) * frac),
+        recovered: Math.round(pop * 0.002 * (1 + treatEffect) * frac),
+      }
+    }
+    return { county, total_deaths: deaths, baseline_deaths: baseDeaths, lives_saved: saved, cost, timeline, total_overdoses: Math.round(deaths / 0.12), total_treated: Math.round(pop * 0.001 * 60) }
+  }, [counties])
+
   // Run simulation (debounced)
   const runSim = useCallback(async (county, ivs) => {
     setLoading(true)
@@ -255,13 +282,19 @@ export default function MapPage({ theme = 'default' }) {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ county, ...ivs, months: 60, seed: 42 }),
       })
+      if (!res.ok) throw new Error()
       const data = await res.json()
       setResult(data)
       if (data.lives_saved > 1000) setConfettiKey(k => k + 1)
       setHoverData(prev => ({ ...prev, [county]: data }))
-    } catch (e) { console.error(e) }
+    } catch (e) {
+      // Fallback: local estimation
+      const est = estimateLocally(county, ivs)
+      setResult(est)
+      setHoverData(prev => ({ ...prev, [county]: est }))
+    }
     setLoading(false)
-  }, [])
+  }, [estimateLocally])
 
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
