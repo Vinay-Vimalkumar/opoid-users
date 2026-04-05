@@ -141,7 +141,13 @@ export default function RLAgentView() {
     fetch(`${API}/rl-summary`)
       .then(r => r.ok ? r.json() : null)
       .then(d => d && setSummary(d.summary))
-      .catch(() => {})
+      .catch(() => {
+        // Fallback: load summary from bundled data
+        fetch('/data/rl_results.json')
+          .then(r => r.json())
+          .then(d => d?.summary && setSummary(d.summary))
+          .catch(() => {})
+      })
   }, [])
 
   const run = async () => {

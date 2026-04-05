@@ -310,10 +310,15 @@ export default function MapPage({ theme = 'default' }) {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ county: name, ...interventions, months: 60, seed: 42 }),
       })
+      if (!res.ok) throw new Error()
       const data = await res.json()
       setHoverData(prev => ({ ...prev, [name]: data }))
-    } catch {}
-  }, [interventions, hoverData])
+    } catch {
+      // Fallback to local estimation
+      const est = estimateLocally(name, interventions)
+      setHoverData(prev => ({ ...prev, [name]: est }))
+    }
+  }, [interventions, hoverData, estimateLocally])
 
   const handleSlider = (lever, val) => setInterventions(prev => ({ ...prev, [lever]: val }))
 

@@ -195,7 +195,7 @@ export default function RoadmapView() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ county, budget: 2000000, ...interventions }),
     })
-      .then(r => r.json())
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
       .then(d => { if (!cancelled) { setRoadmap(d); setLoading(false) } })
       .catch(() => {
         if (cancelled) return
@@ -234,7 +234,7 @@ export default function RoadmapView() {
         setLoading(false)
       })
     return () => { cancelled = true }
-  }, [county])
+  }, [county, counties])
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
