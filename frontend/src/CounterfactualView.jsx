@@ -85,9 +85,9 @@ export default function CounterfactualView() {
       {activeScenario === 'scott' && scott && (
         <div className="space-y-4">
           {/* Context card */}
-          <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 fade-up fade-up-d2 hover-lift">
+          <div className="bg-slate-800/80 rounded-xl p-5 border border-red-900/30 fade-up fade-up-d2 hover-lift" style={{ backdropFilter: 'blur(8px)', boxShadow: '0 0 30px rgba(239,68,68,0.05)' }}>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-red-900/50 flex items-center justify-center text-red-400 text-lg flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-red-900/50 flex items-center justify-center text-red-400 text-xl font-black flex-shrink-0 pulse-glow" style={{ boxShadow: '0 0 16px rgba(239,68,68,0.3)' }}>
                 !
               </div>
               <div>

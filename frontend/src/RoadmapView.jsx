@@ -166,7 +166,7 @@ export default function RoadmapView() {
   const [county, setCounty] = useState('Marion')
   const [counties, setCounties] = useState([])
   const [roadmap, setRoadmap] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [interventions] = useState({ naloxone: 0.5, prescribing: 0.3, treatment: 0.5 })
 
   useEffect(() => {
@@ -174,15 +174,18 @@ export default function RoadmapView() {
   }, [])
 
   useEffect(() => {
+    let cancelled = false
     setLoading(true)
+    setRoadmap(null)
     fetch(`${API}/roadmap`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ county, budget: 2000000, ...interventions }),
     })
       .then(r => r.json())
-      .then(d => { setRoadmap(d); setLoading(false) })
-      .catch(() => setLoading(false))
+      .then(d => { if (!cancelled) { setRoadmap(d); setLoading(false) } })
+      .catch(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
   }, [county])
 
   return (
@@ -213,8 +216,9 @@ export default function RoadmapView() {
       </div>
 
       {loading && (
-        <div className="flex items-center justify-center h-40 text-slate-500 text-sm">
-          Generating roadmap...
+        <div className="flex flex-col items-center justify-center h-60 gap-3">
+          <div className="w-8 h-8 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+          <p className="text-slate-500 text-sm">Generating roadmap for {county} County...</p>
         </div>
       )}
 

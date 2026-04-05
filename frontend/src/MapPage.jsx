@@ -78,6 +78,47 @@ function fmt(n) {
   return `$${n}`
 }
 
+/* ── Confetti burst (CSS-only) ── */
+function ConfettiBurst({ trigger }) {
+  const [particles, setParticles] = useState([])
+  useEffect(() => {
+    if (!trigger) return
+    const colors = ['#22c55e', '#f97316', '#9333ea', '#06b6d4']
+    const ps = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      color: colors[i % colors.length],
+      x: (Math.random() - 0.5) * 200,
+      y: -(Math.random() * 150 + 50),
+      r: Math.random() * 360,
+      size: Math.random() * 6 + 4,
+    }))
+    setParticles(ps)
+    const t = setTimeout(() => setParticles([]), 1200)
+    return () => clearTimeout(t)
+  }, [trigger])
+  if (!particles.length) return null
+  return (
+    <div style={{ position: 'absolute', top: 0, left: '50%', pointerEvents: 'none', zIndex: 50 }}>
+      {particles.map(p => (
+        <div key={p.id} style={{
+          position: 'absolute',
+          width: p.size, height: p.size,
+          background: p.color,
+          borderRadius: 2,
+          animation: 'confetti-fly 1s ease-out forwards',
+          '--cx': `${p.x}px`, '--cy': `${p.y}px`, '--cr': `${p.r}deg`,
+        }} />
+      ))}
+      <style>{`
+        @keyframes confetti-fly {
+          0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+          100% { transform: translate(var(--cx), var(--cy)) rotate(var(--cr)); opacity: 0; }
+        }
+      `}</style>
+    </div>
+  )
+}
+
 function MapResizer() {
   const map = useMap()
   useEffect(() => { setTimeout(() => map.invalidateSize(), 100) }, [map])
@@ -138,6 +179,7 @@ function AnimatedPolyline({ positions, color, isBW }) {
 
 export default function MapPage({ theme = 'default' }) {
   const isBW = theme === 'bw'
+  const isLight = theme === 'light'
   const [counties, setCounties] = useState([])
   const [selected, setSelected] = useState('Marion')
   const [interventions, setInterventions] = useState({ naloxone: 0.3, prescribing: 0.3, treatment: 0.3 })
@@ -150,7 +192,7 @@ export default function MapPage({ theme = 'default' }) {
   const [showNetwork, setShowNetwork] = useState(true)
   const [hoveredCounty, setHoveredCounty] = useState(null)
   const [hoverData, setHoverData] = useState({}) // county -> sim result cache
-  const [tileLayer, setTileLayer] = useState('dark')
+  const [tileLayer, setTileLayer] = useState(isLight ? 'light' : 'dark')
   const [colorScheme, setColorScheme] = useState('heat')
   const [ripplePos, setRipplePos] = useState(null)
   const [viewMode, setViewMode] = useState('numbers') // 'numbers' | 'graphs'
@@ -166,6 +208,7 @@ export default function MapPage({ theme = 'default' }) {
   const containerRef = useRef(null)
   const debounceRef = useRef(null)
   const pulseKeyRef = useRef(0)
+  const [confettiKey, setConfettiKey] = useState(0)
 
   // Load counties + timeseries
   useEffect(() => {
@@ -198,6 +241,7 @@ export default function MapPage({ theme = 'default' }) {
       })
       const data = await res.json()
       setResult(data)
+      if (data.lives_saved > 1000) setConfettiKey(k => k + 1)
       setHoverData(prev => ({ ...prev, [county]: data }))
     } catch (e) { console.error(e) }
     setLoading(false)
@@ -258,7 +302,7 @@ export default function MapPage({ theme = 'default' }) {
     <div
       ref={containerRef}
       className={`relative ${isFullscreen ? 'h-screen' : 'h-[calc(100vh-57px)]'}`}
-      style={{ background: isBW ? '#090909' : '#020617' }}
+      style={{ background: isBW ? '#090909' : isLight ? '#f0f4f8' : '#020617' }}
     >
       {/* ═══ FULL-SCREEN MAP ═══ */}
       <MapContainer
@@ -478,7 +522,8 @@ export default function MapPage({ theme = 'default' }) {
           </div>
 
           {result && viewMode === 'numbers' && (
-            <div className={`grid grid-cols-2 gap-2`}>
+            <div className={`grid grid-cols-2 gap-2`} style={{ position: 'relative' }}>
+              <ConfettiBurst trigger={confettiKey} />
               {[
                 { label: 'Lives Saved', val: `+${result.lives_saved}`, rawVal: result.lives_saved, prefix: '+', color: '#22c55e', glow: true },
                 { label: 'Reduction', val: `${reductionPct}%`, rawVal: reductionPct, suffix: '%', color: '#a78bfa', glow: false },

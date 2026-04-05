@@ -11,7 +11,8 @@
       "Bash(python -c \"import socket; s=socket.socket\\(\\); r=s.connect_ex\\(\\('localhost',8000\\)\\); print\\('Port 8000 open:', r==0\\); s.close\\(\\)\")",
       "Bash(python -m uvicorn api.main:app --port 8000)",
       "Bash(npm install:*)",
-      "Bash(npx remotion:*)"
+      "Bash(npx remotion:*)",
+      "Bash(npm run:*)"
     ]
   }
 }

@@ -577,6 +577,131 @@ input[type='range']::-webkit-slider-thumb:hover { transform: scale(1.2); }
 /* ── Smooth scrollbar behavior ── */
 html { scroll-behavior: smooth; }
 
+/* ══════════════════════════════════════════════
+   MICRO-INTERACTIONS & POLISH
+   ══════════════════════════════════════════════ */
+
+/* ── Every button gets smooth transitions ── */
+button {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+button:hover {
+  filter: brightness(1.08);
+}
+
+/* ── Every input gets focus glow ── */
+input, select, textarea {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(249,115,22,0.15);
+}
+
+/* ── Cards: subtle border glow on hover ── */
+.rounded-xl, .rounded-2xl, .rounded-lg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease,
+              background-color 0.3s ease;
+}
+
+/* ── Stagger delays up to d12 ── */
+.fade-up-d9  { animation-delay: 0.45s; }
+.fade-up-d10 { animation-delay: 0.50s; }
+.fade-up-d11 { animation-delay: 0.55s; }
+.fade-up-d12 { animation-delay: 0.60s; }
+
+/* ── Slide from bottom (for panels) ── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Blur-in (for overlays) ── */
+@keyframes blur-in {
+  from { opacity: 0; filter: blur(8px); transform: scale(0.95); }
+  to   { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+.blur-in { animation: blur-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Stat card glow pulse on value change ── */
+@keyframes value-flash {
+  0%   { box-shadow: inset 0 0 0 1px rgba(249,115,22,0.4); }
+  50%  { box-shadow: inset 0 0 20px rgba(249,115,22,0.1); }
+  100% { box-shadow: inset 0 0 0 1px transparent; }
+}
+.value-flash {
+  animation: value-flash 0.6s ease-out;
+}
+
+/* ── Floating effect for hero elements ── */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+/* ── Gradient text glow ── */
+.gradient-text {
+  text-shadow: 0 0 30px rgba(249,115,22,0.15);
+}
+
+/* ── Bar chart bars: smooth radius ── */
+.recharts-bar-rectangle rect {
+  transition: opacity 0.15s ease;
+}
+.recharts-bar-rectangle:hover rect {
+  opacity: 1 !important;
+  filter: brightness(1.15);
+}
+
+/* ── Line chart dots: glow on hover ── */
+.recharts-dot:hover {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* ── Tooltip entrance: scale from pointer ── */
+.recharts-tooltip-wrapper {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.15s ease !important;
+}
+
+/* ── Legend items: subtle hover ── */
+.recharts-legend-item {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+.recharts-legend-item:hover {
+  opacity: 0.7;
+}
+
+/* ── Smooth select dropdown ── */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* ── Header nav: active tab glow ── */
+header button[style*="borderBottomColor"] {
+  text-shadow: 0 0 12px rgba(249,115,22,0.3);
+}
+
+/* ── Smooth theme transitions ── */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0s;
+}
+.glass-panel, button, input, select, .bg-slate-800, .bg-slate-900, .border-slate-700, .border-slate-800 {
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
 /* ── Focus ring for accessibility ── */
 *:focus-visible {
   outline: 2px solid #f97316;
