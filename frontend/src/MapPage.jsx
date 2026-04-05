@@ -210,13 +210,29 @@ export default function MapPage({ theme = 'default' }) {
   const pulseKeyRef = useRef(0)
   const [confettiKey, setConfettiKey] = useState(0)
 
-  // Load counties + timeseries
+  // Load counties + timeseries (with static fallback)
   useEffect(() => {
-    fetch(`${API}/counties`).then(r => r.json()).then(data => {
-      setCounties(data)
-      setMaxPop(Math.max(...data.map(c => c.population)))
-    }).catch(() => {})
-    fetch(`${API}/timeseries`).then(r => r.json()).then(setTimeseriesData).catch(() => {})
+    const FALLBACK_COUNTIES = [
+      { name: 'Marion', population: 971102 }, { name: 'Lake', population: 498558 },
+      { name: 'Allen', population: 388608 }, { name: 'St. Joseph', population: 272212 },
+      { name: 'Vanderburgh', population: 179987 }, { name: 'Tippecanoe', population: 187076 },
+      { name: 'Delaware', population: 111871 }, { name: 'Vigo', population: 105994 },
+      { name: 'Madison', population: 130782 }, { name: 'Grant', population: 66263 },
+      { name: 'Lawrence', population: 45070 }, { name: 'Floyd', population: 80454 },
+      { name: 'Clark', population: 122738 }, { name: 'Scott', population: 24355 },
+      { name: 'Fayette', population: 23360 }, { name: 'Jay', population: 20248 },
+      { name: 'Blackford', population: 12091 }, { name: 'Vermillion', population: 15341 },
+      { name: 'Wayne', population: 66456 }, { name: 'Henry', population: 48935 },
+    ]
+    const loadCounties = (data) => { setCounties(data); setMaxPop(Math.max(...data.map(c => c.population))) }
+
+    fetch(`${API}/counties`).then(r => { if (!r.ok) throw new Error(); return r.json() })
+      .then(loadCounties)
+      .catch(() => loadCounties(FALLBACK_COUNTIES))
+
+    fetch(`${API}/timeseries`).then(r => { if (!r.ok) throw new Error(); return r.json() })
+      .then(setTimeseriesData)
+      .catch(() => fetch('/data/county_timeseries.json').then(r => r.json()).then(setTimeseriesData).catch(() => {}))
   }, [])
 
   // Time machine auto-play

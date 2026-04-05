@@ -10,9 +10,15 @@ export default function CounterfactualView() {
 
   useEffect(() => {
     fetch(`${API}/counterfactual`)
-      .then(r => r.json())
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
       .then(d => { setData(d); setLoading(false) })
-      .catch(() => setLoading(false))
+      .catch(() => {
+        // Fallback to bundled static data
+        fetch('/data/counterfactual_results.json')
+          .then(r => r.json())
+          .then(d => { setData(d); setLoading(false) })
+          .catch(() => setLoading(false))
+      })
   }, [])
 
   if (loading) {

@@ -163,7 +163,30 @@ export default function RLAgentView() {
       setData(d)
       setTimeout(() => setAnimate(true), 80)
     } catch (e) {
-      setError(e.message)
+      // Fallback to bundled RL results
+      try {
+        const fallback = await fetch('/data/rl_results.json')
+        const allData = await fallback.json()
+        const cd = allData.counties?.[county]
+        if (cd) {
+          const storedBudget = cd.budget || 2000000
+          const scale = Math.sqrt(Math.min(budget / storedBudget, 2.0))
+          setData({
+            county, budget,
+            rl: { ...cd.rl, total_lives_saved: Math.round(cd.rl.total_lives_saved * scale * 10) / 10 },
+            greedy: { ...cd.greedy, total_lives_saved: Math.round(cd.greedy.total_lives_saved * scale * 10) / 10 },
+            improvement_pct: cd.improvement_pct,
+            extra_lives: cd.extra_lives,
+            summary: allData.summary,
+            source: 'static',
+          })
+          setTimeout(() => setAnimate(true), 80)
+        } else {
+          setError('No data for this county')
+        }
+      } catch {
+        setError(e.message)
+      }
     }
     setLoading(false)
   }

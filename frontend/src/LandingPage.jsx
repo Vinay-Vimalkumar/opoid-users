@@ -191,7 +191,20 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
   useScrollReveal([counties])
 
   useEffect(() => {
-    fetch(`${API}/counties`).then(r => r.json()).then(setCounties).catch(() => {})
+    fetch(`${API}/counties`).then(r => { if (!r.ok) throw new Error(); return r.json() }).then(setCounties).catch(() => {
+      setCounties([
+        { name: 'Marion', population: 971102 }, { name: 'Lake', population: 498558 },
+        { name: 'Allen', population: 388608 }, { name: 'St. Joseph', population: 272212 },
+        { name: 'Vanderburgh', population: 179987 }, { name: 'Tippecanoe', population: 187076 },
+        { name: 'Delaware', population: 111871 }, { name: 'Vigo', population: 105994 },
+        { name: 'Madison', population: 130782 }, { name: 'Grant', population: 66263 },
+        { name: 'Lawrence', population: 45070 }, { name: 'Floyd', population: 80454 },
+        { name: 'Clark', population: 122738 }, { name: 'Scott', population: 24355 },
+        { name: 'Fayette', population: 23360 }, { name: 'Jay', population: 20248 },
+        { name: 'Blackford', population: 12091 }, { name: 'Vermillion', population: 15341 },
+        { name: 'Wayne', population: 66456 }, { name: 'Henry', population: 48935 },
+      ])
+    })
   }, [])
 
   const maxPop  = counties.length ? Math.max(...counties.map(c => c.population)) : 1

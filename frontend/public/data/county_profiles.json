@@ -1,0 +1,4428 @@
+[
+  {
+    "name": "Allen",
+    "fips": "18003",
+    "state": "Indiana",
+    "population": 388608,
+    "urban_rural": "Medium Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 8.81,
+        "population": 339569
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 9.28,
+        "population": 340916
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 10.01,
+        "population": 343238
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 11.45,
+        "population": 346314
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 11.88,
+        "population": 349534
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 11.92,
+        "population": 351264
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 12.01,
+        "population": 353693
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 12.37,
+        "population": 355339
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 13.24,
+        "population": 359013
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 13.21,
+        "population": 360946
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 13.92,
+        "population": 363432
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 14.79,
+        "population": 365254
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 16.36,
+        "population": 367508
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 19.74,
+        "population": 369526
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 21.66,
+        "population": 371803
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 20.68,
+        "population": 375076
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 21.6,
+        "population": 379006
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 27.97,
+        "population": 382187,
+        "provisional_deaths": 1361,
+        "monthly_deaths": {
+          "1": 113,
+          "2": 112,
+          "3": 108,
+          "4": 116,
+          "5": 126,
+          "6": 116,
+          "7": 114,
+          "8": 108,
+          "9": 113,
+          "10": 109,
+          "11": 110,
+          "12": 116
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 32.28,
+        "population": 388608,
+        "provisional_deaths": 1645,
+        "monthly_deaths": {
+          "1": 118,
+          "2": 123,
+          "3": 136,
+          "4": 133,
+          "5": 132,
+          "6": 134,
+          "7": 135,
+          "8": 144,
+          "9": 141,
+          "10": 146,
+          "11": 152,
+          "12": 151
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 1678,
+        "monthly_deaths": {
+          "1": 154,
+          "2": 154,
+          "3": 141,
+          "4": 133,
+          "5": 130,
+          "6": 135,
+          "7": 146,
+          "8": 144,
+          "9": 134,
+          "10": 133,
+          "11": 137,
+          "12": 137
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 1432,
+        "monthly_deaths": {
+          "1": 129,
+          "2": 128,
+          "3": 133,
+          "4": 139,
+          "5": 135,
+          "6": 129,
+          "7": 117,
+          "8": 112,
+          "9": 108,
+          "10": 107,
+          "11": 99,
+          "12": 96
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 959,
+        "monthly_deaths": {
+          "1": 95,
+          "2": 94,
+          "3": 87,
+          "4": 83,
+          "5": 84,
+          "6": 83,
+          "7": 78,
+          "8": 72,
+          "9": 73,
+          "10": 73,
+          "11": 71,
+          "12": 66
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 379,
+        "monthly_deaths": {
+          "1": 61,
+          "2": 59,
+          "3": 66,
+          "4": 63,
+          "5": 64,
+          "6": 66
+        }
+      }
+    ],
+    "latest_rate_per_100k": 32.28,
+    "peak_rate_per_100k": 32.28,
+    "avg_rate_per_100k": 15.96,
+    "total_provisional_deaths": 7454,
+    "peak_annual_deaths": 1678,
+    "treatment_facilities": 2,
+    "treatment_facility_names": [
+      "BHG Fort Wayne Treatment Center",
+      "Bowen Health Recovery Center"
+    ],
+    "od_touchpoints": {
+      "ED visit": 78.0,
+      "EMS interaction": 49.0,
+      "Jail booking": 19.0,
+      "Rx dispensation": 38.0,
+      "Release from prison": 1.0
+    },
+    "median_household_income": 66194.0,
+    "pct_uninsured": 0.0814,
+    "drug_od_mortality_rate_chr": 10.2625,
+    "pct_smokers": 0.188,
+    "pct_excessive_drinking": 11.1381,
+    "mentally_unhealthy_days": 4.2673
+  },
+  {
+    "name": "Blackford",
+    "fips": "18009",
+    "state": "Indiana",
+    "population": 12091,
+    "urban_rural": "Noncore",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 14.68,
+        "population": 13642
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 15.47,
+        "population": 13496
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 16.69,
+        "population": 13392
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 19.09,
+        "population": 13161
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 19.8,
+        "population": 13078
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 19.88,
+        "population": 12971
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 20.03,
+        "population": 12844
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 20.63,
+        "population": 12766
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 22.07,
+        "population": 12655
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 22.02,
+        "population": 12527
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 23.19,
+        "population": 12456
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 24.65,
+        "population": 12342
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 27.28,
+        "population": 12237
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 32.9,
+        "population": 12109
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 36.1,
+        "population": 12019
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 34.47,
+        "population": 11934
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 35.99,
+        "population": 11787
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 46.61,
+        "population": 11782,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 53.8,
+        "population": 12091,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 30,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5
+        }
+      }
+    ],
+    "latest_rate_per_100k": 53.8,
+    "peak_rate_per_100k": 53.8,
+    "avg_rate_per_100k": 26.6,
+    "total_provisional_deaths": 330,
+    "peak_annual_deaths": 60,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "EMS interaction": 1.0,
+      "Jail booking": 1.25,
+      "Release from prison": 1.0,
+      "ED visit": 1.0,
+      "Rx dispensation": 1.0
+    },
+    "median_household_income": 51799.0,
+    "pct_uninsured": 0.0788,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.223,
+    "pct_excessive_drinking": 14.2629,
+    "mentally_unhealthy_days": 4.9838
+  },
+  {
+    "name": "Clark",
+    "fips": "18019",
+    "state": "Indiana",
+    "population": 122738,
+    "urban_rural": "Medium Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 14.27,
+        "population": 99349
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 15.04,
+        "population": 100435
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 16.22,
+        "population": 101781
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 18.56,
+        "population": 104148
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 19.25,
+        "population": 105672
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 19.32,
+        "population": 107406
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 19.46,
+        "population": 109067
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 20.05,
+        "population": 110221
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 21.45,
+        "population": 111504
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 21.4,
+        "population": 111879
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 22.54,
+        "population": 112722
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 23.96,
+        "population": 114082
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 26.51,
+        "population": 114887
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 31.97,
+        "population": 115660
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 35.09,
+        "population": 116648
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 33.51,
+        "population": 117287
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 34.98,
+        "population": 118191
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 45.31,
+        "population": 119266,
+        "provisional_deaths": 640,
+        "monthly_deaths": {
+          "1": 41,
+          "2": 45,
+          "3": 47,
+          "4": 44,
+          "5": 43,
+          "6": 47,
+          "7": 56,
+          "8": 61,
+          "9": 65,
+          "10": 62,
+          "11": 65,
+          "12": 64
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 52.29,
+        "population": 122738,
+        "provisional_deaths": 748,
+        "monthly_deaths": {
+          "1": 67,
+          "2": 64,
+          "3": 61,
+          "4": 64,
+          "5": 66,
+          "6": 62,
+          "7": 58,
+          "8": 57,
+          "9": 60,
+          "10": 60,
+          "11": 62,
+          "12": 67
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 809,
+        "monthly_deaths": {
+          "1": 64,
+          "2": 68,
+          "3": 70,
+          "4": 69,
+          "5": 69,
+          "6": 72,
+          "7": 67,
+          "8": 67,
+          "9": 64,
+          "10": 70,
+          "11": 67,
+          "12": 62
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 800,
+        "monthly_deaths": {
+          "1": 62,
+          "2": 62,
+          "3": 64,
+          "4": 63,
+          "5": 64,
+          "6": 68,
+          "7": 72,
+          "8": 73,
+          "9": 70,
+          "10": 67,
+          "11": 68,
+          "12": 67
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 687,
+        "monthly_deaths": {
+          "1": 67,
+          "2": 63,
+          "3": 59,
+          "4": 61,
+          "5": 59,
+          "6": 54,
+          "7": 54,
+          "8": 51,
+          "9": 55,
+          "10": 55,
+          "11": 54,
+          "12": 55
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 325,
+        "monthly_deaths": {
+          "1": 55,
+          "2": 59,
+          "3": 58,
+          "4": 52,
+          "5": 51,
+          "6": 50
+        }
+      }
+    ],
+    "latest_rate_per_100k": 52.29,
+    "peak_rate_per_100k": 52.29,
+    "avg_rate_per_100k": 25.85,
+    "total_provisional_deaths": 4009,
+    "peak_annual_deaths": 809,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Southern Indiana Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 30.0,
+      "Release from prison": 7.0,
+      "Jail booking": 16.0,
+      "Rx dispensation": 28.0,
+      "ED visit": 39.0
+    },
+    "median_household_income": 71718.0,
+    "pct_uninsured": 0.0743,
+    "drug_od_mortality_rate_chr": 4.6712,
+    "pct_smokers": 0.191,
+    "pct_excessive_drinking": 8.2101,
+    "mentally_unhealthy_days": 4.1492
+  },
+  {
+    "name": "Delaware",
+    "fips": "18035",
+    "state": "Indiana",
+    "population": 111871,
+    "urban_rural": "Small Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 14.94,
+        "population": 119935
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 15.74,
+        "population": 118938
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 16.98,
+        "population": 118170
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 19.43,
+        "population": 117326
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 20.15,
+        "population": 117229
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 20.23,
+        "population": 117007
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 20.38,
+        "population": 117490
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 20.99,
+        "population": 117674
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 22.46,
+        "population": 117914
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 22.41,
+        "population": 117053
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 23.6,
+        "population": 116867
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 25.09,
+        "population": 116528
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 27.76,
+        "population": 115814
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 33.48,
+        "population": 115696
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 36.74,
+        "population": 115268
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 35.08,
+        "population": 114118
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 36.63,
+        "population": 113769
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 47.44,
+        "population": 113454,
+        "provisional_deaths": 667,
+        "monthly_deaths": {
+          "1": 49,
+          "2": 52,
+          "3": 52,
+          "4": 54,
+          "5": 55,
+          "6": 59,
+          "7": 57,
+          "8": 53,
+          "9": 54,
+          "10": 60,
+          "11": 62,
+          "12": 60
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 54.76,
+        "population": 111871,
+        "provisional_deaths": 867,
+        "monthly_deaths": {
+          "1": 57,
+          "2": 59,
+          "3": 61,
+          "4": 65,
+          "5": 65,
+          "6": 63,
+          "7": 70,
+          "8": 79,
+          "9": 84,
+          "10": 86,
+          "11": 88,
+          "12": 90
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 921,
+        "monthly_deaths": {
+          "1": 90,
+          "2": 89,
+          "3": 87,
+          "4": 82,
+          "5": 82,
+          "6": 79,
+          "7": 76,
+          "8": 77,
+          "9": 71,
+          "10": 65,
+          "11": 59,
+          "12": 64
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 778,
+        "monthly_deaths": {
+          "1": 65,
+          "2": 68,
+          "3": 68,
+          "4": 67,
+          "5": 67,
+          "6": 64,
+          "7": 65,
+          "8": 63,
+          "9": 64,
+          "10": 63,
+          "11": 62,
+          "12": 62
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 673,
+        "monthly_deaths": {
+          "1": 65,
+          "2": 60,
+          "3": 58,
+          "4": 59,
+          "5": 56,
+          "6": 59,
+          "7": 56,
+          "8": 52,
+          "9": 50,
+          "10": 54,
+          "11": 55,
+          "12": 49
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 280,
+        "monthly_deaths": {
+          "1": 47,
+          "2": 48,
+          "3": 49,
+          "4": 46,
+          "5": 47,
+          "6": 43
+        }
+      }
+    ],
+    "latest_rate_per_100k": 54.76,
+    "peak_rate_per_100k": 54.76,
+    "avg_rate_per_100k": 27.07,
+    "total_provisional_deaths": 4186,
+    "peak_annual_deaths": 921,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Muncie Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 16891.0,
+      "Jail booking": 2475.0,
+      "Release from prison": 59.0,
+      "Rx dispensation": 30671.0,
+      "ED visit": 43651.0
+    },
+    "median_household_income": 55704.0,
+    "pct_uninsured": 0.0866,
+    "drug_od_mortality_rate_chr": 7.6532,
+    "pct_smokers": 0.225,
+    "pct_excessive_drinking": 13.2999,
+    "mentally_unhealthy_days": 4.9737
+  },
+  {
+    "name": "Fayette",
+    "fips": "18041",
+    "state": "Indiana",
+    "population": 23360,
+    "urban_rural": "Micropolitan",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 22.24,
+        "population": 24953
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 23.44,
+        "population": 24844
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 25.28,
+        "population": 24700
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 28.93,
+        "population": 24508
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 30.0,
+        "population": 24413
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 30.12,
+        "population": 24384
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 30.35,
+        "population": 24247
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 31.26,
+        "population": 24302
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 33.44,
+        "population": 24152
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 33.36,
+        "population": 23949
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 35.14,
+        "population": 23827
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 37.35,
+        "population": 23443
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 41.33,
+        "population": 23389
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 49.85,
+        "population": 23246
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 54.7,
+        "population": 23138
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 52.23,
+        "population": 23026
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 54.54,
+        "population": 23038
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 70.62,
+        "population": 22892,
+        "provisional_deaths": 265,
+        "monthly_deaths": {
+          "1": 21,
+          "2": 21,
+          "3": 19,
+          "4": 19,
+          "5": 26,
+          "6": 26,
+          "7": 21,
+          "8": 24,
+          "9": 23,
+          "10": 22,
+          "11": 22,
+          "12": 21
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 81.5,
+        "population": 23360,
+        "provisional_deaths": 250,
+        "monthly_deaths": {
+          "1": 22,
+          "2": 24,
+          "3": 24,
+          "4": 24,
+          "5": 20,
+          "6": 21,
+          "7": 21,
+          "8": 18,
+          "9": 20,
+          "10": 19,
+          "11": 18,
+          "12": 19
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 210,
+        "monthly_deaths": {
+          "1": 23,
+          "2": 23,
+          "3": 22,
+          "4": 20,
+          "5": 17,
+          "6": 16,
+          "7": 17,
+          "8": 17,
+          "9": 14,
+          "10": 14,
+          "11": 13,
+          "12": 14
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 160,
+        "monthly_deaths": {
+          "1": 12,
+          "2": 12,
+          "3": 12,
+          "4": 13,
+          "5": 13,
+          "6": 13,
+          "7": 12,
+          "8": 13,
+          "9": 15,
+          "10": 15,
+          "11": 16,
+          "12": 14
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 102,
+        "monthly_deaths": {
+          "1": 12,
+          "2": 11,
+          "3": 11,
+          "4": 10,
+          "5": 12,
+          "6": 11,
+          "7": 10,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 53,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 10,
+          "3": 11,
+          "4": 12,
+          "5": 10,
+          "6": 5
+        }
+      }
+    ],
+    "latest_rate_per_100k": 81.5,
+    "peak_rate_per_100k": 81.5,
+    "avg_rate_per_100k": 40.3,
+    "total_provisional_deaths": 1040,
+    "peak_annual_deaths": 265,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Release from prison": 1.0,
+      "Jail booking": 1.0,
+      "ED visit": 5.0,
+      "EMS interaction": 4.0,
+      "Rx dispensation": 2.0
+    },
+    "median_household_income": 60483.0,
+    "pct_uninsured": 0.0746,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.26,
+    "pct_excessive_drinking": 11.5637,
+    "mentally_unhealthy_days": 4.8465
+  },
+  {
+    "name": "Floyd",
+    "fips": "18043",
+    "state": "Indiana",
+    "population": 80454,
+    "urban_rural": "Medium Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 12.71,
+        "population": 71219
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 13.4,
+        "population": 71465
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 14.45,
+        "population": 71905
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 16.54,
+        "population": 72358
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 17.15,
+        "population": 72876
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 17.22,
+        "population": 73775
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 17.35,
+        "population": 74284
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 17.87,
+        "population": 74575
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 19.11,
+        "population": 74987
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 19.07,
+        "population": 75284
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 20.09,
+        "population": 76053
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 21.35,
+        "population": 76138
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 23.63,
+        "population": 76559
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 28.49,
+        "population": 76801
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 31.27,
+        "population": 77043
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 29.86,
+        "population": 77870
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 31.18,
+        "population": 78601
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 40.38,
+        "population": 78936,
+        "provisional_deaths": 412,
+        "monthly_deaths": {
+          "1": 39,
+          "2": 40,
+          "3": 36,
+          "4": 33,
+          "5": 32,
+          "6": 34,
+          "7": 34,
+          "8": 34,
+          "9": 33,
+          "10": 30,
+          "11": 34,
+          "12": 33
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 46.6,
+        "population": 80454,
+        "provisional_deaths": 494,
+        "monthly_deaths": {
+          "1": 39,
+          "2": 38,
+          "3": 38,
+          "4": 40,
+          "5": 42,
+          "6": 40,
+          "7": 40,
+          "8": 42,
+          "9": 42,
+          "10": 47,
+          "11": 44,
+          "12": 42
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 485,
+        "monthly_deaths": {
+          "1": 36,
+          "2": 38,
+          "3": 40,
+          "4": 40,
+          "5": 39,
+          "6": 39,
+          "7": 42,
+          "8": 42,
+          "9": 43,
+          "10": 41,
+          "11": 42,
+          "12": 43
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 457,
+        "monthly_deaths": {
+          "1": 44,
+          "2": 43,
+          "3": 41,
+          "4": 40,
+          "5": 37,
+          "6": 40,
+          "7": 39,
+          "8": 36,
+          "9": 34,
+          "10": 32,
+          "11": 33,
+          "12": 38
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 494,
+        "monthly_deaths": {
+          "1": 39,
+          "2": 39,
+          "3": 43,
+          "4": 45,
+          "5": 45,
+          "6": 43,
+          "7": 40,
+          "8": 42,
+          "9": 41,
+          "10": 42,
+          "11": 40,
+          "12": 35
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 171,
+        "monthly_deaths": {
+          "1": 33,
+          "2": 31,
+          "3": 28,
+          "4": 25,
+          "5": 28,
+          "6": 26
+        }
+      }
+    ],
+    "latest_rate_per_100k": 46.6,
+    "peak_rate_per_100k": 46.6,
+    "avg_rate_per_100k": 23.04,
+    "total_provisional_deaths": 2513,
+    "peak_annual_deaths": 494,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Release from prison": 2.0,
+      "EMS interaction": 20.0,
+      "Jail booking": 6.0,
+      "ED visit": 28.0,
+      "Rx dispensation": 19.0
+    },
+    "median_household_income": 79008.0,
+    "pct_uninsured": 0.0689,
+    "drug_od_mortality_rate_chr": 4.7233,
+    "pct_smokers": 0.177,
+    "pct_excessive_drinking": 10.531,
+    "mentally_unhealthy_days": 4.1494
+  },
+  {
+    "name": "Grant",
+    "fips": "18053",
+    "state": "Indiana",
+    "population": 66263,
+    "urban_rural": "Micropolitan",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 14.65,
+        "population": 72113
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 15.44,
+        "population": 71479
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 16.65,
+        "population": 70803
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 19.05,
+        "population": 70448
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 19.76,
+        "population": 70012
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 19.83,
+        "population": 70250
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 19.98,
+        "population": 70195
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 20.58,
+        "population": 70063
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 22.02,
+        "population": 69633
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 21.97,
+        "population": 69110
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 23.15,
+        "population": 68887
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 24.6,
+        "population": 68381
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 27.22,
+        "population": 67543
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 32.83,
+        "population": 66731
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 36.03,
+        "population": 66373
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 34.4,
+        "population": 66112
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 35.91,
+        "population": 65836
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 46.51,
+        "population": 65225,
+        "provisional_deaths": 307,
+        "monthly_deaths": {
+          "1": 15,
+          "2": 17,
+          "3": 19,
+          "4": 24,
+          "5": 22,
+          "6": 25,
+          "7": 28,
+          "8": 31,
+          "9": 31,
+          "10": 31,
+          "11": 33,
+          "12": 31
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 53.69,
+        "population": 66263,
+        "provisional_deaths": 478,
+        "monthly_deaths": {
+          "1": 31,
+          "2": 33,
+          "3": 38,
+          "4": 36,
+          "5": 37,
+          "6": 38,
+          "7": 36,
+          "8": 40,
+          "9": 42,
+          "10": 46,
+          "11": 49,
+          "12": 52
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 592,
+        "monthly_deaths": {
+          "1": 50,
+          "2": 50,
+          "3": 47,
+          "4": 47,
+          "5": 49,
+          "6": 47,
+          "7": 53,
+          "8": 54,
+          "9": 53,
+          "10": 49,
+          "11": 47,
+          "12": 46
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 555,
+        "monthly_deaths": {
+          "1": 47,
+          "2": 47,
+          "3": 46,
+          "4": 49,
+          "5": 49,
+          "6": 50,
+          "7": 45,
+          "8": 43,
+          "9": 45,
+          "10": 46,
+          "11": 45,
+          "12": 43
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 337,
+        "monthly_deaths": {
+          "1": 41,
+          "2": 40,
+          "3": 40,
+          "4": 34,
+          "5": 30,
+          "6": 27,
+          "7": 25,
+          "8": 21,
+          "9": 17,
+          "10": 19,
+          "11": 20,
+          "12": 23
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 132,
+        "monthly_deaths": {
+          "1": 23,
+          "2": 24,
+          "3": 22,
+          "4": 21,
+          "5": 21,
+          "6": 21
+        }
+      }
+    ],
+    "latest_rate_per_100k": 53.69,
+    "peak_rate_per_100k": 53.69,
+    "avg_rate_per_100k": 26.54,
+    "total_provisional_deaths": 2401,
+    "peak_annual_deaths": 592,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Community Medical Services - Marion"
+    ],
+    "od_touchpoints": {
+      "ED visit": 22.0,
+      "EMS interaction": 12.0,
+      "Jail booking": 2.0,
+      "Rx dispensation": 10.0,
+      "Release from prison": 12.0
+    },
+    "median_household_income": 53872.0,
+    "pct_uninsured": 0.0719,
+    "drug_od_mortality_rate_chr": 7.5652,
+    "pct_smokers": 0.215,
+    "pct_excessive_drinking": 16.3582,
+    "mentally_unhealthy_days": 4.9038
+  },
+  {
+    "name": "Henry",
+    "fips": "18065",
+    "state": "Indiana",
+    "population": 48935,
+    "urban_rural": "Micropolitan",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 13.89,
+        "population": 48145
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 14.64,
+        "population": 48184
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 15.79,
+        "population": 48064
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 18.06,
+        "population": 48375
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 18.73,
+        "population": 48030
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 18.8,
+        "population": 49420
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 18.95,
+        "population": 49305
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 19.51,
+        "population": 49466
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 20.88,
+        "population": 49221
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 20.83,
+        "population": 49118
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 21.94,
+        "population": 48847
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 23.32,
+        "population": 48887
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 25.8,
+        "population": 48662
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 31.12,
+        "population": 48349
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 34.15,
+        "population": 48178
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 32.61,
+        "population": 48205
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 34.05,
+        "population": 48025
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 44.1,
+        "population": 48033,
+        "provisional_deaths": 101,
+        "monthly_deaths": {
+          "1": 10,
+          "2": 5,
+          "3": 12,
+          "4": 12,
+          "5": 11,
+          "6": 11,
+          "7": 5,
+          "8": 5,
+          "9": 10,
+          "10": 10,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 50.89,
+        "population": 48935,
+        "provisional_deaths": 127,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 12,
+          "3": 5,
+          "4": 10,
+          "5": 10,
+          "6": 5,
+          "7": 11,
+          "8": 12,
+          "9": 13,
+          "10": 14,
+          "11": 14,
+          "12": 16
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 165,
+        "monthly_deaths": {
+          "1": 16,
+          "2": 14,
+          "3": 14,
+          "4": 12,
+          "5": 13,
+          "6": 15,
+          "7": 14,
+          "8": 14,
+          "9": 12,
+          "10": 13,
+          "11": 14,
+          "12": 14
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 192,
+        "monthly_deaths": {
+          "1": 15,
+          "2": 16,
+          "3": 18,
+          "4": 18,
+          "5": 17,
+          "6": 16,
+          "7": 15,
+          "8": 16,
+          "9": 16,
+          "10": 15,
+          "11": 15,
+          "12": 15
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 166,
+        "monthly_deaths": {
+          "1": 18,
+          "2": 16,
+          "3": 15,
+          "4": 14,
+          "5": 14,
+          "6": 14,
+          "7": 13,
+          "8": 10,
+          "9": 12,
+          "10": 14,
+          "11": 14,
+          "12": 12
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 77,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 12,
+          "3": 13,
+          "4": 15,
+          "5": 16,
+          "6": 16
+        }
+      }
+    ],
+    "latest_rate_per_100k": 50.89,
+    "peak_rate_per_100k": 50.89,
+    "avg_rate_per_100k": 25.16,
+    "total_provisional_deaths": 828,
+    "peak_annual_deaths": 192,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Rx dispensation": 7.0,
+      "ED visit": 2.14,
+      "Jail booking": 2.0,
+      "EMS interaction": 1.62,
+      "Release from prison": 47.0
+    },
+    "median_household_income": 62048.0,
+    "pct_uninsured": 0.072,
+    "drug_od_mortality_rate_chr": 3.5385,
+    "pct_smokers": 0.226,
+    "pct_excessive_drinking": 13.2884,
+    "mentally_unhealthy_days": 4.6982
+  },
+  {
+    "name": "Jay",
+    "fips": "18075",
+    "state": "Indiana",
+    "population": 20248,
+    "urban_rural": "Noncore",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 12.16,
+        "population": 21681
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 12.81,
+        "population": 21651
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 13.82,
+        "population": 21595
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 15.82,
+        "population": 21564
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 16.4,
+        "population": 21580
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 16.47,
+        "population": 21467
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 16.59,
+        "population": 21399
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 17.09,
+        "population": 21253
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 18.28,
+        "population": 21336
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 18.24,
+        "population": 21346
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 19.22,
+        "population": 21267
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 20.42,
+        "population": 21135
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 22.6,
+        "population": 21135
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 27.25,
+        "population": 21021
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 29.91,
+        "population": 20879
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 28.56,
+        "population": 20721
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 29.82,
+        "population": 20446
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 38.62,
+        "population": 20416,
+        "provisional_deaths": 65,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 10,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 44.57,
+        "population": 20248,
+        "provisional_deaths": 107,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 10,
+          "6": 5,
+          "7": 10,
+          "8": 10,
+          "9": 12,
+          "10": 13,
+          "11": 14,
+          "12": 13
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 90,
+        "monthly_deaths": {
+          "1": 13,
+          "2": 11,
+          "3": 11,
+          "4": 10,
+          "5": 5,
+          "6": 10,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 132,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 10,
+          "3": 5,
+          "4": 12,
+          "5": 12,
+          "6": 11,
+          "7": 13,
+          "8": 15,
+          "9": 13,
+          "10": 12,
+          "11": 12,
+          "12": 12
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 65,
+        "monthly_deaths": {
+          "1": 10,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 30,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5
+        }
+      }
+    ],
+    "latest_rate_per_100k": 44.57,
+    "peak_rate_per_100k": 44.57,
+    "avg_rate_per_100k": 22.03,
+    "total_provisional_deaths": 489,
+    "peak_annual_deaths": 132,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 1.0,
+      "Jail booking": 18.0,
+      "Rx dispensation": 21.0,
+      "EMS interaction": 1.0,
+      "Release from prison": 1.0
+    },
+    "median_household_income": 61030.0,
+    "pct_uninsured": 0.0893,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.233,
+    "pct_excessive_drinking": 14.3579,
+    "mentally_unhealthy_days": 4.9491
+  },
+  {
+    "name": "Lake",
+    "fips": "18089",
+    "state": "Indiana",
+    "population": 498558,
+    "urban_rural": "Large Fringe Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 8.14,
+        "population": 485596
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 8.57,
+        "population": 487405
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 9.25,
+        "population": 489530
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 10.58,
+        "population": 491432
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 10.97,
+        "population": 493403
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 11.02,
+        "population": 495479
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 11.1,
+        "population": 495789
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 11.43,
+        "population": 496112
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 12.23,
+        "population": 495035
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 12.2,
+        "population": 493511
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 12.86,
+        "population": 491909
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 13.66,
+        "population": 491259
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 15.12,
+        "population": 488195
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 18.24,
+        "population": 486381
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 20.02,
+        "population": 484834
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 19.11,
+        "population": 484918
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 19.96,
+        "population": 486244
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 25.85,
+        "population": 487536,
+        "provisional_deaths": 1929,
+        "monthly_deaths": {
+          "1": 146,
+          "2": 143,
+          "3": 149,
+          "4": 153,
+          "5": 156,
+          "6": 162,
+          "7": 170,
+          "8": 168,
+          "9": 169,
+          "10": 173,
+          "11": 170,
+          "12": 170
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 29.84,
+        "population": 498558,
+        "provisional_deaths": 2447,
+        "monthly_deaths": {
+          "1": 176,
+          "2": 185,
+          "3": 196,
+          "4": 203,
+          "5": 206,
+          "6": 202,
+          "7": 204,
+          "8": 207,
+          "9": 216,
+          "10": 213,
+          "11": 218,
+          "12": 221
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 2337,
+        "monthly_deaths": {
+          "1": 220,
+          "2": 218,
+          "3": 203,
+          "4": 194,
+          "5": 189,
+          "6": 188,
+          "7": 186,
+          "8": 180,
+          "9": 182,
+          "10": 190,
+          "11": 192,
+          "12": 195
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 2355,
+        "monthly_deaths": {
+          "1": 197,
+          "2": 185,
+          "3": 191,
+          "4": 197,
+          "5": 203,
+          "6": 212,
+          "7": 204,
+          "8": 206,
+          "9": 201,
+          "10": 195,
+          "11": 188,
+          "12": 176
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 1789,
+        "monthly_deaths": {
+          "1": 173,
+          "2": 174,
+          "3": 165,
+          "4": 156,
+          "5": 153,
+          "6": 148,
+          "7": 145,
+          "8": 141,
+          "9": 141,
+          "10": 133,
+          "11": 133,
+          "12": 127
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 755,
+        "monthly_deaths": {
+          "1": 120,
+          "2": 128,
+          "3": 134,
+          "4": 132,
+          "5": 123,
+          "6": 118
+        }
+      }
+    ],
+    "latest_rate_per_100k": 29.84,
+    "peak_rate_per_100k": 29.84,
+    "avg_rate_per_100k": 14.74,
+    "total_provisional_deaths": 11612,
+    "peak_annual_deaths": 2447,
+    "treatment_facilities": 3,
+    "treatment_facility_names": [
+      "Edgewater New-Life",
+      "Medmark Treatment Centers Merrillville",
+      "Semoran - New Season Treatment Center"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 92.0,
+      "Jail booking": 48.0,
+      "Rx dispensation": 80.0,
+      "ED visit": 143.0,
+      "Release from prison": 17.0
+    },
+    "median_household_income": 69182.0,
+    "pct_uninsured": 0.0772,
+    "drug_od_mortality_rate_chr": 17.0695,
+    "pct_smokers": 0.169,
+    "pct_excessive_drinking": 8.9256,
+    "mentally_unhealthy_days": 4.5346
+  },
+  {
+    "name": "Lawrence",
+    "fips": "18093",
+    "state": "Indiana",
+    "population": 45070,
+    "urban_rural": "Micropolitan",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 8.48,
+        "population": 46178
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 8.94,
+        "population": 46106
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 9.64,
+        "population": 46233
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 11.03,
+        "population": 46165
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 11.44,
+        "population": 46300
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 11.48,
+        "population": 46233
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 11.57,
+        "population": 46138
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 11.92,
+        "population": 46134
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 12.75,
+        "population": 46144
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 12.72,
+        "population": 46121
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 13.4,
+        "population": 45900
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 14.24,
+        "population": 45653
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 15.76,
+        "population": 45571
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 19.01,
+        "population": 45560
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 20.86,
+        "population": 45595
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 19.92,
+        "population": 45690
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 20.8,
+        "population": 45419
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 26.93,
+        "population": 45496,
+        "provisional_deaths": 117,
+        "monthly_deaths": {
+          "1": 10,
+          "2": 10,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 11,
+          "8": 15,
+          "9": 15,
+          "10": 14,
+          "11": 11,
+          "12": 11
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 31.09,
+        "population": 45070,
+        "provisional_deaths": 165,
+        "monthly_deaths": {
+          "1": 11,
+          "2": 12,
+          "3": 13,
+          "4": 14,
+          "5": 13,
+          "6": 15,
+          "7": 13,
+          "8": 10,
+          "9": 12,
+          "10": 14,
+          "11": 19,
+          "12": 19
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 242,
+        "monthly_deaths": {
+          "1": 22,
+          "2": 21,
+          "3": 21,
+          "4": 22,
+          "5": 21,
+          "6": 21,
+          "7": 21,
+          "8": 21,
+          "9": 21,
+          "10": 20,
+          "11": 15,
+          "12": 16
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 189,
+        "monthly_deaths": {
+          "1": 13,
+          "2": 13,
+          "3": 15,
+          "4": 15,
+          "5": 17,
+          "6": 17,
+          "7": 16,
+          "8": 17,
+          "9": 15,
+          "10": 15,
+          "11": 18,
+          "12": 18
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 183,
+        "monthly_deaths": {
+          "1": 17,
+          "2": 18,
+          "3": 16,
+          "4": 16,
+          "5": 14,
+          "6": 13,
+          "7": 15,
+          "8": 15,
+          "9": 16,
+          "10": 16,
+          "11": 13,
+          "12": 14
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 73,
+        "monthly_deaths": {
+          "1": 14,
+          "2": 12,
+          "3": 11,
+          "4": 11,
+          "5": 12,
+          "6": 13
+        }
+      }
+    ],
+    "latest_rate_per_100k": 31.09,
+    "peak_rate_per_100k": 31.09,
+    "avg_rate_per_100k": 15.37,
+    "total_provisional_deaths": 969,
+    "peak_annual_deaths": 242,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 8.0,
+      "EMS interaction": 6.0,
+      "Rx dispensation": 5.0,
+      "Jail booking": 2.0,
+      "Release from prison": 3.0
+    },
+    "median_household_income": 64958.0,
+    "pct_uninsured": 0.08,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.208,
+    "pct_excessive_drinking": 14.1524,
+    "mentally_unhealthy_days": 4.6412
+  },
+  {
+    "name": "Madison",
+    "fips": "18095",
+    "state": "Indiana",
+    "population": 130782,
+    "urban_rural": "Large Fringe Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 15.99,
+        "population": 131740
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 16.85,
+        "population": 131366
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 18.17,
+        "population": 130871
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 20.8,
+        "population": 131240
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 21.56,
+        "population": 131203
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 21.65,
+        "population": 131537
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 21.81,
+        "population": 131599
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 22.47,
+        "population": 131639
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 24.04,
+        "population": 131013
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 23.98,
+        "population": 130216
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 25.26,
+        "population": 130331
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 26.85,
+        "population": 129773
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 29.71,
+        "population": 129436
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 35.83,
+        "population": 129360
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 39.32,
+        "population": 129465
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 37.54,
+        "population": 129509
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 39.2,
+        "population": 129416
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 50.76,
+        "population": 129681,
+        "provisional_deaths": 619,
+        "monthly_deaths": {
+          "1": 54,
+          "2": 51,
+          "3": 47,
+          "4": 44,
+          "5": 47,
+          "6": 52,
+          "7": 52,
+          "8": 57,
+          "9": 57,
+          "10": 55,
+          "11": 52,
+          "12": 51
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 58.58,
+        "population": 130782,
+        "provisional_deaths": 593,
+        "monthly_deaths": {
+          "1": 49,
+          "2": 48,
+          "3": 51,
+          "4": 53,
+          "5": 49,
+          "6": 46,
+          "7": 44,
+          "8": 46,
+          "9": 49,
+          "10": 50,
+          "11": 53,
+          "12": 55
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 822,
+        "monthly_deaths": {
+          "1": 56,
+          "2": 63,
+          "3": 60,
+          "4": 62,
+          "5": 65,
+          "6": 68,
+          "7": 70,
+          "8": 71,
+          "9": 71,
+          "10": 76,
+          "11": 79,
+          "12": 81
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 852,
+        "monthly_deaths": {
+          "1": 79,
+          "2": 72,
+          "3": 73,
+          "4": 75,
+          "5": 77,
+          "6": 73,
+          "7": 73,
+          "8": 71,
+          "9": 73,
+          "10": 66,
+          "11": 62,
+          "12": 58
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 714,
+        "monthly_deaths": {
+          "1": 61,
+          "2": 65,
+          "3": 67,
+          "4": 62,
+          "5": 59,
+          "6": 64,
+          "7": 60,
+          "8": 60,
+          "9": 56,
+          "10": 54,
+          "11": 51,
+          "12": 55
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 323,
+        "monthly_deaths": {
+          "1": 54,
+          "2": 53,
+          "3": 51,
+          "4": 56,
+          "5": 55,
+          "6": 54
+        }
+      }
+    ],
+    "latest_rate_per_100k": 58.58,
+    "peak_rate_per_100k": 58.58,
+    "avg_rate_per_100k": 28.97,
+    "total_provisional_deaths": 3923,
+    "peak_annual_deaths": 852,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 51.0,
+      "EMS interaction": 34.0,
+      "Jail booking": 8.0,
+      "Release from prison": 306.0,
+      "Rx dispensation": 34.0
+    },
+    "median_household_income": 62000.0,
+    "pct_uninsured": 0.0796,
+    "drug_od_mortality_rate_chr": 6.2623,
+    "pct_smokers": 0.227,
+    "pct_excessive_drinking": 12.5243,
+    "mentally_unhealthy_days": 4.3923
+  },
+  {
+    "name": "Marion",
+    "fips": "18097",
+    "state": "Indiana",
+    "population": 971102,
+    "urban_rural": "Large Central Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 14.67,
+        "population": 868576
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 15.46,
+        "population": 870378
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 16.67,
+        "population": 873310
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 19.08,
+        "population": 878515
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 19.79,
+        "population": 883591
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 19.87,
+        "population": 889504
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 20.01,
+        "population": 898394
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 20.61,
+        "population": 903373
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 22.05,
+        "population": 911294
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 22.01,
+        "population": 919917
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 23.18,
+        "population": 930127
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 24.64,
+        "population": 936178
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 27.27,
+        "population": 940152
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 32.89,
+        "population": 946050
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 36.09,
+        "population": 951247
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 34.46,
+        "population": 959370
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 35.99,
+        "population": 963829
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 46.64,
+        "population": 966183,
+        "provisional_deaths": 5950,
+        "monthly_deaths": {
+          "1": 400,
+          "2": 417,
+          "3": 408,
+          "4": 440,
+          "5": 482,
+          "6": 505,
+          "7": 512,
+          "8": 522,
+          "9": 543,
+          "10": 553,
+          "11": 571,
+          "12": 597
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 53.85,
+        "population": 971102,
+        "provisional_deaths": 8100,
+        "monthly_deaths": {
+          "1": 614,
+          "2": 615,
+          "3": 635,
+          "4": 652,
+          "5": 650,
+          "6": 657,
+          "7": 670,
+          "8": 702,
+          "9": 720,
+          "10": 719,
+          "11": 736,
+          "12": 730
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 8730,
+        "monthly_deaths": {
+          "1": 724,
+          "2": 755,
+          "3": 764,
+          "4": 747,
+          "5": 725,
+          "6": 718,
+          "7": 739,
+          "8": 729,
+          "9": 712,
+          "10": 719,
+          "11": 699,
+          "12": 699
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 7678,
+        "monthly_deaths": {
+          "1": 698,
+          "2": 684,
+          "3": 662,
+          "4": 652,
+          "5": 651,
+          "6": 653,
+          "7": 637,
+          "8": 641,
+          "9": 625,
+          "10": 599,
+          "11": 595,
+          "12": 581
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 5884,
+        "monthly_deaths": {
+          "1": 564,
+          "2": 545,
+          "3": 537,
+          "4": 538,
+          "5": 521,
+          "6": 502,
+          "7": 479,
+          "8": 448,
+          "9": 445,
+          "10": 443,
+          "11": 440,
+          "12": 422
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 2395,
+        "monthly_deaths": {
+          "1": 411,
+          "2": 411,
+          "3": 405,
+          "4": 390,
+          "5": 390,
+          "6": 388
+        }
+      }
+    ],
+    "latest_rate_per_100k": 53.85,
+    "peak_rate_per_100k": 53.85,
+    "avg_rate_per_100k": 26.59,
+    "total_provisional_deaths": 38737,
+    "peak_annual_deaths": 8730,
+    "treatment_facilities": 3,
+    "treatment_facility_names": [
+      "Indianapolis Comprehensive Treatment Center",
+      "New Vista North",
+      "Sandra Eskenazi Mental Health Center Caring Recovery OTP"
+    ],
+    "od_touchpoints": {
+      "Release from prison": 829.0,
+      "Rx dispensation": 221977.0,
+      "ED visit": 430416.0,
+      "EMS interaction": 137589.0,
+      "Jail booking": 8135.0
+    },
+    "median_household_income": 66653.0,
+    "pct_uninsured": 0.0977,
+    "drug_od_mortality_rate_chr": 20.5886,
+    "pct_smokers": 0.176,
+    "pct_excessive_drinking": 11.4702,
+    "mentally_unhealthy_days": 4.3261
+  },
+  {
+    "name": "Scott",
+    "fips": "18143",
+    "state": "Indiana",
+    "population": 24355,
+    "urban_rural": "Medium Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 23.04,
+        "population": 23638
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 24.28,
+        "population": 23626
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 26.19,
+        "population": 23889
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 29.97,
+        "population": 23982
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 31.08,
+        "population": 24137
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 31.2,
+        "population": 24089
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 31.43,
+        "population": 24165
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 32.38,
+        "population": 24195
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 34.64,
+        "population": 23909
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 34.56,
+        "population": 23724
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 36.4,
+        "population": 23761
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 38.69,
+        "population": 23645
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 42.81,
+        "population": 23670
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 51.63,
+        "population": 23700
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 56.66,
+        "population": 23810
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 54.1,
+        "population": 23773
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 56.49,
+        "population": 23855
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 73.15,
+        "population": 23788,
+        "provisional_deaths": 181,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 10,
+          "5": 12,
+          "6": 13,
+          "7": 15,
+          "8": 18,
+          "9": 24,
+          "10": 25,
+          "11": 25,
+          "12": 24
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 84.42,
+        "population": 24355,
+        "provisional_deaths": 276,
+        "monthly_deaths": {
+          "1": 24,
+          "2": 25,
+          "3": 27,
+          "4": 27,
+          "5": 28,
+          "6": 28,
+          "7": 27,
+          "8": 23,
+          "9": 19,
+          "10": 17,
+          "11": 16,
+          "12": 15
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 138,
+        "monthly_deaths": {
+          "1": 16,
+          "2": 14,
+          "3": 12,
+          "4": 10,
+          "5": 5,
+          "6": 11,
+          "7": 12,
+          "8": 12,
+          "9": 10,
+          "10": 11,
+          "11": 12,
+          "12": 13
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 181,
+        "monthly_deaths": {
+          "1": 13,
+          "2": 13,
+          "3": 16,
+          "4": 17,
+          "5": 17,
+          "6": 14,
+          "7": 13,
+          "8": 13,
+          "9": 15,
+          "10": 15,
+          "11": 17,
+          "12": 18
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 183,
+        "monthly_deaths": {
+          "1": 18,
+          "2": 18,
+          "3": 14,
+          "4": 15,
+          "5": 15,
+          "6": 16,
+          "7": 15,
+          "8": 16,
+          "9": 15,
+          "10": 15,
+          "11": 13,
+          "12": 13
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 79,
+        "monthly_deaths": {
+          "1": 13,
+          "2": 14,
+          "3": 15,
+          "4": 14,
+          "5": 12,
+          "6": 11
+        }
+      }
+    ],
+    "latest_rate_per_100k": 84.42,
+    "peak_rate_per_100k": 84.42,
+    "avg_rate_per_100k": 41.74,
+    "total_provisional_deaths": 1038,
+    "peak_annual_deaths": 276,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "Jail booking": 1.0,
+      "Release from prison": 1.0,
+      "EMS interaction": 4.0,
+      "Rx dispensation": 8.0,
+      "ED visit": 4.0
+    },
+    "median_household_income": 62584.0,
+    "pct_uninsured": 0.0861,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.232,
+    "pct_excessive_drinking": 9.7609,
+    "mentally_unhealthy_days": 4.9694
+  },
+  {
+    "name": "St. Joseph",
+    "fips": "18141",
+    "state": "Indiana",
+    "population": 272212,
+    "urban_rural": "Small Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 8.5,
+        "population": 264762
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 8.96,
+        "population": 264541
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 9.66,
+        "population": 264863
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 11.06,
+        "population": 265496
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 11.47,
+        "population": 266045
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 11.51,
+        "population": 267282
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 11.6,
+        "population": 266827
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 11.95,
+        "population": 266914
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 12.78,
+        "population": 266726
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 12.75,
+        "population": 266576
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 13.43,
+        "population": 267188
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 14.28,
+        "population": 268023
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 15.8,
+        "population": 268567
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 19.06,
+        "population": 270042
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 20.91,
+        "population": 270219
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 19.97,
+        "population": 270961
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 20.85,
+        "population": 271695
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 27.0,
+        "population": 271484,
+        "provisional_deaths": 767,
+        "monthly_deaths": {
+          "1": 38,
+          "2": 45,
+          "3": 52,
+          "4": 53,
+          "5": 55,
+          "6": 62,
+          "7": 68,
+          "8": 74,
+          "9": 77,
+          "10": 76,
+          "11": 80,
+          "12": 87
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 31.17,
+        "population": 272212,
+        "provisional_deaths": 1086,
+        "monthly_deaths": {
+          "1": 92,
+          "2": 92,
+          "3": 91,
+          "4": 95,
+          "5": 91,
+          "6": 89,
+          "7": 86,
+          "8": 80,
+          "9": 86,
+          "10": 94,
+          "11": 95,
+          "12": 95
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 1166,
+        "monthly_deaths": {
+          "1": 93,
+          "2": 94,
+          "3": 97,
+          "4": 97,
+          "5": 98,
+          "6": 99,
+          "7": 99,
+          "8": 101,
+          "9": 102,
+          "10": 97,
+          "11": 95,
+          "12": 94
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 1130,
+        "monthly_deaths": {
+          "1": 99,
+          "2": 100,
+          "3": 97,
+          "4": 94,
+          "5": 93,
+          "6": 91,
+          "7": 91,
+          "8": 96,
+          "9": 93,
+          "10": 94,
+          "11": 94,
+          "12": 88
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 973,
+        "monthly_deaths": {
+          "1": 84,
+          "2": 83,
+          "3": 82,
+          "4": 85,
+          "5": 85,
+          "6": 87,
+          "7": 88,
+          "8": 82,
+          "9": 76,
+          "10": 74,
+          "11": 73,
+          "12": 74
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 368,
+        "monthly_deaths": {
+          "1": 70,
+          "2": 63,
+          "3": 59,
+          "4": 58,
+          "5": 59,
+          "6": 59
+        }
+      }
+    ],
+    "latest_rate_per_100k": 31.17,
+    "peak_rate_per_100k": 31.17,
+    "avg_rate_per_100k": 15.41,
+    "total_provisional_deaths": 5490,
+    "peak_annual_deaths": 1166,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Victory Clinical Services II"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 99.0,
+      "Jail booking": 99.0,
+      "Release from prison": 99.0,
+      "Rx dispensation": 99.0,
+      "ED visit": 99.0
+    },
+    "median_household_income": 65977.0,
+    "pct_uninsured": 0.0804,
+    "drug_od_mortality_rate_chr": 9.1144,
+    "pct_smokers": 0.167,
+    "pct_excessive_drinking": 10.1383,
+    "mentally_unhealthy_days": 4.3671
+  },
+  {
+    "name": "Tippecanoe",
+    "fips": "18157",
+    "state": "Indiana",
+    "population": 187076,
+    "urban_rural": "Small Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 7.73,
+        "population": 154040
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 8.15,
+        "population": 155832
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 8.79,
+        "population": 158834
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 10.06,
+        "population": 163010
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 10.43,
+        "population": 166226
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 10.47,
+        "population": 169039
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 10.55,
+        "population": 171937
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 10.87,
+        "population": 172801
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 11.63,
+        "population": 175892
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 11.6,
+        "population": 179181
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 12.22,
+        "population": 182043
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 12.99,
+        "population": 184542
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 14.37,
+        "population": 186858
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 17.33,
+        "population": 190475
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 19.02,
+        "population": 191334
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 18.16,
+        "population": 193705
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 18.97,
+        "population": 194881
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 24.56,
+        "population": 196115,
+        "provisional_deaths": 465,
+        "monthly_deaths": {
+          "1": 42,
+          "2": 41,
+          "3": 38,
+          "4": 38,
+          "5": 35,
+          "6": 36,
+          "7": 43,
+          "8": 42,
+          "9": 40,
+          "10": 39,
+          "11": 37,
+          "12": 34
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 28.35,
+        "population": 187076,
+        "provisional_deaths": 517,
+        "monthly_deaths": {
+          "1": 40,
+          "2": 38,
+          "3": 38,
+          "4": 42,
+          "5": 45,
+          "6": 47,
+          "7": 42,
+          "8": 46,
+          "9": 46,
+          "10": 44,
+          "11": 45,
+          "12": 44
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 584,
+        "monthly_deaths": {
+          "1": 40,
+          "2": 44,
+          "3": 50,
+          "4": 47,
+          "5": 44,
+          "6": 48,
+          "7": 51,
+          "8": 49,
+          "9": 51,
+          "10": 55,
+          "11": 53,
+          "12": 52
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 546,
+        "monthly_deaths": {
+          "1": 49,
+          "2": 47,
+          "3": 44,
+          "4": 50,
+          "5": 55,
+          "6": 47,
+          "7": 43,
+          "8": 43,
+          "9": 41,
+          "10": 43,
+          "11": 42,
+          "12": 42
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 519,
+        "monthly_deaths": {
+          "1": 46,
+          "2": 54,
+          "3": 51,
+          "4": 46,
+          "5": 40,
+          "6": 42,
+          "7": 43,
+          "8": 42,
+          "9": 43,
+          "10": 37,
+          "11": 38,
+          "12": 37
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 157,
+        "monthly_deaths": {
+          "1": 33,
+          "2": 26,
+          "3": 26,
+          "4": 24,
+          "5": 25,
+          "6": 23
+        }
+      }
+    ],
+    "latest_rate_per_100k": 28.35,
+    "peak_rate_per_100k": 28.35,
+    "avg_rate_per_100k": 14.01,
+    "total_provisional_deaths": 2788,
+    "peak_annual_deaths": 584,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "MedMark Treatment Centers Lafayette"
+    ],
+    "od_touchpoints": {
+      "ED visit": 34.0,
+      "EMS interaction": 24.0,
+      "Jail booking": 12.0,
+      "Rx dispensation": 17.0,
+      "Release from prison": 114.0
+    },
+    "median_household_income": 61681.0,
+    "pct_uninsured": 0.0874,
+    "drug_od_mortality_rate_chr": 3.4345,
+    "pct_smokers": 0.175,
+    "pct_excessive_drinking": 9.75,
+    "mentally_unhealthy_days": 4.5201
+  },
+  {
+    "name": "Vanderburgh",
+    "fips": "18163",
+    "state": "Indiana",
+    "population": 179987,
+    "urban_rural": "Medium Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 12.9,
+        "population": 174239
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 13.6,
+        "population": 175113
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 14.67,
+        "population": 175769
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 16.78,
+        "population": 176822
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 17.41,
+        "population": 177789
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 17.47,
+        "population": 178053
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 17.61,
+        "population": 178995
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 18.13,
+        "population": 179701
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 19.4,
+        "population": 180488
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 19.36,
+        "population": 181075
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 20.39,
+        "population": 181633
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 21.67,
+        "population": 182010
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 23.98,
+        "population": 181600
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 28.92,
+        "population": 181536
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 31.74,
+        "population": 181031
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 30.3,
+        "population": 181165
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 31.64,
+        "population": 181561
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 40.97,
+        "population": 182447,
+        "provisional_deaths": 480,
+        "monthly_deaths": {
+          "1": 35,
+          "2": 34,
+          "3": 31,
+          "4": 34,
+          "5": 39,
+          "6": 36,
+          "7": 40,
+          "8": 41,
+          "9": 45,
+          "10": 47,
+          "11": 50,
+          "12": 48
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 47.29,
+        "population": 179987,
+        "provisional_deaths": 882,
+        "monthly_deaths": {
+          "1": 53,
+          "2": 60,
+          "3": 68,
+          "4": 69,
+          "5": 69,
+          "6": 73,
+          "7": 74,
+          "8": 83,
+          "9": 81,
+          "10": 78,
+          "11": 85,
+          "12": 89
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 931,
+        "monthly_deaths": {
+          "1": 86,
+          "2": 83,
+          "3": 80,
+          "4": 77,
+          "5": 77,
+          "6": 77,
+          "7": 75,
+          "8": 69,
+          "9": 74,
+          "10": 84,
+          "11": 75,
+          "12": 74
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 782,
+        "monthly_deaths": {
+          "1": 79,
+          "2": 77,
+          "3": 75,
+          "4": 75,
+          "5": 71,
+          "6": 67,
+          "7": 64,
+          "8": 64,
+          "9": 59,
+          "10": 52,
+          "11": 51,
+          "12": 48
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 503,
+        "monthly_deaths": {
+          "1": 44,
+          "2": 43,
+          "3": 44,
+          "4": 43,
+          "5": 43,
+          "6": 45,
+          "7": 45,
+          "8": 44,
+          "9": 41,
+          "10": 36,
+          "11": 37,
+          "12": 38
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 205,
+        "monthly_deaths": {
+          "1": 35,
+          "2": 36,
+          "3": 31,
+          "4": 35,
+          "5": 35,
+          "6": 33
+        }
+      }
+    ],
+    "latest_rate_per_100k": 47.29,
+    "peak_rate_per_100k": 47.29,
+    "avg_rate_per_100k": 23.38,
+    "total_provisional_deaths": 3783,
+    "peak_annual_deaths": 931,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Evansville Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "ED visit": 48.0,
+      "EMS interaction": 30.0,
+      "Jail booking": 13.0,
+      "Rx dispensation": 37.0,
+      "Release from prison": 2.0
+    },
+    "median_household_income": 60923.0,
+    "pct_uninsured": 0.0791,
+    "drug_od_mortality_rate_chr": 8.8332,
+    "pct_smokers": 0.169,
+    "pct_excessive_drinking": 14.4094,
+    "mentally_unhealthy_days": 4.382
+  },
+  {
+    "name": "Vermillion",
+    "fips": "18165",
+    "state": "Indiana",
+    "population": 15341,
+    "urban_rural": "Small Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 8.47,
+        "population": 16493
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 8.93,
+        "population": 16515
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 9.63,
+        "population": 16603
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 11.02,
+        "population": 16585
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 11.43,
+        "population": 16561
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 11.47,
+        "population": 16387
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 11.56,
+        "population": 16377
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 11.9,
+        "population": 16210
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 12.73,
+        "population": 16072
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 12.7,
+        "population": 15924
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 13.38,
+        "population": 15853
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 14.22,
+        "population": 15661
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 15.74,
+        "population": 15597
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 18.98,
+        "population": 15588
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 20.83,
+        "population": 15507
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 19.89,
+        "population": 15508
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 20.77,
+        "population": 15493
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 26.9,
+        "population": 15329,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 31.05,
+        "population": 15341,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 60,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5,
+          "11": 5,
+          "12": 5
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 30,
+        "monthly_deaths": {
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5,
+          "5": 5,
+          "6": 5
+        }
+      }
+    ],
+    "latest_rate_per_100k": 31.05,
+    "peak_rate_per_100k": 31.05,
+    "avg_rate_per_100k": 15.35,
+    "total_provisional_deaths": 330,
+    "peak_annual_deaths": 60,
+    "treatment_facilities": 0,
+    "treatment_facility_names": [],
+    "od_touchpoints": {
+      "ED visit": 15.0,
+      "EMS interaction": 1.0,
+      "Jail booking": 1.0,
+      "Rx dispensation": 1.0
+    },
+    "median_household_income": 58743.0,
+    "pct_uninsured": 0.0736,
+    "drug_od_mortality_rate_chr": null,
+    "pct_smokers": 0.218,
+    "pct_excessive_drinking": 11.6497,
+    "mentally_unhealthy_days": 4.6939
+  },
+  {
+    "name": "Vigo",
+    "fips": "18167",
+    "state": "Indiana",
+    "population": 105994,
+    "urban_rural": "Small Metro",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 9.11,
+        "population": 105356
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 9.6,
+        "population": 104662
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 10.36,
+        "population": 105245
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 11.85,
+        "population": 106509
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 12.29,
+        "population": 106885
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 12.34,
+        "population": 106972
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 12.43,
+        "population": 107429
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 12.8,
+        "population": 107850
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 13.7,
+        "population": 108350
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 13.67,
+        "population": 108561
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 14.4,
+        "population": 108251
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 15.3,
+        "population": 107989
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 16.93,
+        "population": 107615
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 20.42,
+        "population": 107871
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 22.41,
+        "population": 107648
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 21.4,
+        "population": 107438
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 22.34,
+        "population": 106958
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 28.93,
+        "population": 106608,
+        "provisional_deaths": 224,
+        "monthly_deaths": {
+          "1": 19,
+          "2": 18,
+          "3": 19,
+          "4": 19,
+          "5": 20,
+          "6": 19,
+          "7": 20,
+          "8": 19,
+          "9": 19,
+          "10": 18,
+          "11": 17,
+          "12": 17
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 33.39,
+        "population": 105994,
+        "provisional_deaths": 296,
+        "monthly_deaths": {
+          "1": 18,
+          "2": 18,
+          "3": 15,
+          "4": 22,
+          "5": 22,
+          "6": 26,
+          "7": 27,
+          "8": 28,
+          "9": 28,
+          "10": 30,
+          "11": 30,
+          "12": 32
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 418,
+        "monthly_deaths": {
+          "1": 31,
+          "2": 37,
+          "3": 43,
+          "4": 36,
+          "5": 37,
+          "6": 34,
+          "7": 35,
+          "8": 35,
+          "9": 33,
+          "10": 31,
+          "11": 33,
+          "12": 33
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 338,
+        "monthly_deaths": {
+          "1": 31,
+          "2": 27,
+          "3": 25,
+          "4": 26,
+          "5": 25,
+          "6": 30,
+          "7": 27,
+          "8": 27,
+          "9": 31,
+          "10": 32,
+          "11": 29,
+          "12": 28
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 296,
+        "monthly_deaths": {
+          "1": 29,
+          "2": 27,
+          "3": 24,
+          "4": 24,
+          "5": 24,
+          "6": 21,
+          "7": 24,
+          "8": 23,
+          "9": 21,
+          "10": 25,
+          "11": 28,
+          "12": 26
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 173,
+        "monthly_deaths": {
+          "1": 26,
+          "2": 29,
+          "3": 29,
+          "4": 30,
+          "5": 31,
+          "6": 28
+        }
+      }
+    ],
+    "latest_rate_per_100k": 33.39,
+    "peak_rate_per_100k": 33.39,
+    "avg_rate_per_100k": 16.51,
+    "total_provisional_deaths": 1745,
+    "peak_annual_deaths": 418,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "WIN Recovery-Vigo"
+    ],
+    "od_touchpoints": {
+      "EMS interaction": 12.0,
+      "Release from prison": 1.0,
+      "Jail booking": 8.0,
+      "ED visit": 21.0,
+      "Rx dispensation": 24.0
+    },
+    "median_household_income": 50665.0,
+    "pct_uninsured": 0.0933,
+    "drug_od_mortality_rate_chr": 5.2106,
+    "pct_smokers": 0.212,
+    "pct_excessive_drinking": 14.5275,
+    "mentally_unhealthy_days": 4.6549
+  },
+  {
+    "name": "Wayne",
+    "fips": "18177",
+    "state": "Indiana",
+    "population": 66456,
+    "urban_rural": "Micropolitan",
+    "yearly_data": [
+      {
+        "year": 2003,
+        "model_death_rate_per_100k": 19.98,
+        "population": 70490
+      },
+      {
+        "year": 2004,
+        "model_death_rate_per_100k": 21.05,
+        "population": 70070
+      },
+      {
+        "year": 2005,
+        "model_death_rate_per_100k": 22.71,
+        "population": 69793
+      },
+      {
+        "year": 2006,
+        "model_death_rate_per_100k": 25.98,
+        "population": 69642
+      },
+      {
+        "year": 2007,
+        "model_death_rate_per_100k": 26.95,
+        "population": 69365
+      },
+      {
+        "year": 2008,
+        "model_death_rate_per_100k": 27.05,
+        "population": 69093
+      },
+      {
+        "year": 2009,
+        "model_death_rate_per_100k": 27.25,
+        "population": 68984
+      },
+      {
+        "year": 2010,
+        "model_death_rate_per_100k": 28.07,
+        "population": 68996
+      },
+      {
+        "year": 2011,
+        "model_death_rate_per_100k": 30.03,
+        "population": 68661
+      },
+      {
+        "year": 2012,
+        "model_death_rate_per_100k": 29.96,
+        "population": 68256
+      },
+      {
+        "year": 2013,
+        "model_death_rate_per_100k": 31.56,
+        "population": 67829
+      },
+      {
+        "year": 2014,
+        "model_death_rate_per_100k": 33.54,
+        "population": 67427
+      },
+      {
+        "year": 2015,
+        "model_death_rate_per_100k": 37.12,
+        "population": 67044
+      },
+      {
+        "year": 2016,
+        "model_death_rate_per_100k": 44.77,
+        "population": 66723
+      },
+      {
+        "year": 2017,
+        "model_death_rate_per_100k": 49.14,
+        "population": 66307
+      },
+      {
+        "year": 2018,
+        "model_death_rate_per_100k": 46.91,
+        "population": 66131
+      },
+      {
+        "year": 2019,
+        "model_death_rate_per_100k": 48.98,
+        "population": 65943
+      },
+      {
+        "year": 2020,
+        "model_death_rate_per_100k": 63.43,
+        "population": 65778,
+        "provisional_deaths": 606,
+        "monthly_deaths": {
+          "1": 49,
+          "2": 49,
+          "3": 45,
+          "4": 52,
+          "5": 54,
+          "6": 56,
+          "7": 55,
+          "8": 55,
+          "9": 51,
+          "10": 49,
+          "11": 45,
+          "12": 46
+        }
+      },
+      {
+        "year": 2021,
+        "model_death_rate_per_100k": 73.21,
+        "population": 66456,
+        "provisional_deaths": 555,
+        "monthly_deaths": {
+          "1": 46,
+          "2": 47,
+          "3": 52,
+          "4": 46,
+          "5": 41,
+          "6": 39,
+          "7": 41,
+          "8": 43,
+          "9": 44,
+          "10": 45,
+          "11": 52,
+          "12": 59
+        }
+      },
+      {
+        "year": 2022,
+        "provisional_deaths": 688,
+        "monthly_deaths": {
+          "1": 59,
+          "2": 60,
+          "3": 57,
+          "4": 56,
+          "5": 59,
+          "6": 62,
+          "7": 62,
+          "8": 60,
+          "9": 60,
+          "10": 56,
+          "11": 51,
+          "12": 46
+        }
+      },
+      {
+        "year": 2023,
+        "provisional_deaths": 449,
+        "monthly_deaths": {
+          "1": 44,
+          "2": 40,
+          "3": 39,
+          "4": 39,
+          "5": 39,
+          "6": 36,
+          "7": 35,
+          "8": 33,
+          "9": 35,
+          "10": 37,
+          "11": 37,
+          "12": 35
+        }
+      },
+      {
+        "year": 2024,
+        "provisional_deaths": 471,
+        "monthly_deaths": {
+          "1": 36,
+          "2": 40,
+          "3": 40,
+          "4": 42,
+          "5": 42,
+          "6": 44,
+          "7": 41,
+          "8": 40,
+          "9": 36,
+          "10": 35,
+          "11": 37,
+          "12": 38
+        }
+      },
+      {
+        "year": 2025,
+        "provisional_deaths": 212,
+        "monthly_deaths": {
+          "1": 36,
+          "2": 36,
+          "3": 38,
+          "4": 36,
+          "5": 35,
+          "6": 31
+        }
+      }
+    ],
+    "latest_rate_per_100k": 73.21,
+    "peak_rate_per_100k": 73.21,
+    "avg_rate_per_100k": 36.19,
+    "total_provisional_deaths": 2981,
+    "peak_annual_deaths": 688,
+    "treatment_facilities": 1,
+    "treatment_facility_names": [
+      "Richmond Comprehensive Treatment Center"
+    ],
+    "od_touchpoints": {
+      "ED visit": 67.0,
+      "EMS interaction": 67.0,
+      "Jail booking": 67.0,
+      "Release from prison": 67.0,
+      "Rx dispensation": 67.0
+    },
+    "median_household_income": 52956.0,
+    "pct_uninsured": 0.0845,
+    "drug_od_mortality_rate_chr": 7.774,
+    "pct_smokers": 0.229,
+    "pct_excessive_drinking": 13.7311,
+    "mentally_unhealthy_days": 4.7413
+  }
+]

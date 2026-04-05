@@ -83,23 +83,55 @@ export default function CountyDashboard() {
 
   /* ── Load all data on mount ── */
   useEffect(() => {
+    const FALLBACK_COUNTIES = [
+      { name: 'Marion', population: 971102 }, { name: 'Lake', population: 498558 },
+      { name: 'Allen', population: 388608 }, { name: 'St. Joseph', population: 272212 },
+      { name: 'Vanderburgh', population: 179987 }, { name: 'Tippecanoe', population: 187076 },
+      { name: 'Delaware', population: 111871 }, { name: 'Vigo', population: 105994 },
+      { name: 'Madison', population: 130782 }, { name: 'Grant', population: 66263 },
+      { name: 'Lawrence', population: 45070 }, { name: 'Floyd', population: 80454 },
+      { name: 'Clark', population: 122738 }, { name: 'Scott', population: 24355 },
+      { name: 'Fayette', population: 23360 }, { name: 'Jay', population: 20248 },
+      { name: 'Blackford', population: 12091 }, { name: 'Vermillion', population: 15341 },
+      { name: 'Wayne', population: 66456 }, { name: 'Henry', population: 48935 },
+    ]
     const load = async () => {
       try {
-        const [countiesRes, timeseriesRes] = await Promise.all([
-          fetch(`${API}/counties`).then(r => r.json()),
-          fetch(`${API}/timeseries`).then(r => r.json()),
-        ])
+        let countiesRes, timeseriesRes
+        try {
+          [countiesRes, timeseriesRes] = await Promise.all([
+            fetch(`${API}/counties`).then(r => { if (!r.ok) throw new Error(); return r.json() }),
+            fetch(`${API}/timeseries`).then(r => { if (!r.ok) throw new Error(); return r.json() }),
+          ])
+        } catch {
+          countiesRes = FALLBACK_COUNTIES
+          timeseriesRes = await fetch('/data/county_timeseries.json').then(r => r.json()).catch(() => ({}))
+        }
         setCounties(countiesRes)
         setTimeseries(timeseriesRes)
 
         // Compare all counties
         const names = countiesRes.map(c => c.name)
-        const cmpRes = await fetch(`${API}/compare`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ counties: names }),
-        }).then(r => r.json())
-        setCompare(cmpRes.results || cmpRes)
+        try {
+          const cmpRes = await fetch(`${API}/compare`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ counties: names }),
+          }).then(r => { if (!r.ok) throw new Error(); return r.json() })
+          setCompare(cmpRes.results || cmpRes)
+        } catch {
+          // Build compare data from timeseries
+          const lastYear = '2021'
+          setCompare(names.map(name => {
+            const ts = timeseriesRes[name]?.[lastYear]
+            const pop = countiesRes.find(c => c.name === name)?.population || 0
+            return {
+              county: name, population: pop,
+              baseline_deaths: Math.round(ts?.deaths || 0),
+              deaths_per_100k: ts?.rate || 0,
+            }
+          }))
+        }
       } catch (e) {
         console.error('CountyDashboard load error:', e)
       }
