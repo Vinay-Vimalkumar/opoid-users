@@ -3,12 +3,14 @@ import LandingPage from './LandingPage'
 import MapPage from './MapPage'
 import CounterfactualView from './CounterfactualView'
 import MethodologyView from './MethodologyView'
+import AssistantPage from './AssistantPage'
 
 const TABS = [
   { key: 'home', label: 'Overview' },
   { key: 'map',  label: 'Map & Simulator' },
   { key: 'whatif', label: 'What If?' },
   { key: 'methodology', label: 'How It Works' },
+  { key: 'assistant', label: 'AI Assistant' },
 ]
 
 const THEMES = [
@@ -156,13 +158,15 @@ export default function App() {
             ? <div className="max-w-7xl mx-auto px-4 py-6"><CounterfactualView /></div>
             : page === 'methodology'
             ? <div className="max-w-7xl mx-auto px-4 py-6"><MethodologyView /></div>
+            : page === 'assistant'
+            ? <AssistantPage />
             : <MapPage theme={theme} />
           }
         </div>
       </div>
 
       {/* Footer */}
-      {(page === 'home' || page === 'whatif' || page === 'methodology') && (
+      {(page === 'home' || page === 'whatif' || page === 'methodology' || page === 'assistant') && (
         <footer
           className="py-4 text-center text-xs flex-shrink-0"
           style={{ borderTop: `1px solid ${isBW ? '#111' : '#0f172a'}`, color: '#334155' }}
