@@ -6,10 +6,12 @@ import MethodologyView from './MethodologyView'
 import AssistantPage from './AssistantPage'
 import RoadmapView from './RoadmapView'
 import RLAgentView from './RLAgentView'
+import CountyDashboard from './CountyDashboard'
 
 const TABS = [
   { key: 'home',        label: 'Overview' },
   { key: 'map',         label: 'Map & Simulator' },
+  { key: 'analytics',   label: 'Analytics' },
   { key: 'whatif',      label: 'What If?' },
   { key: 'roadmap',     label: 'Roadmap' },
   { key: 'rlagent',     label: 'RL Agent' },
@@ -256,6 +258,8 @@ export default function App() {
         <div key={page} className="page-enter">
           {page === 'home'
             ? <LandingPage onNavigate={setPage} theme={theme} />
+            : page === 'analytics'
+            ? <CountyDashboard />
             : page === 'whatif'
             ? <div className="max-w-7xl mx-auto px-4 py-6"><CounterfactualView /></div>
             : page === 'roadmap'
@@ -272,7 +276,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      {(page === 'home' || page === 'whatif' || page === 'roadmap' || page === 'rlagent' || page === 'methodology' || page === 'assistant') && (
+      {(page === 'home' || page === 'analytics' || page === 'whatif' || page === 'roadmap' || page === 'rlagent' || page === 'methodology' || page === 'assistant') && (
         <footer
           className="py-4 text-center text-xs flex-shrink-0"
           style={{ borderTop: `1px solid ${isBW ? '#111' : '#0f172a'}`, color: '#334155' }}

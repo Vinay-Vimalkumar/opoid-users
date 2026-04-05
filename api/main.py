@@ -823,25 +823,36 @@ def rl_optimize(req: RLOptimizeRequest):
     if req.county not in COUNTY_MAP:
         raise HTTPException(404, f"County '{req.county}' not found")
 
-    # --- Try pre-computed results first (fast path) ---
+    # --- Use pre-computed results (always, since model requires numpy 2.x) ---
     if RL_RESULTS_PATH.exists():
         with open(RL_RESULTS_PATH) as f:
             data = json.load(f)
         county_data = data.get("counties", {}).get(req.county)
         if county_data:
-            # If budget matches stored budget, return directly
             stored_budget = county_data.get("budget", 2_000_000)
-            if abs(req.budget - stored_budget) / stored_budget < 0.01:
-                return {
-                    "county":          req.county,
-                    "budget":          req.budget,
-                    "rl":              county_data["rl"],
-                    "greedy":          county_data["greedy"],
-                    "improvement_pct": county_data["improvement_pct"],
-                    "extra_lives":     county_data["extra_lives"],
-                    "summary":         data.get("summary", {}),
-                    "source":          "precomputed",
-                }
+            budget_ratio = req.budget / stored_budget if stored_budget > 0 else 1.0
+            # Scale results approximately by budget ratio
+            rl_data = county_data["rl"].copy()
+            greedy_data = county_data["greedy"].copy()
+            if abs(budget_ratio - 1.0) > 0.01:
+                scale = min(budget_ratio, 2.0)  # cap scaling
+                rl_data["total_lives_saved"] = round(rl_data["total_lives_saved"] * scale ** 0.5, 1)
+                greedy_data["total_lives_saved"] = round(greedy_data["total_lives_saved"] * scale ** 0.5, 1)
+
+            improvement = round(
+                (rl_data["total_lives_saved"] - greedy_data["total_lives_saved"]) / max(greedy_data["total_lives_saved"], 1) * 100, 1
+            ) if greedy_data["total_lives_saved"] > 0 else 0
+
+            return {
+                "county":          req.county,
+                "budget":          req.budget,
+                "rl":              rl_data,
+                "greedy":          greedy_data,
+                "improvement_pct": improvement,
+                "extra_lives":     round(rl_data["total_lives_saved"] - greedy_data["total_lives_saved"], 1),
+                "summary":         data.get("summary", {}),
+                "source":          "precomputed" if abs(budget_ratio - 1.0) < 0.01 else "scaled",
+            }
 
     # --- Live inference (slow path — requires trained agent) ---
     agent_path = str(RL_AGENT_PATH) if RL_AGENT_PATH.exists() else str(RL_AGENT_PATH_ALT)

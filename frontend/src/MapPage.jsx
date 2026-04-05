@@ -179,6 +179,7 @@ function AnimatedPolyline({ positions, color, isBW }) {
 
 export default function MapPage({ theme = 'default' }) {
   const isBW = theme === 'bw'
+  const isLight = theme === 'light'
   const [counties, setCounties] = useState([])
   const [selected, setSelected] = useState('Marion')
   const [interventions, setInterventions] = useState({ naloxone: 0.3, prescribing: 0.3, treatment: 0.3 })
@@ -191,7 +192,7 @@ export default function MapPage({ theme = 'default' }) {
   const [showNetwork, setShowNetwork] = useState(true)
   const [hoveredCounty, setHoveredCounty] = useState(null)
   const [hoverData, setHoverData] = useState({}) // county -> sim result cache
-  const [tileLayer, setTileLayer] = useState('dark')
+  const [tileLayer, setTileLayer] = useState(isLight ? 'light' : 'dark')
   const [colorScheme, setColorScheme] = useState('heat')
   const [ripplePos, setRipplePos] = useState(null)
   const [viewMode, setViewMode] = useState('numbers') // 'numbers' | 'graphs'
@@ -301,7 +302,7 @@ export default function MapPage({ theme = 'default' }) {
     <div
       ref={containerRef}
       className={`relative ${isFullscreen ? 'h-screen' : 'h-[calc(100vh-57px)]'}`}
-      style={{ background: isBW ? '#090909' : '#020617' }}
+      style={{ background: isBW ? '#090909' : isLight ? '#f0f4f8' : '#020617' }}
     >
       {/* ═══ FULL-SCREEN MAP ═══ */}
       <MapContainer
