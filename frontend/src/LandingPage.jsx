@@ -340,6 +340,64 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
         </div>
       </section>
 
+      {/* ── Scott County Story ── */}
+      <section className="relative z-10 border-t border-slate-800/60 py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="reveal rounded-2xl border relative overflow-hidden" style={{
+            background: 'linear-gradient(135deg, rgba(239,68,68,0.06), rgba(249,115,22,0.06))',
+            borderColor: 'rgba(239,68,68,0.2)',
+          }}>
+            <div className="p-8 md:p-10">
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{
+                  background: 'rgba(239,68,68,0.12)',
+                  border: '1px solid rgba(239,68,68,0.25)',
+                }}>
+                  <span className="text-2xl" style={{ filter: 'none' }}>&#8986;</span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-red-400 mb-2">Case Study</p>
+                  <h3 className="text-2xl font-black text-white mb-3 leading-tight">
+                    Scott County, 2015: <span className="text-red-400">215 HIV cases</span> in a town of 4,000
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">
+                    The opioid-fueled HIV outbreak in Scott County was one of the worst in U.S. history.
+                    Our model shows that if naloxone and treatment had been deployed just two years earlier,{' '}
+                    <span className="text-green-400 font-semibold">47% of overdose deaths could have been prevented</span>.
+                  </p>
+                  <div className="flex flex-wrap gap-6 mb-5">
+                    <div>
+                      <p className="text-3xl font-black font-mono text-red-400">188</p>
+                      <p className="text-xs text-slate-500">actual deaths</p>
+                    </div>
+                    <div>
+                      <p className="text-3xl font-black font-mono text-green-400">100</p>
+                      <p className="text-xs text-slate-500">with intervention</p>
+                    </div>
+                    <div>
+                      <p className="text-3xl font-black font-mono text-yellow-400">47%</p>
+                      <p className="text-xs text-slate-500">reduction</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => onNavigate('timemachine')}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition hover:brightness-110"
+                    style={{
+                      background: 'rgba(239,68,68,0.15)',
+                      border: '1px solid rgba(239,68,68,0.3)',
+                      color: '#fca5a5',
+                    }}
+                  >
+                    Open Time Machine
+                    <span className="text-xs">&#8594;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── How It Works ── */}
       <section className="relative z-10 border-t border-slate-800/60 bg-slate-900/20 py-24 px-4">
         <div className="max-w-5xl mx-auto">

@@ -4,16 +4,16 @@ import MapPage from './MapPage'
 import CounterfactualView from './CounterfactualView'
 import MethodologyView from './MethodologyView'
 import AssistantPage from './AssistantPage'
-import RoadmapView from './RoadmapView'
 import RLAgentView from './RLAgentView'
 import CountyDashboard from './CountyDashboard'
+import TimeMachine from './TimeMachine'
 
 const TABS = [
   { key: 'home',        label: 'Overview' },
   { key: 'map',         label: 'Map & Simulator' },
   { key: 'analytics',   label: 'Analytics' },
+  { key: 'timemachine', label: 'Time Machine' },
   { key: 'whatif',      label: 'What If?' },
-  { key: 'roadmap',     label: 'Roadmap' },
   { key: 'rlagent',     label: 'RL Agent' },
   { key: 'methodology', label: 'How It Works' },
   { key: 'assistant',   label: 'AI Assistant' },
@@ -125,7 +125,7 @@ export default function App() {
         else document.exitFullscreen?.()
         return
       }
-      const tabMap = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4, '6': 5, '7': 6 }
+      const tabMap = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4, '6': 5, '7': 6, '8': 7 }
       if (tabMap[key] !== undefined && TABS[tabMap[key]]) {
         navigateTo(TABS[tabMap[key]].key)
       }
@@ -260,10 +260,10 @@ export default function App() {
             ? <LandingPage onNavigate={setPage} theme={theme} />
             : page === 'analytics'
             ? <CountyDashboard />
+            : page === 'timemachine'
+            ? <TimeMachine />
             : page === 'whatif'
             ? <div className="max-w-7xl mx-auto px-4 py-6"><CounterfactualView /></div>
-            : page === 'roadmap'
-            ? <RoadmapView />
             : page === 'rlagent'
             ? <RLAgentView />
             : page === 'methodology'
@@ -276,7 +276,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      {(page === 'home' || page === 'analytics' || page === 'whatif' || page === 'roadmap' || page === 'rlagent' || page === 'methodology' || page === 'assistant') && (
+      {(page === 'home' || page === 'analytics' || page === 'whatif' || page === 'timemachine' || page === 'rlagent' || page === 'methodology' || page === 'assistant') && (
         <footer
           className="py-4 text-center text-xs flex-shrink-0"
           style={{ borderTop: `1px solid ${isBW ? '#111' : '#0f172a'}`, color: '#334155' }}
