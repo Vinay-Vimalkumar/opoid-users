@@ -32,6 +32,9 @@ CALIBRATION_PATH = BASE_DIR / "data" / "processed" / "calibration_results.json"
 FORECAST_PATH = BASE_DIR / "data" / "processed" / "county_forecasts.json"
 TIMESERIES_PATH = BASE_DIR / "data" / "processed" / "county_timeseries.json"
 OPTIMIZATION_PATH = BASE_DIR / "data" / "processed" / "gradient_optimization_results.json"
+RL_RESULTS_PATH   = BASE_DIR / "data" / "processed" / "rl_results.json"
+RL_AGENT_PATH     = BASE_DIR / "ml" / "best_model.zip"
+RL_AGENT_PATH_ALT = BASE_DIR / "ml" / "rl_agent.zip"
 
 app = FastAPI(title="DrugDiffuse API", version="1.0.0")
 api = APIRouter(prefix="/api")
@@ -802,6 +805,158 @@ Parameters calibrated to 19 years of real CDC Drug Poisoning Mortality data (200
         "response": ai_response,
         "simulation": sim_result,
     }
+
+
+class RLOptimizeRequest(BaseModel):
+    county: str
+    budget: float = Field(default=2_000_000, gt=0)
+
+
+@api.post("/rl-optimize")
+def rl_optimize(req: RLOptimizeRequest):
+    """
+    Run the trained RL policy agent for a county/budget and compare against
+    the greedy XGBoost optimizer.
+
+    Falls back to pre-computed results if the agent file is absent.
+    """
+    if req.county not in COUNTY_MAP:
+        raise HTTPException(404, f"County '{req.county}' not found")
+
+    # --- Try pre-computed results first (fast path) ---
+    if RL_RESULTS_PATH.exists():
+        with open(RL_RESULTS_PATH) as f:
+            data = json.load(f)
+        county_data = data.get("counties", {}).get(req.county)
+        if county_data:
+            # If budget matches stored budget, return directly
+            stored_budget = county_data.get("budget", 2_000_000)
+            if abs(req.budget - stored_budget) / stored_budget < 0.01:
+                return {
+                    "county":          req.county,
+                    "budget":          req.budget,
+                    "rl":              county_data["rl"],
+                    "greedy":          county_data["greedy"],
+                    "improvement_pct": county_data["improvement_pct"],
+                    "extra_lives":     county_data["extra_lives"],
+                    "summary":         data.get("summary", {}),
+                    "source":          "precomputed",
+                }
+
+    # --- Live inference (slow path — requires trained agent) ---
+    agent_path = str(RL_AGENT_PATH) if RL_AGENT_PATH.exists() else str(RL_AGENT_PATH_ALT)
+    if not (RL_AGENT_PATH.exists() or RL_AGENT_PATH_ALT.exists()):
+        raise HTTPException(
+            503,
+            "RL agent not trained yet. Run: python ml/train_rl.py"
+        )
+
+    try:
+        sys.path.insert(0, str(BASE_DIR / "ml"))
+        from stable_baselines3 import PPO
+        from rl_env import OpioidPolicyEnv
+        from optimize import find_optimal
+
+        agent = PPO.load(agent_path)
+
+        # RL rollout
+        env = OpioidPolicyEnv(
+            county_name=req.county,
+            total_budget=req.budget,
+            randomize_budget=False,
+        )
+        obs, _ = env.reset(seed=42)
+        rl_yearly = []
+        rl_total_lives = 0.0
+        rl_total_deaths = 0
+
+        for _ in range(5):
+            action, _ = agent.predict(obs, deterministic=True)
+            obs, _, done, _, info = env.step(action)
+            rl_yearly.append({
+                "year":                  info["year"],
+                "naloxone":              round(float(info["naloxone"]), 2),
+                "prescribing":           round(float(info["prescribing"]), 2),
+                "treatment":             round(float(info["treatment"]), 2),
+                "budget_spent":          round(float(info["budget_spent"])),
+                "budget_remaining":      round(float(info["budget_remaining"])),
+                "deaths_this_year":      int(info["deaths_this_year"]),
+                "lives_saved_this_year": round(float(info["lives_saved_this_year"]), 1),
+                "baseline_this_year":    round(float(info["baseline_this_year"]), 1),
+            })
+            rl_total_lives  += info["lives_saved_this_year"]
+            rl_total_deaths += info["deaths_this_year"]
+
+        rl_result = {
+            "total_lives_saved": round(rl_total_lives, 1),
+            "total_deaths":      rl_total_deaths,
+            "yearly_plan":       rl_yearly,
+        }
+
+        # Greedy comparison
+        greedy_raw = find_optimal(req.county, req.budget, months=60)
+        county_obj = COUNTY_MAP[req.county]
+        ivx = greedy_raw.get("optimal_interventions") or {"naloxone": 0.5, "prescribing": 0.3, "treatment": 0.5}
+        from model import run_scenario, run_baseline as _bl
+        interventions = Interventions(
+            ivx.get("naloxone", 0.5),
+            ivx.get("prescribing", 0.3),
+            ivx.get("treatment", 0.5),
+        )
+        bl  = _bl(county_obj, months=60, seed=42)
+        sim = run_scenario(county_obj, interventions, months=60, seed=42)
+        greedy_lives = max(0, bl.total_deaths - sim.total_deaths)
+
+        greedy_yearly = []
+        for y in range(5):
+            start = y * 12
+            end   = start + 11
+            bl_d  = (bl.timeline[end]["cumulative_deaths"]
+                     - bl.timeline[start]["cumulative_deaths"])
+            sim_d = (sim.timeline[end]["cumulative_deaths"]
+                     - sim.timeline[start]["cumulative_deaths"])
+            greedy_yearly.append({
+                "year":                  y + 1,
+                "naloxone":              round(ivx.get("naloxone", 0.5), 2),
+                "prescribing":           round(ivx.get("prescribing", 0.3), 2),
+                "treatment":             round(ivx.get("treatment", 0.5), 2),
+                "deaths_this_year":      int(sim_d),
+                "lives_saved_this_year": round(max(0, bl_d - sim_d), 1),
+                "baseline_this_year":    round(bl_d, 1),
+            })
+
+        greedy_result = {
+            "total_lives_saved": greedy_lives,
+            "total_deaths":      sim.total_deaths,
+            "baseline_deaths":   bl.total_deaths,
+            "yearly_plan":       greedy_yearly,
+        }
+
+        improvement = 0.0
+        if greedy_lives > 0:
+            improvement = round((rl_total_lives - greedy_lives) / greedy_lives * 100, 1)
+
+        return {
+            "county":          req.county,
+            "budget":          req.budget,
+            "rl":              rl_result,
+            "greedy":          greedy_result,
+            "improvement_pct": improvement,
+            "extra_lives":     round(rl_total_lives - greedy_lives, 1),
+            "source":          "live",
+        }
+
+    except Exception as e:
+        raise HTTPException(500, f"RL inference failed: {str(e)}")
+
+
+@api.get("/rl-summary")
+def rl_summary():
+    """Return aggregate RL vs greedy results across all counties."""
+    if not RL_RESULTS_PATH.exists():
+        raise HTTPException(503, "RL results not found. Run: python ml/train_rl.py")
+    with open(RL_RESULTS_PATH) as f:
+        return json.load(f)
 
 
 # --- Register API router, then static files ---

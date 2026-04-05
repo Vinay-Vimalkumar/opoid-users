@@ -1,0 +1,2570 @@
+{
+  "summary": {
+    "avg_improvement_pct": 61.6,
+    "total_extra_lives": 2312.0,
+    "budget": 2000000,
+    "counties_analyzed": 20
+  },
+  "counties": {
+    "Marion": {
+      "county": "Marion",
+      "population": 971102,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 1592.0,
+        "total_deaths": 891,
+        "baseline_deaths": 2483.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.38,
+            "prescribing": 0.38,
+            "treatment": 0.28,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 88,
+            "lives_saved_this_year": 15.0,
+            "baseline_this_year": 103.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 109,
+            "lives_saved_this_year": 133.0,
+            "baseline_this_year": 242.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 158,
+            "lives_saved_this_year": 321.0,
+            "baseline_this_year": 479.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.59,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 246,
+            "lives_saved_this_year": 467.0,
+            "baseline_this_year": 713.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.38,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 290,
+            "lives_saved_this_year": 656.0,
+            "baseline_this_year": 946.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 361,
+        "total_deaths": 2297,
+        "baseline_deaths": 2658,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.05,
+            "prescribing": 0.3,
+            "treatment": 0.0,
+            "budget_spent": 387399,
+            "deaths_this_year": 94,
+            "lives_saved_this_year": 9,
+            "baseline_this_year": 103
+          },
+          {
+            "year": 2,
+            "naloxone": 0.05,
+            "prescribing": 0.3,
+            "treatment": 0.0,
+            "budget_spent": 387399,
+            "deaths_this_year": 223,
+            "lives_saved_this_year": 19,
+            "baseline_this_year": 242
+          },
+          {
+            "year": 3,
+            "naloxone": 0.05,
+            "prescribing": 0.3,
+            "treatment": 0.0,
+            "budget_spent": 387399,
+            "deaths_this_year": 397,
+            "lives_saved_this_year": 82,
+            "baseline_this_year": 479
+          },
+          {
+            "year": 4,
+            "naloxone": 0.05,
+            "prescribing": 0.3,
+            "treatment": 0.0,
+            "budget_spent": 387399,
+            "deaths_this_year": 591,
+            "lives_saved_this_year": 122,
+            "baseline_this_year": 713
+          },
+          {
+            "year": 5,
+            "naloxone": 0.05,
+            "prescribing": 0.3,
+            "treatment": 0.0,
+            "budget_spent": 387399,
+            "deaths_this_year": 834,
+            "lives_saved_this_year": 112,
+            "baseline_this_year": 946
+          }
+        ],
+        "cost": 1936996
+      },
+      "improvement_pct": 341.0,
+      "extra_lives": 1231.0
+    },
+    "Lake": {
+      "county": "Lake",
+      "population": 498558,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 458.0,
+        "total_deaths": 216,
+        "baseline_deaths": 674.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.45,
+            "prescribing": 0.45,
+            "treatment": 0.34,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 21,
+            "lives_saved_this_year": 10.0,
+            "baseline_this_year": 31.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 31,
+            "lives_saved_this_year": 40.0,
+            "baseline_this_year": 71.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.89,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 45,
+            "lives_saved_this_year": 94.0,
+            "baseline_this_year": 139.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.46,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 47,
+            "lives_saved_this_year": 147.0,
+            "baseline_this_year": 194.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.35,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 72,
+            "lives_saved_this_year": 167.0,
+            "baseline_this_year": 239.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 110,
+        "total_deaths": 624,
+        "baseline_deaths": 734,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.35,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 364092,
+            "deaths_this_year": 27,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 31
+          },
+          {
+            "year": 2,
+            "naloxone": 0.35,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 364092,
+            "deaths_this_year": 47,
+            "lives_saved_this_year": 24,
+            "baseline_this_year": 71
+          },
+          {
+            "year": 3,
+            "naloxone": 0.35,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 364092,
+            "deaths_this_year": 118,
+            "lives_saved_this_year": 21,
+            "baseline_this_year": 139
+          },
+          {
+            "year": 4,
+            "naloxone": 0.35,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 364092,
+            "deaths_this_year": 185,
+            "lives_saved_this_year": 9,
+            "baseline_this_year": 194
+          },
+          {
+            "year": 5,
+            "naloxone": 0.35,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 364092,
+            "deaths_this_year": 202,
+            "lives_saved_this_year": 37,
+            "baseline_this_year": 239
+          }
+        ],
+        "cost": 1820458
+      },
+      "improvement_pct": 316.4,
+      "extra_lives": 348.0
+    },
+    "Allen": {
+      "county": "Allen",
+      "population": 388608,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 419.0,
+        "total_deaths": 207,
+        "baseline_deaths": 617.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.48,
+            "prescribing": 0.48,
+            "treatment": 0.36,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 26,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 17.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 23,
+            "lives_saved_this_year": 37.0,
+            "baseline_this_year": 60.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.74,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 34,
+            "lives_saved_this_year": 81.0,
+            "baseline_this_year": 115.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.4,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 55,
+            "lives_saved_this_year": 131.0,
+            "baseline_this_year": 186.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.31,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 69,
+            "lives_saved_this_year": 170.0,
+            "baseline_this_year": 239.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 198,
+        "total_deaths": 472,
+        "baseline_deaths": 670,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.5,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 399747,
+            "deaths_this_year": 11,
+            "lives_saved_this_year": 6,
+            "baseline_this_year": 17
+          },
+          {
+            "year": 2,
+            "naloxone": 0.5,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 399747,
+            "deaths_this_year": 33,
+            "lives_saved_this_year": 27,
+            "baseline_this_year": 60
+          },
+          {
+            "year": 3,
+            "naloxone": 0.5,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 399747,
+            "deaths_this_year": 86,
+            "lives_saved_this_year": 29,
+            "baseline_this_year": 115
+          },
+          {
+            "year": 4,
+            "naloxone": 0.5,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 399747,
+            "deaths_this_year": 138,
+            "lives_saved_this_year": 48,
+            "baseline_this_year": 186
+          },
+          {
+            "year": 5,
+            "naloxone": 0.5,
+            "prescribing": 0.05,
+            "treatment": 0.0,
+            "budget_spent": 399747,
+            "deaths_this_year": 164,
+            "lives_saved_this_year": 75,
+            "baseline_this_year": 239
+          }
+        ],
+        "cost": 1998736
+      },
+      "improvement_pct": 111.6,
+      "extra_lives": 221.0
+    },
+    "St. Joseph": {
+      "county": "St. Joseph",
+      "population": 272212,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 255.0,
+        "total_deaths": 137,
+        "baseline_deaths": 392.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.52,
+            "prescribing": 0.52,
+            "treatment": 0.39,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 8,
+            "lives_saved_this_year": 11.0,
+            "baseline_this_year": 19.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 11,
+            "lives_saved_this_year": 31.0,
+            "baseline_this_year": 42.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.87,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 27,
+            "lives_saved_this_year": 45.0,
+            "baseline_this_year": 72.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.41,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 36,
+            "lives_saved_this_year": 47.0,
+            "baseline_this_year": 83.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.31,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 55,
+            "lives_saved_this_year": 121.0,
+            "baseline_this_year": 176.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 154,
+        "total_deaths": 271,
+        "baseline_deaths": 425,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.8,
+            "prescribing": 0.0,
+            "treatment": 0.0,
+            "budget_spent": 391985,
+            "deaths_this_year": 14,
+            "lives_saved_this_year": 5,
+            "baseline_this_year": 19
+          },
+          {
+            "year": 2,
+            "naloxone": 0.8,
+            "prescribing": 0.0,
+            "treatment": 0.0,
+            "budget_spent": 391985,
+            "deaths_this_year": 27,
+            "lives_saved_this_year": 15,
+            "baseline_this_year": 42
+          },
+          {
+            "year": 3,
+            "naloxone": 0.8,
+            "prescribing": 0.0,
+            "treatment": 0.0,
+            "budget_spent": 391985,
+            "deaths_this_year": 49,
+            "lives_saved_this_year": 23,
+            "baseline_this_year": 72
+          },
+          {
+            "year": 4,
+            "naloxone": 0.8,
+            "prescribing": 0.0,
+            "treatment": 0.0,
+            "budget_spent": 391985,
+            "deaths_this_year": 71,
+            "lives_saved_this_year": 12,
+            "baseline_this_year": 83
+          },
+          {
+            "year": 5,
+            "naloxone": 0.8,
+            "prescribing": 0.0,
+            "treatment": 0.0,
+            "budget_spent": 391985,
+            "deaths_this_year": 93,
+            "lives_saved_this_year": 83,
+            "baseline_this_year": 176
+          }
+        ],
+        "cost": 1959926
+      },
+      "improvement_pct": 65.6,
+      "extra_lives": 101.0
+    },
+    "Vanderburgh": {
+      "county": "Vanderburgh",
+      "population": 179987,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 281.0,
+        "total_deaths": 113,
+        "baseline_deaths": 394.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.55,
+            "prescribing": 0.55,
+            "treatment": 0.41,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 11,
+            "lives_saved_this_year": 5.0,
+            "baseline_this_year": 16.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 12,
+            "lives_saved_this_year": 32.0,
+            "baseline_this_year": 44.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.8,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 20,
+            "lives_saved_this_year": 48.0,
+            "baseline_this_year": 68.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.41,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 25,
+            "lives_saved_this_year": 87.0,
+            "baseline_this_year": 112.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.32,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 45,
+            "lives_saved_this_year": 109.0,
+            "baseline_this_year": 154.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 195,
+        "total_deaths": 229,
+        "baseline_deaths": 424,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.95,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 397771,
+            "deaths_this_year": 9,
+            "lives_saved_this_year": 7,
+            "baseline_this_year": 16
+          },
+          {
+            "year": 2,
+            "naloxone": 0.95,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 397771,
+            "deaths_this_year": 27,
+            "lives_saved_this_year": 17,
+            "baseline_this_year": 44
+          },
+          {
+            "year": 3,
+            "naloxone": 0.95,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 397771,
+            "deaths_this_year": 43,
+            "lives_saved_this_year": 25,
+            "baseline_this_year": 68
+          },
+          {
+            "year": 4,
+            "naloxone": 0.95,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 397771,
+            "deaths_this_year": 38,
+            "lives_saved_this_year": 74,
+            "baseline_this_year": 112
+          },
+          {
+            "year": 5,
+            "naloxone": 0.95,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 397771,
+            "deaths_this_year": 94,
+            "lives_saved_this_year": 60,
+            "baseline_this_year": 154
+          }
+        ],
+        "cost": 1988856
+      },
+      "improvement_pct": 44.1,
+      "extra_lives": 86.0
+    },
+    "Tippecanoe": {
+      "county": "Tippecanoe",
+      "population": 187076,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 148.0,
+        "total_deaths": 80,
+        "baseline_deaths": 228.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.54,
+            "prescribing": 0.54,
+            "treatment": 0.41,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 5.0,
+            "baseline_this_year": 10.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 11,
+            "lives_saved_this_year": 11.0,
+            "baseline_this_year": 22.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.75,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 13,
+            "lives_saved_this_year": 43.0,
+            "baseline_this_year": 56.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.4,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 24,
+            "lives_saved_this_year": 32.0,
+            "baseline_this_year": 56.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.31,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 27,
+            "lives_saved_this_year": 57.0,
+            "baseline_this_year": 84.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 118,
+        "total_deaths": 127,
+        "baseline_deaths": 245,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.9,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 396601,
+            "deaths_this_year": 6,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 10
+          },
+          {
+            "year": 2,
+            "naloxone": 0.9,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 396601,
+            "deaths_this_year": 14,
+            "lives_saved_this_year": 8,
+            "baseline_this_year": 22
+          },
+          {
+            "year": 3,
+            "naloxone": 0.9,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 396601,
+            "deaths_this_year": 23,
+            "lives_saved_this_year": 33,
+            "baseline_this_year": 56
+          },
+          {
+            "year": 4,
+            "naloxone": 0.9,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 396601,
+            "deaths_this_year": 29,
+            "lives_saved_this_year": 27,
+            "baseline_this_year": 56
+          },
+          {
+            "year": 5,
+            "naloxone": 0.9,
+            "prescribing": 0.0,
+            "treatment": 0.05,
+            "budget_spent": 396601,
+            "deaths_this_year": 46,
+            "lives_saved_this_year": 38,
+            "baseline_this_year": 84
+          }
+        ],
+        "cost": 1983006
+      },
+      "improvement_pct": 25.4,
+      "extra_lives": 30.0
+    },
+    "Delaware": {
+      "county": "Delaware",
+      "population": 111871,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 185.0,
+        "total_deaths": 81,
+        "baseline_deaths": 266.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.58,
+            "prescribing": 0.58,
+            "treatment": 0.43,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 5.0,
+            "baseline_this_year": 9.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 12,
+            "lives_saved_this_year": 26.0,
+            "baseline_this_year": 38.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.68,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 18,
+            "lives_saved_this_year": 34.0,
+            "baseline_this_year": 52.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.41,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 15,
+            "lives_saved_this_year": 50.0,
+            "baseline_this_year": 65.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.33,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 32,
+            "lives_saved_this_year": 70.0,
+            "baseline_this_year": 102.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 138,
+        "total_deaths": 149,
+        "baseline_deaths": 287,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 307303,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 9
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 307303,
+            "deaths_this_year": 20,
+            "lives_saved_this_year": 18,
+            "baseline_this_year": 38
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 307303,
+            "deaths_this_year": 25,
+            "lives_saved_this_year": 27,
+            "baseline_this_year": 52
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 307303,
+            "deaths_this_year": 37,
+            "lives_saved_this_year": 28,
+            "baseline_this_year": 65
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 307303,
+            "deaths_this_year": 52,
+            "lives_saved_this_year": 50,
+            "baseline_this_year": 102
+          }
+        ],
+        "cost": 1536516
+      },
+      "improvement_pct": 34.1,
+      "extra_lives": 47.0
+    },
+    "Vigo": {
+      "county": "Vigo",
+      "population": 105994,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 94.0,
+        "total_deaths": 49,
+        "baseline_deaths": 142.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.58,
+            "prescribing": 0.58,
+            "treatment": 0.43,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 2.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 8,
+            "lives_saved_this_year": 6.0,
+            "baseline_this_year": 14.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.64,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 8,
+            "lives_saved_this_year": 20.0,
+            "baseline_this_year": 28.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.4,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 12,
+            "lives_saved_this_year": 33.0,
+            "baseline_this_year": 45.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.32,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 18,
+            "lives_saved_this_year": 35.0,
+            "baseline_this_year": 53.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 73,
+        "total_deaths": 84,
+        "baseline_deaths": 157,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 293786,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 0,
+            "baseline_this_year": 2
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 293786,
+            "deaths_this_year": 9,
+            "lives_saved_this_year": 5,
+            "baseline_this_year": 14
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 293786,
+            "deaths_this_year": 15,
+            "lives_saved_this_year": 13,
+            "baseline_this_year": 28
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 293786,
+            "deaths_this_year": 22,
+            "lives_saved_this_year": 23,
+            "baseline_this_year": 45
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 293786,
+            "deaths_this_year": 28,
+            "lives_saved_this_year": 25,
+            "baseline_this_year": 53
+          }
+        ],
+        "cost": 1468931
+      },
+      "improvement_pct": 28.8,
+      "extra_lives": 21.0
+    },
+    "Madison": {
+      "county": "Madison",
+      "population": 130782,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 186.0,
+        "total_deaths": 138,
+        "baseline_deaths": 324.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.57,
+            "prescribing": 0.57,
+            "treatment": 0.42,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 10.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 0.95,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 17,
+            "lives_saved_this_year": 19.0,
+            "baseline_this_year": 36.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 33,
+            "lives_saved_this_year": 21.0,
+            "baseline_this_year": 54.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.77,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 26,
+            "lives_saved_this_year": 57.0,
+            "baseline_this_year": 83.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.47,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 52,
+            "lives_saved_this_year": 89.0,
+            "baseline_this_year": 141.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 154,
+        "total_deaths": 196,
+        "baseline_deaths": 350,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 350799,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 5,
+            "baseline_this_year": 10
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 350799,
+            "deaths_this_year": 20,
+            "lives_saved_this_year": 16,
+            "baseline_this_year": 36
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 350799,
+            "deaths_this_year": 29,
+            "lives_saved_this_year": 25,
+            "baseline_this_year": 54
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 350799,
+            "deaths_this_year": 55,
+            "lives_saved_this_year": 28,
+            "baseline_this_year": 83
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 350799,
+            "deaths_this_year": 67,
+            "lives_saved_this_year": 74,
+            "baseline_this_year": 141
+          }
+        ],
+        "cost": 1753993
+      },
+      "improvement_pct": 20.8,
+      "extra_lives": 32.0
+    },
+    "Grant": {
+      "county": "Grant",
+      "population": 66263,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 132.0,
+        "total_deaths": 46,
+        "baseline_deaths": 178.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.6,
+            "prescribing": 0.6,
+            "treatment": 0.44,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 4.0,
+            "baseline_this_year": 7.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 6,
+            "lives_saved_this_year": 14.0,
+            "baseline_this_year": 20.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.59,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 8,
+            "lives_saved_this_year": 27.0,
+            "baseline_this_year": 35.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.37,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 37.0,
+            "baseline_this_year": 47.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.3,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 19,
+            "lives_saved_this_year": 50.0,
+            "baseline_this_year": 69.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 103,
+        "total_deaths": 86,
+        "baseline_deaths": 189,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202405,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 7
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202405,
+            "deaths_this_year": 12,
+            "lives_saved_this_year": 8,
+            "baseline_this_year": 20
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202405,
+            "deaths_this_year": 18,
+            "lives_saved_this_year": 17,
+            "baseline_this_year": 35
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202405,
+            "deaths_this_year": 24,
+            "lives_saved_this_year": 23,
+            "baseline_this_year": 47
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202405,
+            "deaths_this_year": 26,
+            "lives_saved_this_year": 43,
+            "baseline_this_year": 69
+          }
+        ],
+        "cost": 1012024
+      },
+      "improvement_pct": 28.2,
+      "extra_lives": 29.0
+    },
+    "Lawrence": {
+      "county": "Lawrence",
+      "population": 45070,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 32.0,
+        "total_deaths": 24,
+        "baseline_deaths": 56.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.61,
+            "prescribing": 0.61,
+            "treatment": 0.46,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 1.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 5.0,
+            "baseline_this_year": 7.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.89,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 9.0,
+            "baseline_this_year": 13.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.4,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 6.0,
+            "baseline_this_year": 16.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.28,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 12.0,
+            "baseline_this_year": 19.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 44,
+        "total_deaths": 20,
+        "baseline_deaths": 64,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 153661,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 1
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 153661,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 7
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 153661,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 9,
+            "baseline_this_year": 13
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 153661,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 9,
+            "baseline_this_year": 16
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 153661,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 14,
+            "baseline_this_year": 19
+          }
+        ],
+        "cost": 768305
+      },
+      "improvement_pct": -27.3,
+      "extra_lives": -12.0
+    },
+    "Floyd": {
+      "county": "Floyd",
+      "population": 80454,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 115.0,
+        "total_deaths": 67,
+        "baseline_deaths": 180.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.59,
+            "prescribing": 0.59,
+            "treatment": 0.44,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 3.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 9,
+            "lives_saved_this_year": 3.0,
+            "baseline_this_year": 12.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 14,
+            "lives_saved_this_year": 27.0,
+            "baseline_this_year": 41.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.55,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 17,
+            "lives_saved_this_year": 32.0,
+            "baseline_this_year": 49.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.33,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 22,
+            "lives_saved_this_year": 53.0,
+            "baseline_this_year": 75.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 106,
+        "total_deaths": 86,
+        "baseline_deaths": 192,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 235044,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 0,
+            "baseline_this_year": 3
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 235044,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 7,
+            "baseline_this_year": 12
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 235044,
+            "deaths_this_year": 16,
+            "lives_saved_this_year": 25,
+            "baseline_this_year": 41
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 235044,
+            "deaths_this_year": 28,
+            "lives_saved_this_year": 21,
+            "baseline_this_year": 49
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 235044,
+            "deaths_this_year": 27,
+            "lives_saved_this_year": 48,
+            "baseline_this_year": 75
+          }
+        ],
+        "cost": 1175221
+      },
+      "improvement_pct": 8.5,
+      "extra_lives": 9.0
+    },
+    "Clark": {
+      "county": "Clark",
+      "population": 122738,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 226.0,
+        "total_deaths": 91,
+        "baseline_deaths": 315.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.57,
+            "prescribing": 0.57,
+            "treatment": 0.43,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 8,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 6.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 34.0,
+            "baseline_this_year": 44.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.69,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 19,
+            "lives_saved_this_year": 41.0,
+            "baseline_this_year": 60.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.41,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 22,
+            "lives_saved_this_year": 60.0,
+            "baseline_this_year": 82.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.33,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 32,
+            "lives_saved_this_year": 91.0,
+            "baseline_this_year": 123.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 162,
+        "total_deaths": 166,
+        "baseline_deaths": 328,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 332297,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 2,
+            "baseline_this_year": 6
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 332297,
+            "deaths_this_year": 21,
+            "lives_saved_this_year": 23,
+            "baseline_this_year": 44
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 332297,
+            "deaths_this_year": 34,
+            "lives_saved_this_year": 26,
+            "baseline_this_year": 60
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 332297,
+            "deaths_this_year": 38,
+            "lives_saved_this_year": 44,
+            "baseline_this_year": 82
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 332297,
+            "deaths_this_year": 62,
+            "lives_saved_this_year": 61,
+            "baseline_this_year": 123
+          }
+        ],
+        "cost": 1661487
+      },
+      "improvement_pct": 39.5,
+      "extra_lives": 64.0
+    },
+    "Scott": {
+      "county": "Scott",
+      "population": 24355,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 86.0,
+        "total_deaths": 30,
+        "baseline_deaths": 116.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.62,
+            "prescribing": 0.62,
+            "treatment": 0.45,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 1.0,
+            "baseline_this_year": 3.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 0.98,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 7.0,
+            "baseline_this_year": 11.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 12.0,
+            "baseline_this_year": 19.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.67,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 28.0,
+            "baseline_this_year": 35.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.42,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 38.0,
+            "baseline_this_year": 48.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 67,
+        "total_deaths": 56,
+        "baseline_deaths": 123,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 106016,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 3
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 106016,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 11
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 106016,
+            "deaths_this_year": 8,
+            "lives_saved_this_year": 11,
+            "baseline_this_year": 19
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 106016,
+            "deaths_this_year": 13,
+            "lives_saved_this_year": 22,
+            "baseline_this_year": 35
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 106016,
+            "deaths_this_year": 20,
+            "lives_saved_this_year": 28,
+            "baseline_this_year": 48
+          }
+        ],
+        "cost": 530082
+      },
+      "improvement_pct": 28.4,
+      "extra_lives": 19.0
+    },
+    "Fayette": {
+      "county": "Fayette",
+      "population": 23360,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 53.0,
+        "total_deaths": 29,
+        "baseline_deaths": 82.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.62,
+            "prescribing": 0.62,
+            "treatment": 0.45,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 2.0,
+            "baseline_this_year": 2.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 0.99,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 8.0,
+            "baseline_this_year": 9.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 6,
+            "lives_saved_this_year": 8.0,
+            "baseline_this_year": 14.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.52,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 22.0,
+            "baseline_this_year": 29.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.36,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 15,
+            "lives_saved_this_year": 13.0,
+            "baseline_this_year": 28.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 49,
+        "total_deaths": 43,
+        "baseline_deaths": 92,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 103728,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 2,
+            "baseline_this_year": 2
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 103728,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 4,
+            "baseline_this_year": 9
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 103728,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 7,
+            "baseline_this_year": 14
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 103728,
+            "deaths_this_year": 14,
+            "lives_saved_this_year": 15,
+            "baseline_this_year": 29
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 103728,
+            "deaths_this_year": 16,
+            "lives_saved_this_year": 12,
+            "baseline_this_year": 28
+          }
+        ],
+        "cost": 518640
+      },
+      "improvement_pct": 8.2,
+      "extra_lives": 4.0
+    },
+    "Jay": {
+      "county": "Jay",
+      "population": 20248,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 31.0,
+        "total_deaths": 14,
+        "baseline_deaths": 45.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.62,
+            "prescribing": 0.62,
+            "treatment": 0.47,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 2.0,
+            "baseline_this_year": 2.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 6.0,
+            "baseline_this_year": 6.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.88,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 5.0,
+            "baseline_this_year": 6.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.34,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 6,
+            "lives_saved_this_year": 9.0,
+            "baseline_this_year": 15.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.22,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 9.0,
+            "baseline_this_year": 16.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 28,
+        "total_deaths": 20,
+        "baseline_deaths": 48,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 96570,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 2
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 96570,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 2,
+            "baseline_this_year": 6
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 96570,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 3,
+            "baseline_this_year": 6
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 96570,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 11,
+            "baseline_this_year": 15
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 96570,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 9,
+            "baseline_this_year": 16
+          }
+        ],
+        "cost": 482852
+      },
+      "improvement_pct": 10.7,
+      "extra_lives": 3.0
+    },
+    "Blackford": {
+      "county": "Blackford",
+      "population": 12091,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 18.0,
+        "total_deaths": 12,
+        "baseline_deaths": 30.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.63,
+            "prescribing": 0.63,
+            "treatment": 0.47,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 1.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 2.0,
+            "baseline_this_year": 2.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.9,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 4.0,
+            "baseline_this_year": 6.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.36,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 10.0,
+            "baseline_this_year": 14.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.23,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 2.0,
+            "baseline_this_year": 7.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 14,
+        "total_deaths": 17,
+        "baseline_deaths": 31,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 77809,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 1
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 77809,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 2
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 77809,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 3,
+            "baseline_this_year": 6
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 77809,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 11,
+            "baseline_this_year": 14
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 77809,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 0,
+            "baseline_this_year": 7
+          }
+        ],
+        "cost": 389046
+      },
+      "improvement_pct": 28.6,
+      "extra_lives": 4.0
+    },
+    "Vermillion": {
+      "county": "Vermillion",
+      "population": 15341,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 13.0,
+        "total_deaths": 3,
+        "baseline_deaths": 15.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.62,
+            "prescribing": 0.62,
+            "treatment": 0.47,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 0.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 2.0,
+            "baseline_this_year": 2.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 4.0,
+            "baseline_this_year": 4.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.51,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 7.0,
+            "baseline_this_year": 7.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.33,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 3,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 2.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 9,
+        "total_deaths": 9,
+        "baseline_deaths": 18,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 85284,
+            "deaths_this_year": 0,
+            "lives_saved_this_year": 0,
+            "baseline_this_year": 0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 85284,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 2
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 85284,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 2,
+            "baseline_this_year": 4
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 85284,
+            "deaths_this_year": 5,
+            "lives_saved_this_year": 2,
+            "baseline_this_year": 7
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 85284,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 2
+          }
+        ],
+        "cost": 426422
+      },
+      "improvement_pct": 44.4,
+      "extra_lives": 4.0
+    },
+    "Wayne": {
+      "county": "Wayne",
+      "population": 66456,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 160.0,
+        "total_deaths": 60,
+        "baseline_deaths": 220.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.6,
+            "prescribing": 0.6,
+            "treatment": 0.44,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 8.0,
+            "baseline_this_year": 9.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 12.0,
+            "baseline_this_year": 22.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.61,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 11,
+            "lives_saved_this_year": 45.0,
+            "baseline_this_year": 56.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.38,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 16,
+            "lives_saved_this_year": 47.0,
+            "baseline_this_year": 63.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.31,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 22,
+            "lives_saved_this_year": 48.0,
+            "baseline_this_year": 70.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 100,
+        "total_deaths": 135,
+        "baseline_deaths": 235,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202849,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 5,
+            "baseline_this_year": 9
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202849,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 12,
+            "baseline_this_year": 22
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202849,
+            "deaths_this_year": 25,
+            "lives_saved_this_year": 31,
+            "baseline_this_year": 56
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202849,
+            "deaths_this_year": 36,
+            "lives_saved_this_year": 27,
+            "baseline_this_year": 63
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 202849,
+            "deaths_this_year": 49,
+            "lives_saved_this_year": 21,
+            "baseline_this_year": 70
+          }
+        ],
+        "cost": 1014244
+      },
+      "improvement_pct": 60.0,
+      "extra_lives": 60.0
+    },
+    "Henry": {
+      "county": "Henry",
+      "population": 48935,
+      "budget": 2000000,
+      "rl": {
+        "total_lives_saved": 82.0,
+        "total_deaths": 36,
+        "baseline_deaths": 116.0,
+        "budget_used": 2000000,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 0.61,
+            "prescribing": 0.61,
+            "treatment": 0.45,
+            "budget_spent": 2000000,
+            "budget_remaining": 0,
+            "deaths_this_year": 4,
+            "lives_saved_this_year": 0.0,
+            "baseline_this_year": 2.0
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 1.0,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 2,
+            "lives_saved_this_year": 10.0,
+            "baseline_this_year": 12.0
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.99,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 15.0,
+            "baseline_this_year": 22.0
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.43,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 13,
+            "lives_saved_this_year": 25.0,
+            "baseline_this_year": 38.0
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.3,
+            "treatment": 1.0,
+            "budget_spent": 0,
+            "budget_remaining": 0,
+            "deaths_this_year": 10,
+            "lives_saved_this_year": 32.0,
+            "baseline_this_year": 42.0
+          }
+        ]
+      },
+      "greedy": {
+        "total_lives_saved": 71,
+        "total_deaths": 52,
+        "baseline_deaths": 123,
+        "yearly_plan": [
+          {
+            "year": 1,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 162550,
+            "deaths_this_year": 1,
+            "lives_saved_this_year": 1,
+            "baseline_this_year": 2
+          },
+          {
+            "year": 2,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 162550,
+            "deaths_this_year": 9,
+            "lives_saved_this_year": 3,
+            "baseline_this_year": 12
+          },
+          {
+            "year": 3,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 162550,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 15,
+            "baseline_this_year": 22
+          },
+          {
+            "year": 4,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 162550,
+            "deaths_this_year": 7,
+            "lives_saved_this_year": 31,
+            "baseline_this_year": 38
+          },
+          {
+            "year": 5,
+            "naloxone": 1.0,
+            "prescribing": 0.05,
+            "treatment": 0.05,
+            "budget_spent": 162550,
+            "deaths_this_year": 22,
+            "lives_saved_this_year": 20,
+            "baseline_this_year": 42
+          }
+        ],
+        "cost": 812752
+      },
+      "improvement_pct": 15.5,
+      "extra_lives": 11.0
+    }
+  }
+}
