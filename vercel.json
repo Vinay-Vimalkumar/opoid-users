@@ -1,5 +1,14 @@
 {
   "installCommand": "cd frontend && npm install",
   "buildCommand": "cd frontend && npx vite build",
-  "outputDirectory": "frontend/dist"
+  "outputDirectory": "frontend/dist",
+  "functions": {
+    "api/chat/index.py": {
+      "runtime": "@vercel/python@4.3.1",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/chat", "destination": "/api/chat/index.py" }
+  ]
 }
