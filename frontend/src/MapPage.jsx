@@ -25,8 +25,8 @@ const COUNTY_COORDS = {
 // ── Tile layer options ──
 const TILE_LAYERS = {
   dark: {
-    url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
-    attribution: '&copy; Stadia Maps',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; CARTO',
     label: 'Dark',
     preview: 'linear-gradient(135deg, #1a1a2e, #16213e, #0f172a)',
   },
@@ -43,8 +43,8 @@ const TILE_LAYERS = {
     preview: 'linear-gradient(135deg, #1a3a1a, #2d4a2d, #1a3a1a)',
   },
   light: {
-    url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
-    attribution: '&copy; Stadia Maps',
+    url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; CARTO',
     label: 'Light',
     preview: 'linear-gradient(135deg, #e8e8e8, #d0d0d0, #f0f0f0)',
   },
