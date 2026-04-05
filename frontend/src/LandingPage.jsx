@@ -4,10 +4,10 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const API = '/api'
 
 const STATS = [
-  { value: '80,000+', label: 'Americans die from opioids yearly',      color: '#ef4444' },
-  { value: '2,500+',  label: 'Hoosiers lost every year in Indiana',    color: '#f97316' },
-  { value: '5,146',   label: 'Lives saveable if Indiana acted in 2016', color: '#22c55e' },
-  { value: '$2M',     label: 'Avg county intervention budget',          color: '#a855f7' },
+  { value: '80,000+', label: 'Americans die from opioids yearly',      color: '#ef4444', num: 80000, suffix: '+' },
+  { value: '2,500+',  label: 'Hoosiers lost every year in Indiana',    color: '#f97316', num: 2500, suffix: '+' },
+  { value: '5,146',   label: 'Lives saveable if Indiana acted in 2016', color: '#22c55e', num: 5146, suffix: '' },
+  { value: '$2M',     label: 'Avg county intervention budget',          color: '#a855f7', num: 2, suffix: 'M', prefix: '$' },
 ]
 
 const STEPS = [
@@ -93,6 +93,96 @@ function useScrollReveal(deps = []) {
   }, deps)
 }
 
+/* ── Particle constellation background ── */
+function ParticleBackground() {
+  const canvasRef = useRef(null)
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    let animId
+    const particles = []
+    const COUNT = 30
+    const SPEED = 0.3
+    const CONNECT_DIST = 120
+
+    const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight }
+    resize()
+    window.addEventListener('resize', resize)
+
+    for (let i = 0; i < COUNT; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * SPEED,
+        vy: (Math.random() - 0.5) * SPEED,
+      })
+    }
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      for (let i = 0; i < COUNT; i++) {
+        const p = particles[i]
+        p.x += p.vx; p.y += p.vy
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2)
+        ctx.fillStyle = 'rgba(249,115,22,0.15)'
+        ctx.fill()
+        for (let j = i + 1; j < COUNT; j++) {
+          const q = particles[j]
+          const dx = p.x - q.x, dy = p.y - q.y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+          if (dist < CONNECT_DIST) {
+            ctx.beginPath()
+            ctx.moveTo(p.x, p.y)
+            ctx.lineTo(q.x, q.y)
+            ctx.strokeStyle = `rgba(249,115,22,${0.05 * (1 - dist / CONNECT_DIST)})`
+            ctx.lineWidth = 0.5
+            ctx.stroke()
+          }
+        }
+      }
+      animId = requestAnimationFrame(draw)
+    }
+    draw()
+    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize) }
+  }, [])
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }} />
+}
+
+/* ── Animated stat number (triggers on scroll) ── */
+function AnimatedStatNumber({ num, prefix = '', suffix = '', color, comma = true }) {
+  const ref = useRef(null)
+  const [display, setDisplay] = useState(0)
+  const triggered = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !triggered.current) {
+        triggered.current = true
+        const start = performance.now()
+        const duration = 2000
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1)
+          const ease = 1 - Math.pow(1 - p, 3)
+          setDisplay(num < 10 ? parseFloat((ease * num).toFixed(1)) : Math.round(ease * num))
+          if (p < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      }
+    }, { threshold: 0.3 })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [num])
+
+  const formatted = comma && num >= 100 ? display.toLocaleString() : display
+  return <span ref={ref} style={{ color }}>{prefix}{formatted}{suffix}</span>
+}
+
 export default function LandingPage({ onNavigate, theme = 'default' }) {
   const isBW = theme === 'bw'
   const [counties, setCounties] = useState([])
@@ -114,6 +204,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
 
       {/* ── Hero ── */}
       <section className="relative z-10 px-4 pt-28 pb-24 text-center">
+        <ParticleBackground />
         <div className="max-w-4xl mx-auto">
 
           <div
@@ -191,7 +282,9 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
         <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {STATS.map((s, i) => (
             <div key={i} className="reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-              <p className="text-4xl sm:text-5xl font-black mb-2" style={{ color: s.color }}>{s.value}</p>
+              <p className="text-4xl sm:text-5xl font-black mb-2">
+                <AnimatedStatNumber num={s.num} prefix={s.prefix || ''} suffix={s.suffix} color={s.color} comma={s.num >= 100} />
+              </p>
               <p className="text-xs text-slate-500 leading-snug max-w-[140px] mx-auto">{s.label}</p>
             </div>
           ))}
