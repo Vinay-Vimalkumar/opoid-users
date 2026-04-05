@@ -3,12 +3,18 @@ import LandingPage from './LandingPage'
 import MapPage from './MapPage'
 import CounterfactualView from './CounterfactualView'
 import MethodologyView from './MethodologyView'
+import AssistantPage from './AssistantPage'
+import RoadmapView from './RoadmapView'
+import RLAgentView from './RLAgentView'
 
 const TABS = [
-  { key: 'home', label: 'Overview' },
-  { key: 'map',  label: 'Map & Simulator' },
-  { key: 'whatif', label: 'What If?' },
+  { key: 'home',        label: 'Overview' },
+  { key: 'map',         label: 'Map & Simulator' },
+  { key: 'whatif',      label: 'What If?' },
+  { key: 'roadmap',     label: 'Roadmap' },
+  { key: 'rlagent',     label: 'RL Agent' },
   { key: 'methodology', label: 'How It Works' },
+  { key: 'assistant',   label: 'AI Assistant' },
 ]
 
 const THEMES = [
@@ -17,6 +23,7 @@ const THEMES = [
   { key: 'emerald',  label: 'Emerald',        dots: ['#10b981', '#059669'] },
   { key: 'rose',     label: 'Rose',           dots: ['#f43f5e', '#ec4899'] },
   { key: 'midnight', label: 'Midnight',       dots: ['#6366f1', '#8b5cf6'] },
+  { key: 'light',    label: 'Light Blue',     dots: ['#2563eb', '#0ea5e9'] },
   { key: 'bw',       label: 'Monochrome',     dots: ['#ffffff', '#555555'] },
 ]
 
@@ -54,16 +61,18 @@ export default function App() {
           {/* Logo */}
           <button onClick={() => setPage('home')} className="flex items-center gap-2.5 group flex-shrink-0">
             <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-black text-sm transition group-hover:scale-105"
+              className="w-8 h-8 rounded-lg flex items-center justify-center transition group-hover:scale-105"
               style={{
                 background:  isBW ? 'linear-gradient(135deg,#444,#888)' : 'linear-gradient(135deg,#f97316,#7c3aed)',
                 boxShadow:   isBW ? '0 0 12px rgba(255,255,255,0.08)' : '0 0 12px rgba(249,115,22,0.3)',
               }}
             >
-              DD
+              <svg viewBox="0 0 32 32" width="20" height="20" fill="none">
+                <path d="M24 16a12 12 0 0 1-12 12A12 12 0 0 1 24 4a10 10 0 0 0 0 12z" fill="white"/>
+              </svg>
             </div>
             <span className="hidden sm:block text-base font-black text-white leading-none">
-              Drug<span className="gradient-text">Diffuse</span>
+              Mor<span className="gradient-text">pheus</span>
             </span>
           </button>
 
@@ -153,15 +162,21 @@ export default function App() {
             ? <LandingPage onNavigate={setPage} theme={theme} />
             : page === 'whatif'
             ? <div className="max-w-7xl mx-auto px-4 py-6"><CounterfactualView /></div>
+            : page === 'roadmap'
+            ? <RoadmapView />
+            : page === 'rlagent'
+            ? <RLAgentView />
             : page === 'methodology'
             ? <div className="max-w-7xl mx-auto px-4 py-6"><MethodologyView /></div>
+            : page === 'assistant'
+            ? <AssistantPage />
             : <MapPage theme={theme} />
           }
         </div>
       </div>
 
       {/* Footer */}
-      {(page === 'home' || page === 'whatif' || page === 'methodology') && (
+      {(page === 'home' || page === 'whatif' || page === 'roadmap' || page === 'rlagent' || page === 'methodology' || page === 'assistant') && (
         <footer
           className="py-4 text-center text-xs flex-shrink-0"
           style={{ borderTop: `1px solid ${isBW ? '#111' : '#0f172a'}`, color: '#334155' }}
