@@ -52,7 +52,7 @@ export default function MethodologyView() {
   return (
     <div className="space-y-6">
       <div className="bg-gradient-to-r from-slate-800 to-slate-800/50 rounded-xl p-6 border border-slate-700 fade-up">
-        <h2 className="text-xl font-bold text-white mb-2">How DrugDiffuse Works</h2>
+        <h2 className="text-xl font-bold text-white mb-2">How Morpheus Works</h2>
         <p className="text-slate-400 text-sm leading-relaxed max-w-3xl">
           A six-stage pipeline from raw CDC data to actionable policy recommendations.
           Every parameter is data-driven. The model is calibrated — not assumed.

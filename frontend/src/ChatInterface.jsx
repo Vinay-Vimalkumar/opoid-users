@@ -6,7 +6,7 @@ export default function ChatInterface({ onResult }) {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hi! I'm DrugDiffuse AI. Ask me about opioid intervention strategies for any Indiana county.\n\nTry: \"I have $2M for Marion County, what should I do?\"",
+      content: "Hi! I'm Morpheus AI. Ask me about opioid intervention strategies for any Indiana county.\n\nTry: \"I have $2M for Marion County, what should I do?\"",
     },
   ])
   const [input, setInput] = useState('')

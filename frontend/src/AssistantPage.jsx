@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 const API = '/api'
 
 const SUGGESTIONS = [
-  { label: 'Key Findings', q: 'What are the key findings of DrugDiffuse?' },
+  { label: 'Key Findings', q: 'What are the key findings of Morpheus?' },
   { label: 'Scott County', q: 'Tell me about the Scott County HIV outbreak and what could have been prevented' },
   { label: 'Marion $2M', q: 'I have $2M for Marion County. What interventions should I prioritize?' },
   { label: 'Rural vs Urban', q: 'How do rural counties compare to urban counties in overdose rates?' },

@@ -220,7 +220,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
           </div>
 
           <h1 className="reveal reveal-d1 text-6xl sm:text-8xl font-black tracking-tight text-white mb-5 leading-none">
-            Drug<span className="gradient-text">Diffuse</span>
+            Mor<span className="gradient-text">pheus</span>
           </h1>
 
           <p className="reveal reveal-d2 text-2xl text-slate-300 font-semibold mb-4 leading-snug">
@@ -303,7 +303,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
               Indiana has one of the highest overdose death rates in the Midwest. County health departments are handed limited budgets and asked to make life-or-death decisions with little more than gut instinct and outdated annual reports.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              DrugDiffuse changes that. We built an epidemiological simulation engine and an ML optimization layer that finds the intervention mix that saves the most lives per dollar.
+              Morpheus changes that. We built an epidemiological simulation engine and an ML optimization layer that finds the intervention mix that saves the most lives per dollar.
             </p>
           </div>
           <div className="reveal reveal-d2 space-y-4">

@@ -781,7 +781,7 @@ export default function MapPage({ theme = 'default' }) {
                   const url = URL.createObjectURL(blob)
                   const a = document.createElement('a')
                   a.href = url
-                  a.download = `DrugDiffuse_${selected}_Policy_Report.txt`
+                  a.download = `Morpheus_${selected}_Policy_Report.txt`
                   a.click()
                   URL.revokeObjectURL(url)
                 } catch {}
@@ -808,7 +808,7 @@ export default function MapPage({ theme = 'default' }) {
                   const url = URL.createObjectURL(blob)
                   const a = document.createElement('a')
                   a.href = url
-                  a.download = `DrugDiffuse_${selected}_Roadmap.txt`
+                  a.download = `Morpheus_${selected}_Roadmap.txt`
                   a.click()
                   URL.revokeObjectURL(url)
                 } catch {}

@@ -15,7 +15,7 @@ export default function ChatSidebar({ county, onResult }) {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: `I'm the DrugDiffuse AI assistant. I know everything about this project — the data, the model, the features, and the findings.\n\nAsk me anything:\n• Policy questions ("What should Marion do with $2M?")\n• Navigation help ("How do I use the time machine?")\n• Data questions ("Which county has the highest rate?")\n• Methodology ("How was the model calibrated?")`,
+      content: `I'm the Morpheus AI assistant. I know everything about this project — the data, the model, the features, and the findings.\n\nAsk me anything:\n• Policy questions ("What should Marion do with $2M?")\n• Navigation help ("How do I use the time machine?")\n• Data questions ("Which county has the highest rate?")\n• Methodology ("How was the model calibrated?")`,
     },
   ])
   const [input, setInput] = useState('')
