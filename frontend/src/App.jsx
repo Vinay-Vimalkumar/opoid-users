@@ -154,7 +154,9 @@ export default function App() {
                 boxShadow:   isBW ? '0 0 12px rgba(255,255,255,0.08)' : '0 0 12px rgba(249,115,22,0.3)',
               }}
             >
-              DD
+              <svg viewBox="0 0 32 32" width="18" height="18" fill="none">
+                <path d="M24 16a12 12 0 0 1-12 12A12 12 0 0 1 24 4a10 10 0 0 0 0 12z" fill="white"/>
+              </svg>
             </div>
             <span className="hidden sm:block text-base font-black text-white leading-none">
               Drug<span className="gradient-text">Diffuse</span>
