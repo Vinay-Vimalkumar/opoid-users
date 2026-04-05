@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ReferenceLine, Area, AreaChart } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ReferenceLine, Area, AreaChart, BarChart, Bar } from 'recharts'
 
 const API = '/api'
 
@@ -114,7 +114,8 @@ export default function CounterfactualView() {
                 <XAxis dataKey="year" stroke="#64748b" fontSize={11} />
                 <YAxis stroke="#64748b" fontSize={11} />
                 <Tooltip
-                  contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
+                  contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#fff' }}
+                  itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff', fontWeight: 700 }}
                 />
                 <Legend />
                 <ReferenceLine x={2013} stroke="#facc15" strokeDasharray="4 4" label={{ value: 'Interventions begin', fill: '#facc15', fontSize: 10, position: 'top' }} />
@@ -170,18 +171,19 @@ export default function CounterfactualView() {
               {statewide.intervention} — applied across all 20 counties from 2016
             </p>
             <ResponsiveContainer width="100%" height={Math.max(480, statewideData.length * 28)}>
-              <AreaChart data={statewideData} layout="vertical" margin={{ left: 10, right: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+              <BarChart data={statewideData} layout="vertical" margin={{ left: 10, right: 20 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" horizontal={false} />
                 <XAxis type="number" stroke="#64748b" fontSize={10} />
-                <YAxis type="category" dataKey="county" stroke="#64748b" fontSize={11} width={100} />
+                <YAxis type="category" dataKey="county" stroke="#94a3b8" fontSize={11} width={90} />
                 <Tooltip
-                  contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#ffffff' }}
-                  formatter={(v, name) => [Math.round(v), name]}
+                  contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8, fontSize: 12, color: '#fff' }}
+                  itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff', fontWeight: 700 }}
+                  formatter={(v, name) => [Math.round(v).toLocaleString(), name]}
                 />
                 <Legend />
-                <Area type="monotone" dataKey="actual_deaths_2016_2021" fill="#ef4444" fillOpacity={0.3} stroke="#ef4444" name="Actual deaths (2016-2021)" />
-                <Area type="monotone" dataKey="counterfactual_deaths" fill="#22c55e" fillOpacity={0.3} stroke="#22c55e" name="With intervention" />
-              </AreaChart>
+                <Bar dataKey="actual_deaths_2016_2021" fill="#ef4444" fillOpacity={0.75} radius={[0,4,4,0]} name="Actual deaths" />
+                <Bar dataKey="counterfactual_deaths" fill="#22c55e" fillOpacity={0.75} radius={[0,4,4,0]} name="With intervention" />
+              </BarChart>
             </ResponsiveContainer>
           </div>
 

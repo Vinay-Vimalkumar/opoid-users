@@ -698,7 +698,7 @@ export default function MapPage({ theme = 'default' }) {
                 Reset
               </button>
             </div>
-            <InterventionSliders values={interventions} onChange={handleSlider} />
+            <InterventionSliders values={interventions} onChange={handleSlider} compact />
 
             {/* Quick presets */}
             <div className="flex gap-1.5 mt-3">

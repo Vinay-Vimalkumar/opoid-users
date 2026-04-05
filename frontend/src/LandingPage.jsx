@@ -279,7 +279,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
                     <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                     <XAxis type="number" stroke="#475569" fontSize={10} tickFormatter={v => v >= 1e6 ? `${(v/1e6).toFixed(1)}M` : `${(v/1e3).toFixed(0)}K`} />
                     <YAxis type="category" dataKey="name" stroke="#475569" fontSize={10} width={80} />
-                    <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #1e293b', borderRadius: 8, fontSize: 12, color: '#ffffff' }} formatter={v => [v.toLocaleString(), 'Population']} />
+                    <Tooltip contentStyle={{ background: '#0f172a', border: '1px solid #1e293b', borderRadius: 8, fontSize: 12, color: '#fff' }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#fff' }} formatter={v => [v.toLocaleString(), 'Population']} />
                     <Bar dataKey="population" radius={[0, 4, 4, 0]}>
                       {[...counties].sort((a,b) => b.population - a.population).map((c, i) => (
                         <Cell key={i} fill={riskColor(c.population / maxPop)} fillOpacity={0.8} />
