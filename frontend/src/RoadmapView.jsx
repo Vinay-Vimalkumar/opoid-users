@@ -199,22 +199,37 @@ export default function RoadmapView() {
       .then(d => { if (!cancelled) { setRoadmap(d); setLoading(false) } })
       .catch(() => {
         if (cancelled) return
-        // Static fallback roadmap
+        // Generate county-specific fallback roadmap
+        const pop = counties.find(c => c.name === county)?.population || 100000
+        const scale = pop / 971102 // scale relative to Marion
+        const fiveYrSaved = Math.round(975 * scale)
+        const monthly = Math.round(fiveYrSaved / 60 * 10) / 10
+        const totalCost = Math.round(30000000 * scale)
+        const kitsPerMonth = Math.round(interventions.naloxone * pop / 500)
+        const treatSlots = Math.round(interventions.treatment * pop * 0.001)
+
         setRoadmap({
-          county, population: 971102, total_budget: 30000000, five_year_lives_saved: 975, monthly_lives_saved: 16.2,
+          county, population: pop, total_budget: totalCost, five_year_lives_saved: fiveYrSaved, monthly_lives_saved: monthly,
           phases: [
-            { phase: 'Phase 1: Foundation', months: 'Month 1-2', actions: ['Engage county health department', 'Procure naloxone supply', 'Establish PDMP benchmarks', 'Identify treatment slot locations', 'Baseline data collection'], kpi: '0 lives saved (setup phase)', budget_pct: 15 },
-            { phase: 'Phase 2: Pilot Launch', months: 'Month 3-6', actions: ['Deploy naloxone to 50% capacity', 'Begin prescribing reduction', 'Open 40% treatment slots', 'Weekly monitoring', 'Adjust strategy based on data'], kpi: '~65 lives saved', budget_pct: 30 },
-            { phase: 'Phase 3: Scale', months: 'Month 7-12', actions: ['Scale naloxone to full deployment', 'Achieve prescribing reduction target', 'Expand to full treatment capacity', 'Community awareness campaign', 'Data-driven reallocation'], kpi: '~194 cumulative lives saved', budget_pct: 55, scale_triggers: ['If deaths drop >20%: maintain allocation', 'If drop <10%: shift budget to treatment', 'If retention >60%: expand slots 25%'] },
+            { phase: 'Phase 1: Foundation', months: 'Month 1-2', actions: [`Engage ${county} County Health Department`, `Procure naloxone supply (${kitsPerMonth} kits/month target)`, 'Establish PDMP compliance benchmarks', `Identify ${treatSlots} MAT treatment slot locations`, 'Baseline data collection: overdose rates, ED visits'], kpi: '0 lives saved (setup phase)', budget_pct: 15 },
+            { phase: 'Phase 2: Pilot Launch', months: 'Month 3-6', actions: [`Deploy naloxone to ${Math.round(kitsPerMonth * 0.5)} sites (50% capacity)`, `Begin prescribing reduction program`, `Open ${Math.round(treatSlots * 0.4)} treatment slots (40% capacity)`, 'Weekly monitoring: overdose calls, naloxone use', 'Adjust strategy based on first 90 days'], kpi: `~${Math.round(monthly * 4)} lives saved (months 3-6)`, budget_pct: 30 },
+            { phase: 'Phase 3: Scale', months: 'Month 7-12', actions: [`Scale naloxone to full deployment (${kitsPerMonth} kits/month)`, `Expand to ${treatSlots} treatment slots (full capacity)`, 'Community awareness campaign and stigma reduction', 'Data-driven reallocation to highest-performing interventions', 'Prepare Year 2 budget request with outcome data'], kpi: `~${Math.round(monthly * 12)} cumulative lives saved by month 12`, budget_pct: 55, scale_triggers: ['If overdose deaths drop >20%: maintain current allocation', 'If drop <10%: shift 20% of naloxone budget to treatment', 'If treatment retention >60%: expand treatment slots by 25%'] },
           ],
-          annual_benchmarks: { year_1: '194 lives saved', year_2: '389 cumulative', year_3: '583 cumulative', year_5: '975 cumulative lives saved' },
-          yearly_strategy: [
-            { year: 1, naloxone: 0.25, prescribing: 0.09, treatment: 0.2, lives_saved: 194, cumulative_lives: 194, budget_spent: 4500000 },
-            { year: 2, naloxone: 0.4, prescribing: 0.18, treatment: 0.35, lives_saved: 253, cumulative_lives: 447, budget_spent: 10500000 },
-            { year: 3, naloxone: 0.5, prescribing: 0.26, treatment: 0.45, lives_saved: 292, cumulative_lives: 739, budget_spent: 16500000 },
-            { year: 4, naloxone: 0.5, prescribing: 0.3, treatment: 0.5, lives_saved: 311, cumulative_lives: 1050, budget_spent: 23400000 },
-            { year: 5, naloxone: 0.5, prescribing: 0.3, treatment: 0.5, lives_saved: 311, cumulative_lives: 975, budget_spent: 30000000 },
-          ],
+          annual_benchmarks: {
+            year_1: `${Math.round(monthly * 12)} lives saved, $${Math.round(totalCost * 0.2 / 1000)}K spent`,
+            year_2: `${Math.round(monthly * 24)} cumulative, full program operational`,
+            year_3: `${Math.round(monthly * 36)} cumulative, optimization phase`,
+            year_5: `${fiveYrSaved} cumulative lives saved, program evaluation`,
+          },
+          yearly_strategy: [1, 2, 3, 4, 5].map(y => ({
+            year: y,
+            naloxone: Math.round(interventions.naloxone * Math.min(1, y * 0.3) * 100) / 100,
+            prescribing: Math.round(interventions.prescribing * Math.min(1, y * 0.25) * 100) / 100,
+            treatment: Math.round(interventions.treatment * Math.min(1, y * 0.28) * 100) / 100,
+            lives_saved: Math.round(monthly * 12 * (0.7 + y * 0.12)),
+            cumulative_lives: Math.round(monthly * y * 12 * (0.8 + y * 0.05)),
+            budget_spent: Math.round(totalCost * (y / 5) ** 0.8),
+          })),
         })
         setLoading(false)
       })
