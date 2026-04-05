@@ -59,7 +59,7 @@ export default function AssistantPage() {
     } catch (e) {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: `Error: ${e.message}. Make sure the API is running and ANTHROPIC_API_KEY is set in .env`,
+        content: `The AI Assistant requires the backend server to be running. This is a static deployment — to use the AI chat, run the project locally:\n\n\`\`\`\ngit clone https://github.com/Vinay-Vimalkumar/opoid-users.git\ncd opoid-users\npip install -r requirements-server.txt\npython -m uvicorn api.main:app --port 8000\n\`\`\`\n\nThen open http://localhost:8000 and the AI will be available.\n\nIn the meantime, here are some key findings:\n- **5,146 lives** could have been saved if Indiana acted in 2016\n- **47%** of Scott County deaths were preventable\n- **9.26M simulations** ran in 0.43 seconds on an H100 GPU\n- The RL agent saves **62% more lives** than greedy optimization`,
       }])
     }
     setLoading(false)
