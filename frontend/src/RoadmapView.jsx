@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend, LineChart, Line, ComposedChart, Area } from 'recharts'
 
 const API = '/api'
 
@@ -38,6 +39,126 @@ function BudgetBar({ pct, color }) {
         style={{ width: `${pct}%`, background: color, boxShadow: `0 0 8px ${color}40` }}
       />
     </div>
+  )
+}
+
+function StrategyChart({ data }) {
+  const [visibleYears, setVisibleYears] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const intervalRef = useRef(null)
+
+  const play = () => {
+    setVisibleYears(0)
+    setIsPlaying(true)
+  }
+
+  useEffect(() => {
+    if (!isPlaying) return
+    intervalRef.current = setInterval(() => {
+      setVisibleYears(v => {
+        if (v >= data.length) { setIsPlaying(false); return data.length }
+        return v + 1
+      })
+    }, 600)
+    return () => clearInterval(intervalRef.current)
+  }, [isPlaying, data.length])
+
+  // Start animation on mount
+  useEffect(() => { play() }, [])
+
+  const visibleData = data.slice(0, visibleYears).map(d => ({
+    ...d,
+    name: `Year ${d.year}`,
+    naloxone_pct: Math.round(d.naloxone * 100),
+    prescribing_pct: Math.round(d.prescribing * 100),
+    treatment_pct: Math.round(d.treatment * 100),
+  }))
+
+  // Pad with empty years so chart doesn't resize
+  while (visibleData.length < data.length) {
+    visibleData.push({
+      name: `Year ${visibleData.length + 1}`,
+      naloxone_pct: 0, prescribing_pct: 0, treatment_pct: 0,
+      lives_saved: 0, cumulative_lives: 0, budget_spent: 0,
+    })
+  }
+
+  return (
+    <>
+      <Arrow />
+      <div className="rounded-2xl border border-slate-700 bg-slate-800/50 p-6 fade-up">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="text-sm font-bold text-white uppercase tracking-wide">Year-by-Year Strategy</h3>
+            <p className="text-[10px] text-slate-500 mt-0.5">Intervention deployment levels over 5 years</p>
+          </div>
+          <button
+            onClick={play}
+            className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-600 text-slate-300 hover:text-white hover:border-slate-400 transition press-effect flex items-center gap-1.5"
+          >
+            <span>{isPlaying ? '⏸' : '▶'}</span>
+            {isPlaying ? 'Playing...' : 'Replay'}
+          </button>
+        </div>
+
+        {/* Grouped bar chart — intervention levels */}
+        <div className="mb-6">
+          <p className="text-[10px] text-slate-500 uppercase tracking-wide mb-2">Intervention Deployment (%)</p>
+          <ResponsiveContainer width="100%" height={200}>
+            <BarChart data={visibleData} margin={{ left: 0, right: 0, top: 5, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+              <XAxis dataKey="name" tick={{ fontSize: 11, fill: '#94a3b8', fontWeight: 600 }} axisLine={false} tickLine={false} />
+              <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: '#64748b' }} axisLine={false} tickLine={false} tickFormatter={v => `${v}%`} />
+              <Tooltip
+                contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 10, fontSize: 11, color: '#fff' }}
+                itemStyle={{ color: '#e2e8f0' }}
+                labelStyle={{ color: '#fff', fontWeight: 700 }}
+                formatter={v => `${v}%`}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: 10, paddingTop: 8 }}
+                formatter={(value) => <span style={{ color: '#94a3b8' }}>{value}</span>}
+              />
+              <Bar dataKey="naloxone_pct" name="Naloxone" fill="#f97316" radius={[4, 4, 0, 0]} animationDuration={400} />
+              <Bar dataKey="prescribing_pct" name="Prescribing" fill="#a78bfa" radius={[4, 4, 0, 0]} animationDuration={400} />
+              <Bar dataKey="treatment_pct" name="Treatment" fill="#06b6d4" radius={[4, 4, 0, 0]} animationDuration={400} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Lives saved + budget area chart */}
+        <div>
+          <p className="text-[10px] text-slate-500 uppercase tracking-wide mb-2">Cumulative Impact</p>
+          <ResponsiveContainer width="100%" height={160}>
+            <ComposedChart data={visibleData} margin={{ left: 0, right: 0, top: 5, bottom: 0 }}>
+              <defs>
+                <linearGradient id="livesGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#22c55e" stopOpacity={0.3} />
+                  <stop offset="100%" stopColor="#22c55e" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+              <XAxis dataKey="name" tick={{ fontSize: 11, fill: '#94a3b8', fontWeight: 600 }} axisLine={false} tickLine={false} />
+              <YAxis yAxisId="lives" tick={{ fontSize: 10, fill: '#64748b' }} axisLine={false} tickLine={false} />
+              <YAxis yAxisId="budget" orientation="right" tick={{ fontSize: 10, fill: '#64748b' }} axisLine={false} tickLine={false} tickFormatter={v => v >= 1e6 ? `$${(v/1e6).toFixed(0)}M` : `$${(v/1e3).toFixed(0)}K`} />
+              <Tooltip
+                contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 10, fontSize: 11, color: '#fff' }}
+                itemStyle={{ color: '#e2e8f0' }}
+                labelStyle={{ color: '#fff', fontWeight: 700 }}
+                formatter={(v, name) => [name.includes('Budget') ? `$${(v/1e6).toFixed(2)}M` : v.toLocaleString(), name]}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: 10, paddingTop: 8 }}
+                formatter={(value) => <span style={{ color: '#94a3b8' }}>{value}</span>}
+              />
+              <Area yAxisId="lives" type="monotone" dataKey="cumulative_lives" name="Cumulative Lives Saved" stroke="#22c55e" strokeWidth={2} fill="url(#livesGrad)" animationDuration={400} />
+              <Bar yAxisId="lives" dataKey="lives_saved" name="Lives Saved (Year)" fill="#22c55e" fillOpacity={0.6} radius={[4, 4, 0, 0]} animationDuration={400} />
+              <Line yAxisId="budget" type="monotone" dataKey="budget_spent" name="Budget Spent" stroke="#f59e0b" strokeWidth={2} dot={{ r: 4, fill: '#f59e0b' }} animationDuration={400} />
+            </ComposedChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </>
   )
 }
 
@@ -186,6 +307,11 @@ export default function RoadmapView() {
             </div>
           </div>
         </>
+      )}
+
+      {/* Year-by-Year Strategy Chart */}
+      {roadmap?.yearly_strategy && !loading && (
+        <StrategyChart data={roadmap.yearly_strategy} />
       )}
 
       {/* Download */}

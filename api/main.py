@@ -565,6 +565,53 @@ def generate_roadmap(req: PolicyLetterRequest):
             "year_3": f"{round(monthly_lives * 36)} cumulative, optimization phase",
             "year_5": f"{lives_saved} cumulative lives saved, program evaluation",
         },
+        "yearly_strategy": [
+            {
+                "year": 1,
+                "naloxone": round(req.naloxone * 0.5, 2),
+                "prescribing": round(req.prescribing * 0.3, 2),
+                "treatment": round(req.treatment * 0.4, 2),
+                "lives_saved": round(monthly_lives * 12),
+                "cumulative_lives": round(monthly_lives * 12),
+                "budget_spent": round(result.cost * 0.15),
+            },
+            {
+                "year": 2,
+                "naloxone": round(req.naloxone * 0.8, 2),
+                "prescribing": round(req.prescribing * 0.6, 2),
+                "treatment": round(req.treatment * 0.7, 2),
+                "lives_saved": round(monthly_lives * 12 * 1.3),
+                "cumulative_lives": round(monthly_lives * 24 * 1.15),
+                "budget_spent": round(result.cost * 0.35),
+            },
+            {
+                "year": 3,
+                "naloxone": round(req.naloxone, 2),
+                "prescribing": round(req.prescribing * 0.85, 2),
+                "treatment": round(req.treatment * 0.9, 2),
+                "lives_saved": round(monthly_lives * 12 * 1.5),
+                "cumulative_lives": round(monthly_lives * 36 * 1.2),
+                "budget_spent": round(result.cost * 0.55),
+            },
+            {
+                "year": 4,
+                "naloxone": round(req.naloxone, 2),
+                "prescribing": round(req.prescribing, 2),
+                "treatment": round(req.treatment, 2),
+                "lives_saved": round(monthly_lives * 12 * 1.6),
+                "cumulative_lives": round(monthly_lives * 48 * 1.25),
+                "budget_spent": round(result.cost * 0.78),
+            },
+            {
+                "year": 5,
+                "naloxone": round(req.naloxone, 2),
+                "prescribing": round(req.prescribing, 2),
+                "treatment": round(req.treatment, 2),
+                "lives_saved": round(monthly_lives * 12 * 1.6),
+                "cumulative_lives": lives_saved,
+                "budget_spent": round(result.cost),
+            },
+        ],
     }
 
 
