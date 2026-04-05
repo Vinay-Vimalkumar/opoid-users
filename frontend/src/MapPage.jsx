@@ -4,6 +4,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import InterventionSliders from './InterventionSliders'
 import TimelineChart from './TimelineChart'
+import AnimatedNumber from './AnimatedNumber'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, AreaChart, Area } from 'recharts'
 
 const API = '/api'
@@ -479,9 +480,9 @@ export default function MapPage({ theme = 'default' }) {
           {result && viewMode === 'numbers' && (
             <div className={`grid grid-cols-2 gap-2`}>
               {[
-                { label: 'Lives Saved', val: `+${result.lives_saved}`, color: '#22c55e', glow: true },
-                { label: 'Reduction', val: `${reductionPct}%`, color: '#a78bfa', glow: false },
-                { label: 'Deaths', val: result.total_deaths?.toLocaleString(), color: '#ffffff', glow: false },
+                { label: 'Lives Saved', val: `+${result.lives_saved}`, rawVal: result.lives_saved, prefix: '+', color: '#22c55e', glow: true },
+                { label: 'Reduction', val: `${reductionPct}%`, rawVal: reductionPct, suffix: '%', color: '#a78bfa', glow: false },
+                { label: 'Deaths', val: result.total_deaths?.toLocaleString(), rawVal: result.total_deaths, color: '#ffffff', glow: false },
                 { label: 'Cost', val: fmt(result.cost), color: '#06b6d4', glow: false },
                 ...(panelSize === 'lg' ? [
                   { label: 'Baseline', val: result.baseline_deaths?.toLocaleString(), color: '#ef4444', glow: false },
@@ -496,7 +497,11 @@ export default function MapPage({ theme = 'default' }) {
                   boxShadow: s.glow ? `0 0 16px rgba(34,197,94,0.15), inset 0 1px 0 rgba(34,197,94,0.1)` : 'none',
                 }}>
                   <p className={`text-slate-500 uppercase tracking-wide ${panelSize === 'lg' ? 'text-[10px] mb-0.5' : 'text-[9px]'}`}>{s.label}</p>
-                  <p className={`font-black font-mono number-enter ${panelSize === 'lg' ? 'text-lg' : 'text-sm'}`} style={{ color: s.color }}>{s.val}</p>
+                  {typeof s.rawVal === 'number' ? (
+                    <AnimatedNumber value={s.rawVal} prefix={s.prefix || ''} suffix={s.suffix || ''} className={`font-black font-mono ${panelSize === 'lg' ? 'text-lg' : 'text-sm'}`} style={{ color: s.color }} />
+                  ) : (
+                    <p className={`font-black font-mono number-enter ${panelSize === 'lg' ? 'text-lg' : 'text-sm'}`} style={{ color: s.color }}>{s.val}</p>
+                  )}
                 </div>
               ))}
             </div>
@@ -741,6 +746,33 @@ export default function MapPage({ theme = 'default' }) {
             >
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
               Download Policy Report
+            </button>
+
+            {/* Roadmap */}
+            <button
+              onClick={async () => {
+                try {
+                  const res = await fetch(`${API}/roadmap`, {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ county: selected, budget: 2000000, ...interventions }),
+                  })
+                  const data = await res.json()
+                  const text = `IMPLEMENTATION ROADMAP — ${data.county} County\nBudget: $${data.total_budget?.toLocaleString()}\n5-Year Lives Saved: ${data.five_year_lives_saved}\n\n` +
+                    data.phases.map(p => `${p.phase} (${p.months})\n${p.actions.map(a => `  • ${a}`).join('\n')}\nKPI: ${p.kpi}\nBudget: ${p.budget_pct}%\n${p.scale_triggers ? 'Scale Triggers:\n' + p.scale_triggers.map(t => `  → ${t}`).join('\n') : ''}`).join('\n\n') +
+                    `\n\nANNUAL BENCHMARKS\n` + Object.entries(data.annual_benchmarks).map(([k,v]) => `  ${k}: ${v}`).join('\n')
+                  const blob = new Blob([text], { type: 'text/plain' })
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = `DrugDiffuse_${selected}_Roadmap.txt`
+                  a.click()
+                  URL.revokeObjectURL(url)
+                } catch {}
+              }}
+              className="w-full px-3 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-blue-600/80 to-indigo-600/80 text-white hover:brightness-110 transition press-effect flex items-center justify-center gap-1.5"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+              Download 12-Month Roadmap
             </button>
           </div>
         </div>

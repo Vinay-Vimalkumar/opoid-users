@@ -4,15 +4,18 @@ const API = '/api'
 
 const SUGGESTIONS = [
   'What should Marion County do with $2M?',
-  'Compare naloxone vs treatment for Allen County',
-  'Which county has the highest overdose risk?',
+  'Why does Scott County have the highest death rate?',
+  'How do I use the time machine?',
+  'What are the key findings?',
+  'Compare rural vs urban counties',
+  'How was the model calibrated?',
 ]
 
 export default function ChatSidebar({ county, onResult }) {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: `Hi! I'm the DrugDiffuse AI. Ask me about opioid intervention strategies for any Indiana county.\n\nTry: "I have $2M for Marion County, what should I do?"`,
+      content: `I'm the DrugDiffuse AI assistant. I know everything about this project — the data, the model, the features, and the findings.\n\nAsk me anything:\n• Policy questions ("What should Marion do with $2M?")\n• Navigation help ("How do I use the time machine?")\n• Data questions ("Which county has the highest rate?")\n• Methodology ("How was the model calibrated?")`,
     },
   ])
   const [input, setInput] = useState('')

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-export default function AnimatedNumber({ value, duration = 800, prefix = '', suffix = '', className = '' }) {
+export default function AnimatedNumber({ value, duration = 800, prefix = '', suffix = '', className = '', style = {} }) {
   const [display, setDisplay] = useState(value)
   const prevValue = useRef(value)
   const animRef = useRef(null)
@@ -32,5 +32,5 @@ export default function AnimatedNumber({ value, duration = 800, prefix = '', suf
     ? display.toLocaleString()
     : display
 
-  return <span className={className}>{prefix}{formatted}{suffix}</span>
+  return <span className={className} style={style}>{prefix}{formatted}{suffix}</span>
 }
