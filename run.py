@@ -1,4 +1,4 @@
-"""One-click startup for DrugDiffuse. Just double-click this file or run: python run.py"""
+"""One-click startup for Morpheus. Just double-click this file or run: python run.py"""
 import subprocess, sys, os, webbrowser, time, threading
 from pathlib import Path
 from multiprocessing import freeze_support
@@ -13,7 +13,7 @@ def main():
         subprocess.run([sys.executable, "ml/train_model.py"], check=True)
         print()
 
-    print("Starting DrugDiffuse at http://localhost:8000")
+    print("Starting Morpheus at http://localhost:8000")
     print("Press Ctrl+C to stop.\n")
 
     # Open browser after a short delay

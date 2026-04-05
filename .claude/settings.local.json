@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import urllib.request; r=urllib.request.urlopen\\('http://localhost:8000/'\\); print\\(r.status, r.read\\(\\)[:100]\\)\")",
+      "Bash(python -c \"import urllib.request; r=urllib.request.urlopen\\('http://localhost:8000/'\\); print\\('Status:', r.status, '| Content-Type:', r.headers['Content-Type'], '| First bytes:', r.read\\(\\)[:50\\)\\)\")",
+      "Bash(python -c \"import urllib.request; r=urllib.request.urlopen\\('http://localhost:8000/'\\); print\\('Status:', r.status, 'Type:', r.headers['Content-Type']\\)\")",
+      "Bash(cmd /c \"taskkill /F /IM python.exe /T\")",
+      "Bash(python run.py)",
+      "Bash(python -c ':*)",
+      "Bash(cmd /c \"netstat -ano | findstr 8000\")",
+      "Bash(python -c \"import socket; s=socket.socket\\(\\); r=s.connect_ex\\(\\('localhost',8000\\)\\); print\\('Port 8000 open:', r==0\\); s.close\\(\\)\")",
+      "Bash(python -m uvicorn api.main:app --port 8000)",
+      "Bash(npm install:*)",
+      "Bash(npx remotion:*)"
+    ]
+  }
+}

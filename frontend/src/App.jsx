@@ -166,7 +166,7 @@ export default function App() {
           className="py-4 text-center text-xs flex-shrink-0"
           style={{ borderTop: `1px solid ${isBW ? '#111' : '#0f172a'}`, color: '#334155' }}
         >
-          DrugDiffuse &nbsp;·&nbsp; Catapult Hackathon 2026 &nbsp;·&nbsp; Simplified model for policy exploration only
+          Morpheus &nbsp;·&nbsp; Catapult Hackathon 2026 &nbsp;·&nbsp; Simplified model for policy exploration only
         </footer>
       )}
     </div>

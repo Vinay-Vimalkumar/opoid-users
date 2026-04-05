@@ -1,0 +1,25 @@
+{
+  "name": "morpheus-demo-video",
+  "version": "1.0.0",
+  "description": "Remotion demo video for Morpheus Opioid Policy Simulator",
+  "scripts": {
+    "start": "npx remotion studio",
+    "render": "npx remotion render DemoVideo out/demo.mp4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@remotion/cli": "^4.0.445",
+    "@remotion/player": "^4.0.445",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.445"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.2"
+  }
+}

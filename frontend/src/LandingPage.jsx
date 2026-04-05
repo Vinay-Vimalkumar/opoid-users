@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const API = '/api'
 
 const GLOBAL_STATS = [
-  { value: '15,000+', label: 'Hoosiers have died from overdoses since 1999',        color: '#ef4444' },
+  { value: '15,000+', label: 'Indiana residents have died from overdoses since 1999',        color: '#ef4444' },
   { value: '3 of 5',  label: 'overdose deaths in Indiana involve opioids',           color: '#f97316' },
   { value: '57,500',  label: 'Indiana K–12 students with a parent with OUD',         color: '#a855f7' },
   { value: '5/day',   label: 'overdose deaths per day at Indiana\'s peak',           color: '#22c55e' },
@@ -24,7 +24,7 @@ const HOW_IT_WORKS = [
   {
     step: '03', color: '#22c55e',
     title: 'Get the Playbook',
-    description: 'Our ML model — trained on 12,500 simulations — returns the optimal intervention bundle for your county and budget.',
+    description: 'Our ML model — trained on 9.26 million GPU-accelerated simulations — returns the optimal intervention bundle for your county and budget.',
   },
 ]
 
@@ -187,7 +187,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
           </p>
 
           <p className="reveal reveal-d3 text-slate-500 text-base max-w-2xl mx-auto mb-12 leading-relaxed">
-            Since 1999, 15,000+ Hoosiers have died from overdoses —
+            Since 1999, 15,000+ Indiana residents have died from overdoses —
             with 57,500 Indiana children living in the shadow of parental addiction right now.
             Run policy scenarios across 20 Indiana counties and find the interventions that save the most lives per dollar.
           </p>
@@ -234,7 +234,7 @@ export default function LandingPage({ onNavigate, theme = 'default' }) {
               An intergenerational crisis — and policymakers are flying blind
             </h2>
             <p className="text-slate-400 leading-relaxed mb-4">
-              Since 1999, over 15,000 Hoosiers have died from overdoses — roughly 5 per day at the peak. Fifty-eight Indiana counties recorded nearly 100 opioid prescriptions per 100 residents for multiple years running, indicating systemic overprescribing, not isolated incidents.
+              Since 1999, over 15,000 Indiana residents have died from overdoses — roughly 5 per day at the peak. Fifty-eight Indiana counties recorded nearly 100 opioid prescriptions per 100 residents for multiple years running, indicating systemic overprescribing, not isolated incidents.
             </p>
             <p className="text-slate-400 leading-relaxed">
               The damage doesn't stop there. Approximately 2.2 million children nationwide — including 57,500 Indiana K–12 students — have a parent with opioid use disorder, making them significantly more likely to experience trauma, foster care, and future addiction. The crisis is self-perpetuating without targeted, data-driven intervention.
