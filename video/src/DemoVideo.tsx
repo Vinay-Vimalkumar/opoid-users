@@ -421,7 +421,7 @@ const MorpheusReveal: React.FC = () => {
             background: `linear-gradient(90deg, ${ORANGE}, ${PURPLE})`,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-          }}
+          } as React.CSSProperties}
         >
           MORPHEUS
         </span>
@@ -989,7 +989,7 @@ const FinalCTA: React.FC = () => {
             background: `linear-gradient(90deg, ${ORANGE}, ${PURPLE})`,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-          }}
+          } as React.CSSProperties}
         >
           MORPHEUS
         </span>
